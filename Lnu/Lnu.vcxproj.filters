@@ -46,9 +46,6 @@
     <ClInclude Include="..\AUTH\MainMenu.h">
       <Filter>AUTH</Filter>
     </ClInclude>
-    <ClInclude Include="..\AUTH\Exit.h">
-      <Filter>AUTH</Filter>
-    </ClInclude>
     <ClInclude Include="..\AUTH\CorrectLogIn.h">
       <Filter>AUTH</Filter>
     </ClInclude>

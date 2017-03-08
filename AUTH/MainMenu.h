@@ -78,7 +78,7 @@ void mainMenu()
 		case '4':
 		{
 			checkCorrectInput = true;
-			return;
+			return ;
 			
 		}
 		default:

@@ -1,6 +1,21 @@
-﻿  Main.cpp
-e:\desktop\github\team_02\dto\dtouser.h(53): warning C4018: '<': signed/unsigned mismatch
-e:\desktop\github\team_02\auth\login.h(12): warning C4018: '<': signed/unsigned mismatch
-e:\desktop\github\team_02\auth\mainmenu.h(54): warning C4805: '==': unsafe mix of type 'boolean' and type 'bool' in operation
-  Lnu.vcxproj -> E:\Desktop\github\team_02\Debug\Lnu.exe
-  Lnu.vcxproj -> E:\Desktop\github\team_02\Debug\Lnu.pdb (Full PDB)
+﻿Build started 08.03.2017 21:38:19.
+     1>Project "C:\Users\andrew\Desktop\team_02\Lnu\Lnu.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Entity\Advertisement.cpp ..\Entity\User.cpp Main.cpp
+         Main.cpp
+     1>c:\users\andrew\desktop\team_02\dto\dtouser.h(53): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\andrew\desktop\team_02\auth\login.h(12): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\andrew\desktop\team_02\auth\mainmenu.h(54): warning C4805: '==' : unsafe mix of type 'boolean' and type 'bool' in operation
+         User.cpp
+         Advertisement.cpp
+         Generating Code...
+       Link:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\andrew\Desktop\team_02\Debug\Lnu.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\andrew\Desktop\team_02\Debug\Lnu.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\andrew\Desktop\team_02\Debug\Lnu.lib" /MACHINE:X86 Debug\Advertisement.obj
+         Debug\User.obj
+         Debug\Main.obj
+         Lnu.vcxproj -> C:\Users\andrew\Desktop\team_02\Debug\Lnu.exe
+     1>Done Building Project "C:\Users\andrew\Desktop\team_02\Lnu\Lnu.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.64

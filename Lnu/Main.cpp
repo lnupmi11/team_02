@@ -22,7 +22,7 @@ using namespace std;
 
 #include"../AUTH/LogIn.h"
 
-#include"../AUTH/Exit.h"
+
 
 #include"../AUTH/MainMenu.h"
 
