@@ -75,8 +75,8 @@
     <ClInclude Include="..\AUTH\MainMenu.h" />
     <ClInclude Include="..\AUTH\Registration.h" />
     <ClInclude Include="..\AUTH\ViewAllBeforeLogIn.h" />
-    <ClInclude Include="..\DTO\DtoAdvertisement.h" />
-    <ClInclude Include="..\DTO\DtoUser.h" />
+    <ClInclude Include="..\DTO\DTOAdvertisement.h" />
+    <ClInclude Include="..\DTO\DTOUser.h" />
     <ClInclude Include="..\Entity\Advertisement.h" />
     <ClInclude Include="..\Entity\User.h" />
   </ItemGroup>

@@ -1,5 +1,5 @@
 #include <iostream>
-#include<string>
+#include <string>
 using namespace std;
 
 class Advertisement
@@ -16,6 +16,10 @@ public:
 
 	Advertisement(const Advertisement&x) ;
 	
+	friend void input(Advertisement &advert);
+
+	friend void print(Advertisement &advert);
+
 	string getTitle();
 	
 	string getMainText();
@@ -31,8 +35,5 @@ public:
 	void setMainText(string mainText);
 	
 	void setTitle(string title);
-
-	void input();
 	
-	void print();
 };

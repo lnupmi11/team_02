@@ -8,11 +8,11 @@ using namespace std;
 
 #include"../Entity/User.h"
 
-#include"../DTO/DtoUser.h"
+#include"../DTO/DTOUser.h"
 
 #include"../Entity/Advertisement.h"
 
-#include"../DTO/DtoAdvertisement.h"
+#include"../DTO/DTOAdvertisement.h"
 
 #include"../AUTH/CorrectLogIn.h"
 

@@ -1,8 +1,6 @@
-﻿Build started 06.03.2017 23:19:29.
-     1>Project "C:\Users\andrew\Desktop\team_02\Lnu\Lnu.vcxproj" on node 2 (Build target(s)).
-     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.Cpp.Platform.targets(64,5): error MSB8020: The build tools for v140 (Platform Toolset = 'v140') cannot be found. To build using the v140 build tools, please install v140 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Upgrade Solution...".
-     1>Done Building Project "C:\Users\andrew\Desktop\team_02\Lnu\Lnu.vcxproj" (Build target(s)) -- FAILED.
-
-Build FAILED.
-
-Time Elapsed 00:00:00.14
+﻿  Main.cpp
+e:\desktop\github\team_02\dto\dtouser.h(53): warning C4018: '<': signed/unsigned mismatch
+e:\desktop\github\team_02\auth\login.h(12): warning C4018: '<': signed/unsigned mismatch
+e:\desktop\github\team_02\auth\mainmenu.h(54): warning C4805: '==': unsafe mix of type 'boolean' and type 'bool' in operation
+  Lnu.vcxproj -> E:\Desktop\github\team_02\Debug\Lnu.exe
+  Lnu.vcxproj -> E:\Desktop\github\team_02\Debug\Lnu.pdb (Full PDB)

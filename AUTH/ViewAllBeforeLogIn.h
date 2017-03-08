@@ -10,7 +10,7 @@ void viewAllBeforeLogIn()
 
 	for (Advertisement obj : vectWithAllInformation)
 	{
-		obj.print();
+		print(obj);
 	}
 
 	cout << "\n*********************************************************************\n";
