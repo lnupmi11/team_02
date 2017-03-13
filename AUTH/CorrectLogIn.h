@@ -1,6 +1,5 @@
 #pragma once
 
-
 void correctLogIn(User user)
 {
 	system("cls");

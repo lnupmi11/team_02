@@ -13,7 +13,6 @@ bool DTOUser::ifExist(User myUser)
 	{
 		return false;
 	}
-	
 	else 
 	{
 		vector<User> passAndEmailOfAllUsers;// містить логіни та паролі/ for log and pas
@@ -22,7 +21,7 @@ bool DTOUser::ifExist(User myUser)
 		string s;
 		int lineNumber = 0;
 		int vectorIterator = 0;
-		//запимсуємо всі лоігин і паролі відповідним користувачам(по порядку)
+		
 		User obj;// в цей обєки записуємо логін і паролі а поітм його зьерігаємо у вектор, тобто це тимчасовоа змінна/
 				 //it is a temporary variable for log and pass , we just put and save it at our vector  
 
