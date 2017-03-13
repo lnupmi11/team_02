@@ -29,6 +29,9 @@
     <ClCompile Include="..\Entity\Advertisement.cpp">
       <Filter>Entity</Filter>
     </ClCompile>
+    <ClCompile Include="..\DTO\DTOUser.cpp">
+      <Filter>DTO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Entity\User.h">
@@ -40,13 +43,7 @@
     <ClInclude Include="..\AUTH\LogIn.h">
       <Filter>AUTH</Filter>
     </ClInclude>
-    <ClInclude Include="..\AUTH\Registration.h">
-      <Filter>AUTH</Filter>
-    </ClInclude>
     <ClInclude Include="..\AUTH\MainMenu.h">
-      <Filter>AUTH</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AUTH\Exit.h">
       <Filter>AUTH</Filter>
     </ClInclude>
     <ClInclude Include="..\AUTH\CorrectLogIn.h">

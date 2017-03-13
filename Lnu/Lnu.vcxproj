@@ -13,6 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5E85B493-070A-4CB5-839E-317EA54678A5}</ProjectGuid>
     <RootNamespace>Lnu</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -64,16 +65,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\DTO\DTOUser.cpp" />
     <ClCompile Include="..\Entity\Advertisement.cpp" />
     <ClCompile Include="..\Entity\User.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\AUTH\CorrectLogIn.h" />
-    <ClInclude Include="..\AUTH\Exit.h" />
     <ClInclude Include="..\AUTH\LogIn.h" />
     <ClInclude Include="..\AUTH\MainMenu.h" />
-    <ClInclude Include="..\AUTH\Registration.h" />
     <ClInclude Include="..\AUTH\ViewAllBeforeLogIn.h" />
     <ClInclude Include="..\DTO\DTOAdvertisement.h" />
     <ClInclude Include="..\DTO\DTOUser.h" />

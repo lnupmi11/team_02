@@ -7,6 +7,8 @@ void mainMenu()
 	cout << " \tif you want to view all adverrisement ,  enter 3 . \n ";
 	cout << " \tif you want to exit ,  enter 4 . \n ";
 	cout << "  Action : ";
+	
+	
 	char symbol;
 	vector<char> SymbolsList;
 	bool checkCorrectInput = false;
@@ -26,12 +28,27 @@ void mainMenu()
 		
 		SymbolsList.clear();
 
+
 		switch (symbol)
 		{
 		case '1':
 		{
 			checkCorrectInput = true;
-			registration();
+			//registration
+			
+			system("cls");
+			cout << " \t\t\t Welcome! \n" << "\t You need to fill a few fields to create an account \n ";
+
+			User user;
+			user.inputInformationAboutUser();
+
+			DTOUser userDTO;
+			userDTO.saveInformation(user);
+
+			cout << " \n \t\t Registration successfully completed ! \n";
+			
+			
+			
 			mainMenu();
 
 		}
@@ -60,8 +77,8 @@ void mainMenu()
 			else
 			{
 				
-				cout << "\n you will  be returned to main menu after 2 sec .";
-				Sleep(2000);
+				cout << "\n Incorrect email or password .";
+				system("pause>>null");
 			}
 			
 			mainMenu();
@@ -78,7 +95,7 @@ void mainMenu()
 		case '4':
 		{
 			checkCorrectInput = true;
-			return;
+			return ;
 			
 		}
 		default:

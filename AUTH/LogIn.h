@@ -1,13 +1,16 @@
 #pragma once
-#include<vector>
 
-boolean checkIfCorrect(string email,string pass)
+bool checkIfCorrect(string email, string pass);
+
+
+bool checkIfCorrect(string email,string pass)
 {
-	vector<User> passAndEmailOfAllUsers;
-
-	getAllUsersFromFile(passAndEmailOfAllUsers);
+	DTOUser userDTO;
+	
+	vector<User> passAndEmailOfAllUsers = userDTO.getAllUsers();
 
 	bool checkIflog_PasCorrect = false;
+
 
 	for (int i = 0; i < passAndEmailOfAllUsers.size(); i++)
 	{

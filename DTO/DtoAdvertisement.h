@@ -40,7 +40,7 @@ void input(Advertisement &advert)
 		cout << "\n You will be retnrned to previos page \n";
 
 	}
-	Sleep(3000);
+	
 	break;
 	}
 
@@ -87,7 +87,7 @@ void getAllAdvertisementWith1FromFile(vector<Advertisement> &allAdvertisementWit
 	if (!advertisement.is_open())
 	{
 		cout << "\ndata base is empty!!! ...";
-		Sleep(1400);
+	
 	}
 	else{
 		string s;
