@@ -40,8 +40,8 @@ void mainMenu()
 			cout << " \t\t\t Welcome! \n" << "\t You need to fill a few fields to create an account \n ";
 
 			User user;
-			user.inputInformationAboutUser();
-
+			//user.inputInformationAboutUser();
+			cin >> user;
 			DTOUser userDTO;
 			userDTO.saveInformation(user);
 
@@ -75,8 +75,7 @@ void mainMenu()
 				mainMenu();
 			}
 			else
-			{
-				
+			{		
 				cout << "\n Incorrect email or password .";
 				system("pause>>null");
 			}
@@ -102,7 +101,7 @@ void mainMenu()
 
 		{
 			cout << "enter action (1,2,3,4) : ";
-			}
+		}
 
 
 		}
