@@ -13,13 +13,13 @@ using namespace std;
 
 #include"../DTO/DTOAdvertisement.h"
 
-#include"../AUTH/CorrectLogIn.h"
+#include"../AOTH/CorrectLogIn.h"
 
-#include"../AUTH/ViewAllBeforeLogIn.h"
+#include"../AOTH/ViewAllBeforeLogIn.h"
 
-#include"../AUTH/LogIn.h"
+#include"../AOTH/LogIn.h"
 
-#include"../AUTH/MainMenu.h"
+#include"../AOTH/MainMenu.h"
 
 int main()
 {

@@ -71,10 +71,10 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\AUTH\CorrectLogIn.h" />
-    <ClInclude Include="..\AUTH\LogIn.h" />
-    <ClInclude Include="..\AUTH\MainMenu.h" />
-    <ClInclude Include="..\AUTH\ViewAllBeforeLogIn.h" />
+    <ClInclude Include="..\AOTH\CorrectLogIn.h" />
+    <ClInclude Include="..\AOTH\LogIn.h" />
+    <ClInclude Include="..\AOTH\MainMenu.h" />
+    <ClInclude Include="..\AOTH\ViewAllBeforeLogIn.h" />
     <ClInclude Include="..\DTO\DTOAdvertisement.h" />
     <ClInclude Include="..\DTO\DTOUser.h" />
     <ClInclude Include="..\Entity\Advertisement.h" />
