@@ -42,3 +42,22 @@ void User::inputInformationAboutUser()
 	cout << "password : ";
 	cin >> password;
 }
+ istream &operator>>(istream &is, User &user)
+{
+	 user.inputInformationAboutUser();
+	// is >> user.email;
+
+
+	 return is;
+}
+
+ ostream & operator<< ( ostream & os,  User &user)
+ {
+	 os << "email : ";
+	 os << user.email;
+	 os << "password : ";
+	 os << user.password;
+	
+	 return os;
+ }
+

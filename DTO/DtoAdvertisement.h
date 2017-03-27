@@ -1,9 +1,65 @@
- #pragma once
-#include<vector>
+#pragma once
+#include <vector>
+
+void input(Advertisement &advert)
+{
+	system("cls");
+	cout << " \t\t\t Welcome! \n" << "\t Here you can create an advertisement \n ";
+	cout << "enter title: \n";
+	cin.get();
+
+	getline(cin, advert.title);
+	cout << "enter advertisement : \n";
+	cin.clear();
+
+	_flushall();
+
+	cin.get();
+
+	getline(cin, advert.mainText);
+
+	cout << "Do you want to save or send your advertisement to server? \n enter 1 or 2 :\n";
+
+	cout << "Action :  ";
+	char action;
+	cin >> action;
+	switch (action)
+	{
+	case '1':
+	{
+		advert.status = 0;
+		break;
+	}
+	case '2':
+	{
+		advert.status = 1;
+		break;
+	}
+	default:
+	{
+		cout << "\n You will be retnrned to previos page \n";
+
+	}
+	
+	break;
+	}
+
+}
+
+void print(Advertisement &advert)
+{
+	cout << "\n_________________________________\n";
+	cout << "\t\t " << advert.title << "\n";
+	cout << advert.mainText << "\n";
+	//	cout << "\n" << this->status<<"\n";
+	cout << advert.email << "\n";
+
+}
+
 void putAdvertisementInformationIntoTxtFile(User &obj)
 {
 	Advertisement advertisement;
-	advertisement.input();
+	input(advertisement);
 	ofstream putAdvertisementInformationIntoFile("advertisements.txt", ios_base::app);
 
 	advertisement.setEmail(obj.getEmail());
@@ -31,7 +87,7 @@ void getAllAdvertisementWith1FromFile(vector<Advertisement> &allAdvertisementWit
 	if (!advertisement.is_open())
 	{
 		cout << "\ndata base is empty!!! ...";
-		Sleep(1400);
+	
 	}
 	else{
 		string s;

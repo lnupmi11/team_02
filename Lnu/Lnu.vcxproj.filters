@@ -15,7 +15,7 @@
     <Filter Include="Entity">
       <UniqueIdentifier>{d0dde780-c9fd-44b8-9600-a93293c1fcf1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="AUTH">
+    <Filter Include="AOTH">
       <UniqueIdentifier>{a1d11db9-3e66-49fe-981c-452a5f769574}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -29,6 +29,9 @@
     <ClCompile Include="..\Entity\Advertisement.cpp">
       <Filter>Entity</Filter>
     </ClCompile>
+    <ClCompile Include="..\DTO\DTOUser.cpp">
+      <Filter>DTO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Entity\User.h">
@@ -37,29 +40,23 @@
     <ClInclude Include="..\Entity\Advertisement.h">
       <Filter>Entity</Filter>
     </ClInclude>
-    <ClInclude Include="..\DTO\DtoUser.h">
+    <ClInclude Include="..\DTO\DTOAdvertisement.h">
       <Filter>DTO</Filter>
     </ClInclude>
-    <ClInclude Include="..\DTO\DtoAdvertisement.h">
+    <ClInclude Include="..\DTO\DTOUser.h">
       <Filter>DTO</Filter>
     </ClInclude>
-    <ClInclude Include="..\AUTH\LogIn.h">
-      <Filter>AUTH</Filter>
+    <ClInclude Include="..\AOTH\MainMenu.h">
+      <Filter>AOTH</Filter>
     </ClInclude>
-    <ClInclude Include="..\AUTH\Registration.h">
-      <Filter>AUTH</Filter>
+    <ClInclude Include="..\AOTH\CorrectLogIn.h">
+      <Filter>AOTH</Filter>
     </ClInclude>
-    <ClInclude Include="..\AUTH\MainMenu.h">
-      <Filter>AUTH</Filter>
+    <ClInclude Include="..\AOTH\LogIn.h">
+      <Filter>AOTH</Filter>
     </ClInclude>
-    <ClInclude Include="..\AUTH\Exit.h">
-      <Filter>AUTH</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AUTH\CorrectLogIn.h">
-      <Filter>AUTH</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AUTH\ViewAllBeforeLogIn.h">
-      <Filter>AUTH</Filter>
+    <ClInclude Include="..\AOTH\ViewAllBeforeLogIn.h">
+      <Filter>AOTH</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
