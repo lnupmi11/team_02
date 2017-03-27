@@ -27,3 +27,10 @@
 *.exe
 *.out
 *.app
+
+*.db
+
+/vs
+/.vs/Lnu/v14
+*.vs/Lnu/v14
+*.vs
