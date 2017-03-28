@@ -4,9 +4,9 @@ class DTOUser
 {
 public:
 
-	bool ifExist(User myUser);
+	static bool ifExist(User myUser);
 
-	void saveInformation(User user);
+	static void save(User& user);
 
-	vector<User> getAllUsers();
+	static vector<User> getAllUsers();
 };

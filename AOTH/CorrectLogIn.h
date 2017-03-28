@@ -25,8 +25,7 @@ void correctLogIn(User user)
 			checkCorrectInput = true;
 			// here we nned to call function which will open all advertisement  of this user with status 1	
 			system("cls");				
-			
-			
+		
 			break;
 		}
 		case '2':
@@ -47,11 +46,8 @@ void correctLogIn(User user)
 		case '4':
 		{
 			checkCorrectInput = true;
-			// it works
 			break;
-
 		}
-		
 		default:
 		{
 			cout << "enter action (1,2,3) : ";
@@ -59,6 +55,5 @@ void correctLogIn(User user)
 		}
 		}
 	}
-
 
 }

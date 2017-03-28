@@ -13,7 +13,7 @@ public:
 	
 	User(string email, string password);
 
-	void inputInformationAboutUser();
+	void input();
 
 	string getEmail();
 

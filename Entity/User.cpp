@@ -15,6 +15,7 @@ User::User(string email, string password)
 
 }
 
+
 string User::getEmail()
 {
 	return email;
@@ -35,7 +36,7 @@ void User::setPassword(string s)
 	this->password = s;
 }
 
-void User::inputInformationAboutUser()
+void User::input()
 {
 	cout << "email : ";
 	cin >> email;
@@ -44,14 +45,15 @@ void User::inputInformationAboutUser()
 }
  istream &operator>>(istream &is, User &user)
 {
-	 user.inputInformationAboutUser();
-	// is >> user.email;
-
+	 cout << "email : ";
+	 is >> user.email;
+	 cout << "password : ";
+	 is >> user.password;
 
 	 return is;
 }
 
- ostream & operator<< ( ostream & os,  User &user)
+ ostream& operator<< (ostream& os,  User& user)
  {
 	 os << "email : ";
 	 os << user.email;

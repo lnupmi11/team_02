@@ -15,27 +15,26 @@ bool DTOUser::ifExist(User myUser)
 	}
 	else 
 	{
-		vector<User> passAndEmailOfAllUsers;// містить логіни та паролі/ for log and pas
+		vector<User> passAndEmailOfAllUsers;
 		bool ifExist = false;
 
 		string s;
 		int lineNumber = 0;
 		int vectorIterator = 0;
 		
-		User obj;// в цей обєки записуємо логін і паролі а поітм його зьерігаємо у вектор, тобто це тимчасовоа змінна/
-				 //it is a temporary variable for log and pass , we just put and save it at our vector  
+		User obj; 
 
 		while (!emailAndPassword.eof())
 		{
 			getline(emailAndPassword, s);
 
-			if (lineNumber != 0)// бо перша строка в файлі пуста/first line at file is empty
+			if (lineNumber != 0)
 			{
-				if (lineNumber % 2 != 0)// на не парних позиціях мейли/email 
+				if (lineNumber % 2 != 0)
 				{
 					obj.setEmail(s);
 				}
-				else// парні то тут паролі /pass
+				else
 				{
 					obj.setPassword(s);
 				}
@@ -62,21 +61,20 @@ bool DTOUser::ifExist(User myUser)
 }
 
 
-void DTOUser::saveInformation(User user)
+ void DTOUser::save(User& user)
 {
 		while (ifExist(user))
 		{
-			cout << "Enter another email\n";
-			user.inputInformationAboutUser();
+			cout << "Enter another email and password \n";
+			cin >> user;
 		}
-
 		string s;
 
 		ofstream putInformationIntoFile("user password and email.txt", ios_base::app);
 
 		if (!putInformationIntoFile.is_open())
 		{
-			cout << "problems with RegistrationAtOurSystem.h ";
+			cout << "problems with RegistrationAtOurSystem.h";
 		}
 		else {
 			putInformationIntoFile << "\n";
@@ -85,13 +83,12 @@ void DTOUser::saveInformation(User user)
 			putInformationIntoFile << user.getPassword();
 		}
 		putInformationIntoFile.close();
-
 }
 
 
 vector<User> DTOUser::getAllUsers()
 {
-	// містить логіни та паролі/ for log and pas
+
 	vector<User> passAndEmailOfAllUsers;
 	ifstream emailAndPassword;
 	
@@ -114,13 +111,13 @@ vector<User> DTOUser::getAllUsers()
 		{
 			getline(emailAndPassword, s);
 
-			if (lineNumber != 0)// бо перша строка в файлі пуста/first line at file is empty
+			if (lineNumber != 0)
 			{
-				if (lineNumber % 2 != 0)// на не парних позиціях мейли/email 
+				if (lineNumber % 2 != 0)
 				{
 					obj.setEmail(s);
 				}
-				else// парні то тут паролі /pass
+				else
 				{
 					obj.setPassword(s);
 				}
@@ -129,10 +126,8 @@ vector<User> DTOUser::getAllUsers()
 				{
 					passAndEmailOfAllUsers.push_back(obj);
 				}
-
 			}
 			lineNumber++;
-
 		}
 		return passAndEmailOfAllUsers;
 	}

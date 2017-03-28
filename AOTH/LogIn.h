@@ -1,20 +1,16 @@
 #pragma once
 
-bool checkIfCorrect(string email, string pass);
+bool checkIfCorrect(User& user);
 
-
-bool checkIfCorrect(string email,string pass)
+bool checkIfCorrect(User& user)
 {
-	DTOUser userDTO;
-	
-	vector<User> passAndEmailOfAllUsers = userDTO.getAllUsers();
+	vector<User> passAndEmailOfAllUsers = DTOUser::getAllUsers();
 
 	bool checkIflog_PasCorrect = false;
 
-
 	for (int i = 0; i < passAndEmailOfAllUsers.size(); i++)
 	{
-		if (passAndEmailOfAllUsers[i].getEmail() == email && passAndEmailOfAllUsers[i].getPassword() == pass)
+		if (passAndEmailOfAllUsers[i].getEmail() == user.getEmail() && passAndEmailOfAllUsers[i].getPassword() == user.getPassword() )
 		{
 			checkIflog_PasCorrect = true;
 			break;
@@ -22,7 +18,7 @@ bool checkIfCorrect(string email,string pass)
 	}
 	if (passAndEmailOfAllUsers.size() != 0 && checkIflog_PasCorrect==false)
 	{
-		cout << "this user does not exist at our base =(";
+		cout << "This user does not exist at our base .";
 	}
 
 	return checkIflog_PasCorrect;

@@ -19,7 +19,7 @@ using namespace std;
 
 #include"../AOTH/LogIn.h"
 
-#include"../AOTH/MainMenu.h"
+#include"../Utils/MainMenu.h"
 
 int main()
 {

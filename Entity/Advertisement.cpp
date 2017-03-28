@@ -1,7 +1,6 @@
 #pragma once
 
-#include"../Entity/Advertisement.h"
-#include<windows.h> 
+#include"../Entity/Advertisement.h" 
 #include <vector>
 
 Advertisement::Advertisement()
