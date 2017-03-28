@@ -4,7 +4,8 @@ void viewAllBeforeLogIn()
 	system("cls");
 	cout << "\t\tHere you can find all available advertisement \n";
 	vector<Advertisement> vectWithAllInformation;
-	getAllAdvertisementWith1FromFile(vectWithAllInformation);
+	DTOAdvertisement Advert;
+	Advert.getAllAdvertisements(vectWithAllInformation);
 
 	for (Advertisement obj : vectWithAllInformation)
 	{

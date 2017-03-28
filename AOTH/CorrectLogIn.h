@@ -31,7 +31,8 @@ void correctLogIn(User user)
 		case '2':
 		{
 			checkCorrectInput = true;
-			putAdvertisementInformationIntoTxtFile(user);// this part is work
+			DTOAdvertisement obj;// this part is work
+			obj.saveAdvertisement(user);
 		
 			break;
 		}

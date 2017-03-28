@@ -1,8 +1,5 @@
 ﻿  Main.cpp
-<<<<<<< HEAD
-c:\users\andre\desktop\team_02\aoth\login.h(15): warning C4018: '<': signed/unsigned mismatch
-=======
-c:\users\andre\desktop\team_02\aoth\login.h(11): warning C4018: '<': signed/unsigned mismatch
->>>>>>> ef78473... improved overloaded operators in DTOUser and added folder Utils
-  Lnu.vcxproj -> C:\Users\andre\Desktop\team_02\Debug\Lnu.exe
-  Lnu.vcxproj -> C:\Users\andre\Desktop\team_02\Debug\Lnu.pdb (Full PDB)
+c:\users\andriana008\desktop\team_02\aoth\login.h(11): warning C4018: '<': signed/unsigned mismatch
+  LINK : C:\Users\Andriana008\Desktop\team_02\Debug\Lnu.exe not found or not built by the last incremental link; performing full link
+Main.obj : error LNK2019: unresolved external symbol "void __cdecl print(class Advertisement &)" (?print@@YAXAAVAdvertisement@@@Z) referenced in function "void __cdecl viewAllBeforeLogIn(void)" (?viewAllBeforeLogIn@@YAXXZ)
+C:\Users\Andriana008\Desktop\team_02\Debug\Lnu.exe : fatal error LNK1120: 1 unresolved externals
