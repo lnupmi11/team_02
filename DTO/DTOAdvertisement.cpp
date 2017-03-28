@@ -1,12 +1,11 @@
-#pragma once
+#include <fstream> 
 #include<vector>
 #include<string>
 #include"../Entity/Advertisement.h"
 #include"../Entity/User.h"
-#include <fstream> 
 #include"../DTO/DTOAdvertisement.h"
 
-void DTOAdvertisement::input(Advertisement &advert)
+void DTOAdvertisement::input(Advertisement& advert)
 {
 	system("cls");
 	cout << " \t\t\t Welcome! \n" << "\t Here you can create an advertisement \n ";
@@ -43,7 +42,6 @@ void DTOAdvertisement::input(Advertisement &advert)
 	default:
 	{
 		cout << "\n You will be retnrned to previos page \n";
-
 	}
 
 	break;
@@ -51,7 +49,7 @@ void DTOAdvertisement::input(Advertisement &advert)
 
 }
 
-void DTOAdvertisement::print(Advertisement &advert)
+void DTOAdvertisement::print(Advertisement& advert)
 {
 	cout << "\n_________________________________\n";
 	cout << "\t\t " << advert.getTitle() << "\n";
@@ -61,14 +59,12 @@ void DTOAdvertisement::print(Advertisement &advert)
 
 }
 
-void DTOAdvertisement::saveAdvertisement(User &obj)
+void DTOAdvertisement::saveAdvertisement(User& obj)
 {
 	Advertisement advertisement;
 	input(advertisement);
 	ofstream putAdvertisementInformationIntoFile("advertisements.txt", ios_base::app);
-
 	advertisement.setEmail(obj.getEmail());
-
 	putAdvertisementInformationIntoFile << "\n";
 	putAdvertisementInformationIntoFile << advertisement.getTitle();
 	putAdvertisementInformationIntoFile << "\n";
@@ -78,12 +74,11 @@ void DTOAdvertisement::saveAdvertisement(User &obj)
 	putAdvertisementInformationIntoFile << "\n";
 	putAdvertisementInformationIntoFile << advertisement.getEmail();
 	putAdvertisementInformationIntoFile.close();
-
 }
 
 
 
-void DTOAdvertisement::getAllAdvertisements(vector<Advertisement> &allAdvertisementWithStatus1)
+void DTOAdvertisement::getAllAdvertisements(vector<Advertisement>& allAdvertisementWithStatus1)
 {
 
 
@@ -117,7 +112,6 @@ void DTOAdvertisement::getAllAdvertisements(vector<Advertisement> &allAdvertisem
 				if (lineNumber % 4 == 2)
 				{
 					obj.setMainText(s);
-
 				}
 
 				if (lineNumber % 4 == 3)
@@ -134,19 +128,11 @@ void DTOAdvertisement::getAllAdvertisements(vector<Advertisement> &allAdvertisem
 				}
 				if (lineNumber % 4 == 0 && checkStatus == 1)
 				{
-
 					obj.setEmail(s);
 					allAdvertisementWithStatus1.push_back(obj);
-
-
 				}
-
-
 			}
 			lineNumber++;
-
-
-
 		}
 	}
 

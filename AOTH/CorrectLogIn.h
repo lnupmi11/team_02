@@ -31,9 +31,7 @@ void correctLogIn(User user)
 		case '2':
 		{
 			checkCorrectInput = true;
-			DTOAdvertisement obj;// this part is work
-			obj.saveAdvertisement(user);
-		
+			DTOAdvertisement::saveAdvertisement(user);
 			break;
 		}
 		case '3':

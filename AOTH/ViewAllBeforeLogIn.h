@@ -4,12 +4,12 @@ void viewAllBeforeLogIn()
 	system("cls");
 	cout << "\t\tHere you can find all available advertisement \n";
 	vector<Advertisement> vectWithAllInformation;
-	DTOAdvertisement Advert;
-	Advert.getAllAdvertisements(vectWithAllInformation);
+	
+	DTOAdvertisement::getAllAdvertisements(vectWithAllInformation);
 
 	for (Advertisement obj : vectWithAllInformation)
 	{
-		print(obj);
+		//print(obj);
 	}
 	cout << "\n*********************************************************************\n";
 	cout << "\n " << "\t\tPress any key to back to main menu ....";

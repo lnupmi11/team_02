@@ -1,12 +1,13 @@
+#pragma once 
 
 class DTOAdvertisement
 {
 public:
-	void input(Advertisement &advert);
+    static	void input(Advertisement& advert);
 
-	void print(Advertisement &advert);
+    static void print(Advertisement& advert);
 
-	void saveAdvertisement(User &obj);
+	static void saveAdvertisement(User& obj);
 
-	void getAllAdvertisements(vector<Advertisement> &allAdvertisementWithStatus1);
+	static void getAllAdvertisements(vector<Advertisement>& allAdvertisementWithStatus1);
 };
