@@ -5,6 +5,7 @@
 #include"../Entity/User.h"
 #include"../DTO/DTOAdvertisement.h"
 
+/*
 void DTOAdvertisement::input(Advertisement& advert)
 {
 	system("cls");
@@ -58,11 +59,11 @@ void DTOAdvertisement::print(Advertisement& advert)
 	cout << advert.getEmail() << "\n";
 
 }
-
+*/
 void DTOAdvertisement::saveAdvertisement(User& obj)
 {
 	Advertisement advertisement;
-	input(advertisement);
+	cin>>advertisement;
 	ofstream putAdvertisementInformationIntoFile("advertisements.txt", ios_base::app);
 	advertisement.setEmail(obj.getEmail());
 	putAdvertisementInformationIntoFile << "\n";

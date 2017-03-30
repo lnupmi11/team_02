@@ -3,9 +3,9 @@
 class DTOAdvertisement
 {
 public:
-    static	void input(Advertisement& advert);
+  //  static	void input(Advertisement& advert);
 
-    static void print(Advertisement& advert);
+   // static void print(Advertisement& advert);
 
 	static void saveAdvertisement(User& obj);
 

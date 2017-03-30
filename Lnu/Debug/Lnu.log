@@ -1,10 +1,8 @@
-﻿  Main.cpp
-c:\users\andre\desktop\team_02\aoth\login.h(11): warning C4018: '<': signed/unsigned mismatch
-  User.cpp
-  Advertisement.cpp
-  DTOUser.cpp
-c:\users\andre\desktop\team_02\dto\dtouser.cpp(50): warning C4018: '<': signed/unsigned mismatch
-  DTOAdvertisement.cpp
+﻿  Advertisement.cpp
   Generating Code...
-  Lnu.vcxproj -> C:\Users\andre\Desktop\team_02\Debug\Lnu.exe
-  Lnu.vcxproj -> C:\Users\andre\Desktop\team_02\Debug\Lnu.pdb (Full PDB)
+  Compiling...
+  Main.cpp
+c:\users\olya\desktop\team_02\aoth\login.h(11): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Lnu.vcxproj -> C:\Users\Olya\Desktop\team_02\Debug\Lnu.exe
+  Lnu.vcxproj -> C:\Users\Olya\Desktop\team_02\Debug\Lnu.pdb (Full PDB)

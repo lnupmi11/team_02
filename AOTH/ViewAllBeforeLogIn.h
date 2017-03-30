@@ -9,7 +9,7 @@ void viewAllBeforeLogIn()
 
 	for (Advertisement obj : vectWithAllInformation)
 	{
-		//print(obj);
+		cout<<obj;
 	}
 	cout << "\n*********************************************************************\n";
 	cout << "\n " << "\t\tPress any key to back to main menu ....";
