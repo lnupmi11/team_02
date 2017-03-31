@@ -23,7 +23,7 @@ void correctLogIn(User user)
 		case '1':
 		{
 			checkCorrectInput = true;
-			// here we nned to call function which will open all advertisement  of this user with status 1	
+				
 			system("cls");				
 		
 			break;
@@ -31,7 +31,7 @@ void correctLogIn(User user)
 		case '2':
 		{
 			checkCorrectInput = true;
-			putAdvertisementInformationIntoTxtFile(user);// this part is work
+			putAdvertisementInformationIntoTxtFile(user);
 		
 			break;
 		}
@@ -39,7 +39,7 @@ void correctLogIn(User user)
 		{
 			checkCorrectInput = true;
 			
-			// here we need to edit advertisement  of this user with status 0
+			
 			break;
 
 		}
