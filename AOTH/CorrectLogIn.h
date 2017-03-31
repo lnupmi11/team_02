@@ -13,62 +13,62 @@ void correctLogIn(User user)
 
 	char action;
 	cin >> action;
+   // get all adv of this user	
+	vector<Advertisement> advertOfThisUser;
+	advertOfThisUser = DTOAdvertisement::getAllAdvertisementsOfThis(user);
 
-	bool checkCorrectInput = false;
-
-	while (!checkCorrectInput)
+	switch (action)
 	{
-		switch (action)
-		{
-		case '1':
-		{
-			checkCorrectInput = true;
+	case '1':
+	{
+		system("cls");
 
-			system("cls");				
-			vector<Advertisement> advertOfThisUser;
-			advertOfThisUser = DTOAdvertisement::getAllAdvertisementsOfThis(user);
-			if (advertOfThisUser.size() == 0)
+		if (advertOfThisUser.size() == 0)
+		{
+			cout << "You don't have any advertisements yet .\n";
+			cout << "\nIf you want to create new advertisement , select this option in menu of your profile .\n ";
+
+			system("pause>>null");
+		}
+		else
+		{
+			for (Advertisement obj : advertOfThisUser)
 			{
-				cout << "You don't have any advertisements yet .";
-				system("pause>>null");
+				cout << obj;
 			}
-			else
-			{
-				for (Advertisement obj : advertOfThisUser)
-				{
-					cout << obj;
-				}
-				system("pause>>null");
-			}
-			break;
+			system("pause>>null");
 		}
-		case '2':
-		{
-			checkCorrectInput = true;
+		correctLogIn(user);
+		break;
+	}
+	case '2':
+	{
 
-			DTOAdvertisement::saveAdvertisement(user);
+		system("cls");
+		DTOAdvertisement::saveAdvertisement(user);
+		correctLogIn(user);
+		break;
+	}
+	case '3':
+	{
+		//here we need to separate advertisements
+		system("cls");
+		cout << "here you can edit your advertisements , which you does not published  . \n";
+		cout << "\t\t\n Advertisements \n ";
 
-			break;
-		}
-		case '3':
-		{
-			checkCorrectInput = true;
-			
-			
-			break;
 
-		}
-		case '4':
-		{
-			checkCorrectInput = true;
-			break;
-		}
-		default:
-		{
-			cout << "enter action (1,2,3) : ";
-			cin >> action;
-		}
-		}
+		break;
+
+	}
+	case '4':
+	{
+		break;
+	}
+	default:
+	{
+		cout << "enter action (1,2,3) : ";
+		cin >> action;
+	}
 	}
 
 }

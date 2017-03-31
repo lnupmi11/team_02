@@ -64,5 +64,8 @@
     <ClInclude Include="..\Utils\MainMenu.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="..\Utils\HelperFunctions.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

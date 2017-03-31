@@ -79,6 +79,7 @@
     <ClInclude Include="..\DTO\DTOUser.h" />
     <ClInclude Include="..\Entity\Advertisement.h" />
     <ClInclude Include="..\Entity\User.h" />
+    <ClInclude Include="..\Utils\HelperFunctions.h" />
     <ClInclude Include="..\Utils\MainMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,8 +1,6 @@
-#include <iostream>
 #include <fstream> 
 #include<vector>
 #include<string>
-
 using namespace std;
 
 #include"../Entity/User.h"
@@ -19,10 +17,13 @@ using namespace std;
 
 #include"../AOTH/LogIn.h"
 
+#include"../Utils/HelperFunctions.h"
+
 #include"../Utils/MainMenu.h"
 
 int main()
 {
+	//system("color 09");
 	mainMenu();
 	return 0;
 }

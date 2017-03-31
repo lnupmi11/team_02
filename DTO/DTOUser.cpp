@@ -95,8 +95,7 @@ vector<User> DTOUser::getAllUsers()
 	emailAndPassword.open("../Lnu/user password and email.txt");
 	if (!emailAndPassword.is_open())
 	{
-		cout << "\tData base is empty ...";	
-		
+		cout << "\tData base is empty ...";		
 		return passAndEmailOfAllUsers;
 
 	}

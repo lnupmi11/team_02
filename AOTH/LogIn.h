@@ -1,7 +1,5 @@
 #pragma once
 
-bool checkIfCorrect(User& user);
-
 bool checkIfCorrect(User& user)
 {
 	vector<User> passAndEmailOfAllUsers = DTOUser::getAllUsers();
@@ -20,6 +18,5 @@ bool checkIfCorrect(User& user)
 	{
 		cout << "This user does not exist at our base .";
 	}
-
 	return checkIflog_PasCorrect;
 }

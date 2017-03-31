@@ -10,13 +10,11 @@ void mainMenu()
 	
 	char symbol;
 	cin >> symbol;
-	bool checkCorrectInput = false;
 
 		switch (symbol)
 		{
 		case '1':
 		{
-			checkCorrectInput = true;	
 			system("cls");
 			cout << " \t\t\t Welcome! \n" << "\t You need to fill a few fields to create an account \n ";
 			User user;
@@ -29,13 +27,10 @@ void mainMenu()
 		}
 		case '2':
 		{
-			checkCorrectInput = true;
-
 			system("cls");
 			cout << " \t\t\t Log in \n ";
 			User user;
 			cin >> user;
-
 			if (checkIfCorrect(user))
 			{
 				correctLogIn(user);
@@ -51,7 +46,7 @@ void mainMenu()
 		}
 		case '3':
 		{
-			checkCorrectInput = true;
+			
 			viewAllBeforeLogIn();
 			mainMenu();
 			break;
@@ -59,8 +54,7 @@ void mainMenu()
 
 		case '4':
 		{
-			checkCorrectInput = true;
-			return ;
+		  break;
 		}
 		default:
 		{

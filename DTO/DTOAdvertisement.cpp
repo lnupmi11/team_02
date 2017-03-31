@@ -86,6 +86,7 @@ vector<Advertisement> DTOAdvertisement::getAllAdvertisementsOfThis(User user)
 	vector<Advertisement> vectorWithAdverOfThisUser;
 
 	DTOAdvertisement::getAllAdvertisements(vectorWithAdverOfThisUser);
+	
 	int iterator;
 	iterator = 0;
 	
