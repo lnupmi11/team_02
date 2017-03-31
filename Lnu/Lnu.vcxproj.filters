@@ -35,6 +35,9 @@
     <ClCompile Include="..\DTO\DTOUser.cpp">
       <Filter>DTO</Filter>
     </ClCompile>
+    <ClCompile Include="..\DTO\DTOAdvertisement.cpp">
+      <Filter>DTO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Entity\User.h">

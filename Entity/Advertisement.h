@@ -15,10 +15,6 @@ public:
 	Advertisement(string title, string mainText, bool status , string email);
 
 	Advertisement(const Advertisement&x) ;
-	
-	friend void input(Advertisement &advert);
-
-	friend void print(Advertisement &advert);
 
 	string getTitle();
 	
@@ -36,4 +32,7 @@ public:
 	
 	void setTitle(string title);
 	
+	friend istream &operator >> (istream &cin, Advertisement &advert);
+
+	friend ostream &operator << (ostream &cout, Advertisement &advert);
 };

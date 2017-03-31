@@ -23,16 +23,31 @@ void correctLogIn(User user)
 		case '1':
 		{
 			checkCorrectInput = true;
-				
+
 			system("cls");				
-		
+			vector<Advertisement> advertOfThisUser;
+			advertOfThisUser = DTOAdvertisement::getAllAdvertisementsOfThis(user);
+			if (advertOfThisUser.size() == 0)
+			{
+				cout << "You don't have any advertisements yet .";
+				system("pause>>null");
+			}
+			else
+			{
+				for (Advertisement obj : advertOfThisUser)
+				{
+					cout << obj;
+				}
+				system("pause>>null");
+			}
 			break;
 		}
 		case '2':
 		{
 			checkCorrectInput = true;
-			putAdvertisementInformationIntoTxtFile(user);
-		
+
+			DTOAdvertisement::saveAdvertisement(user);
+
 			break;
 		}
 		case '3':

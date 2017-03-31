@@ -67,4 +67,56 @@ void Advertisement::setMainText(string mainText)
 	this->mainText = mainText;
 }
 
+istream &operator >> (istream &cin, Advertisement &advert)
+{
+	cout << " \t\t\t Welcome! \n" << "\t Here you can create an advertisement \n ";
+	cout << "enter title: \n";
+	cin.get();
 
+	getline(cin, advert.title);
+	cout << "enter advertisement : \n";
+	cin.clear();
+
+	_flushall();
+
+	cin.get();
+
+	getline(cin, advert.mainText);
+
+	cout << "Do you want to save or send your advertisement to server? \n enter 1 or 2 :\n";
+
+	cout << "Action :  ";
+	char action;
+	cin >> action;
+	switch (action)
+	{
+	case '1':
+	{
+		advert.setStatus(0);
+		break;
+	}
+	case '2':
+	{
+		advert.setStatus(1);
+		break;
+	}
+	default:
+	{
+		cout << "\n You will be returned to previos page \n";
+	}
+
+	break;
+	}
+
+	return cin;
+}
+
+ostream &operator << (ostream& cout, Advertisement& advert)
+{
+	cout << "\n_________________________________\n";
+	cout << "\t\t " << advert.title << "\n";
+	cout << advert.mainText << "\n";
+	cout << advert.email << "\n";
+
+	return cout;
+}

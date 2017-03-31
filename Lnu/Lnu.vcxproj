@@ -65,6 +65,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\DTO\DTOAdvertisement.cpp" />
     <ClCompile Include="..\DTO\DTOUser.cpp" />
     <ClCompile Include="..\Entity\Advertisement.cpp" />
     <ClCompile Include="..\Entity\User.cpp" />
