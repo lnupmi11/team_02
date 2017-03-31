@@ -5,61 +5,6 @@
 #include"../Entity/User.h"
 #include"../DTO/DTOAdvertisement.h"
 
-/*
-void DTOAdvertisement::input(Advertisement& advert)
-{
-	system("cls");
-	cout << " \t\t\t Welcome! \n" << "\t Here you can create an advertisement \n ";
-	cout << "enter title: \n";
-	cin.get();
-
-	getline(cin, advert.getTitle());
-	cout << "enter advertisement : \n";
-	cin.clear();
-
-	_flushall();
-
-	cin.get();
-
-	getline(cin, advert.getMainText());
-
-	cout << "Do you want to save or send your advertisement to server? \n enter 1 or 2 :\n";
-
-	cout << "Action :  ";
-	char action;
-	cin >> action;
-	switch (action)
-	{
-	case '1':
-	{
-		advert.setStatus(0);
-		break;
-	}
-	case '2':
-	{
-		advert.setStatus(1);
-		break;
-	}
-	default:
-	{
-		cout << "\n You will be retnrned to previos page \n";
-	}
-
-	break;
-	}
-
-}
-
-void DTOAdvertisement::print(Advertisement& advert)
-{
-	cout << "\n_________________________________\n";
-	cout << "\t\t " << advert.getTitle() << "\n";
-	cout << advert.getMainText() << "\n";
-	//	cout << "\n" << this->status<<"\n";
-	cout << advert.getEmail() << "\n";
-
-}
-*/
 void DTOAdvertisement::saveAdvertisement(User& obj)
 {
 	Advertisement advertisement;
@@ -77,12 +22,8 @@ void DTOAdvertisement::saveAdvertisement(User& obj)
 	putAdvertisementInformationIntoFile.close();
 }
 
-
-
 void DTOAdvertisement::getAllAdvertisements(vector<Advertisement>& allAdvertisementWithStatus1)
 {
-
-
 	ifstream advertisement;
 	advertisement.open("../Lnu/advertisements.txt");
 	if (!advertisement.is_open())
@@ -138,4 +79,27 @@ void DTOAdvertisement::getAllAdvertisements(vector<Advertisement>& allAdvertisem
 	}
 
 
+}
+
+vector<Advertisement> DTOAdvertisement::getAllAdvertisementsOfThis(User user)
+{
+	vector<Advertisement> vectorWithAdverOfThisUser;
+
+	DTOAdvertisement::getAllAdvertisements(vectorWithAdverOfThisUser);
+	int iterator;
+	iterator = 0;
+	
+	int vectSize;
+	vectSize = vectorWithAdverOfThisUser.size();
+	while(iterator<vectSize)
+	{
+		if (vectorWithAdverOfThisUser[iterator].getEmail() != user.getEmail())
+		{
+			vectorWithAdverOfThisUser.erase(vectorWithAdverOfThisUser.begin() + iterator);
+			vectSize = vectorWithAdverOfThisUser.size();
+			continue;
+		}
+		iterator++;
+	}
+	return vectorWithAdverOfThisUser;
 }

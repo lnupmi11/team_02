@@ -111,12 +111,11 @@ istream &operator >> (istream &cin, Advertisement &advert)
 	return cin;
 }
 
-ostream &operator << (ostream &cout, Advertisement &advert)
+ostream &operator << (ostream& cout, Advertisement& advert)
 {
 	cout << "\n_________________________________\n";
 	cout << "\t\t " << advert.title << "\n";
 	cout << advert.mainText << "\n";
-	//	cout << "\n" << this->status<<"\n";
 	cout << advert.email << "\n";
 
 	return cout;

@@ -23,9 +23,23 @@ void correctLogIn(User user)
 		case '1':
 		{
 			checkCorrectInput = true;
-			// here we nned to call function which will open all advertisement  of this user with status 1	
+			// here we nned to call function which will open all advertisement  of this user with status 1
 			system("cls");				
-		
+			vector<Advertisement> advertOfThisUser;
+			advertOfThisUser = DTOAdvertisement::getAllAdvertisementsOfThis(user);
+			if (advertOfThisUser.size() == 0)
+			{
+				cout << "You don't have any advertisements yet .";
+				system("pause>>null");
+			}
+			else
+			{
+				for (Advertisement obj : advertOfThisUser)
+				{
+					cout << obj;
+				}
+				system("pause>>null");
+			}
 			break;
 		}
 		case '2':
