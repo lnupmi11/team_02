@@ -1,6 +1,8 @@
 ﻿  Main.cpp
-c:\users\olya\desktop\team_02\utils\helperfunctions.h(5): warning C4018: '<': signed/unsigned mismatch
-c:\users\olya\desktop\team_02\aoth\correctlogin.h(59): warning C4018: '<': signed/unsigned mismatch
-c:\users\olya\desktop\team_02\aoth\login.h(9): warning C4018: '<': signed/unsigned mismatch
-  Lnu.vcxproj -> C:\Users\Olya\Desktop\team_02\Debug\Lnu.exe
-  Lnu.vcxproj -> C:\Users\Olya\Desktop\team_02\Debug\Lnu.pdb (Full PDB)
+e:\desktop\github\team_02\utils\helperfunctions.h(4): warning C4018: '<': signed/unsigned mismatch
+e:\desktop\github\team_02\aoth\correctlogin.h(60): warning C4018: '<': signed/unsigned mismatch
+e:\desktop\github\team_02\aoth\correctlogin.h(70): warning C4018: '>': signed/unsigned mismatch
+e:\desktop\github\team_02\aoth\login.h(9): warning C4018: '<': signed/unsigned mismatch
+  LINK : E:\Desktop\github\team_02\Debug\Lnu.exe not found or not built by the last incremental link; performing full link
+  Lnu.vcxproj -> E:\Desktop\github\team_02\Debug\Lnu.exe
+  Lnu.vcxproj -> E:\Desktop\github\team_02\Debug\Lnu.pdb (Full PDB)

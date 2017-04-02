@@ -1,17 +1,16 @@
 #pragma once
-void makeVectAdvWithStatus1(vector<Advertisement> &vect)
+void eraseWithStatus1(vector<Advertisement> &vect)
 {
-
-	int countDeleted = 0;
-
-	for (int i = 0;i < vect.size()- countDeleted;i++)
+	for (int i = 0;i < vect.size();i++)
 	{
 		while (vect[i].getStatus() == true)
 		{
 			vect.erase(vect.begin() + i);
-			countDeleted++;
+			if (i == vect.size())
+			{
+				break;
+			}
 		}
 	}
-	
 
 }
