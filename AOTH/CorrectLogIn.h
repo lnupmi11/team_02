@@ -1,5 +1,5 @@
 #pragma once
-
+#include"../Utils/HelperFunctions.h"
 void correctLogIn(User user)
 {
 	system("cls");
@@ -55,8 +55,13 @@ void correctLogIn(User user)
 		system("cls");
 		cout << "here you can edit your advertisements , which you does not published  . \n";
 		cout << "\t\t\n Advertisements \n ";
-
-
+		makeVectAdvWithStatus1(advertOfThisUser);
+		for (int i = 0;i < advertOfThisUser.size();i++)
+		{
+			cout << advertOfThisUser[i];
+		}
+		system("PAUSE>>NULL");
+	
 		break;
 
 	}

@@ -61,14 +61,13 @@ void DTOAdvertisement::getAllAdvertisements(vector<Advertisement>& allAdvertisem
 					if (s == "1")
 					{
 						obj.setStatus(1);
-						checkStatus = true;
 					}
 					else
 					{
-						checkStatus = false;
+						obj.setStatus(0);
 					}
 				}
-				if (lineNumber % 4 == 0 && checkStatus == 1)
+				if (lineNumber % 4 == 0)
 				{
 					obj.setEmail(s);
 					allAdvertisementWithStatus1.push_back(obj);
