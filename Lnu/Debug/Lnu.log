@@ -1,6 +1,5 @@
 ﻿  Main.cpp
 c:\users\olya\desktop\team_02\utils\helperfunctions.h(6): warning C4018: '<': signed/unsigned mismatch
-c:\users\olya\desktop\team_02\utils\helperfunctions.h(22): warning C4018: '<': signed/unsigned mismatch
 c:\users\olya\desktop\team_02\aoth\correctlogin.h(71): warning C4018: '<': signed/unsigned mismatch
 c:\users\olya\desktop\team_02\aoth\correctlogin.h(81): warning C4018: '>': signed/unsigned mismatch
 c:\users\olya\desktop\team_02\aoth\login.h(9): warning C4018: '<': signed/unsigned mismatch

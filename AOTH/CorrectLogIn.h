@@ -54,7 +54,7 @@ void correctLogIn(User user)
 	{
 		vector<Advertisement> advWith0;
 
-		advWith0 = leaveAdvWith0(advertOfThisUser);
+		advWith0 = leaveAdvGivenStatus(advertOfThisUser, 0);
 
 		system("cls");
 
