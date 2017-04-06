@@ -52,12 +52,23 @@ void correctLogIn(User user)
 	}
 	case '3':
 	{
-		eraseWithStatus1(advertOfThisUser);
+		vector<Advertisement> advWith0;
+
+		advWith0 = leaveAdvWith0(advertOfThisUser);
+
 		system("cls");
+
+		if (advWith0.size() == 0)
+		{
+			cout << "You don't have any advertisements to edit. " << endl;
+			system("pause>null");
+			break;
+		}
+
 		cout << "Here you can edit your advertisements , which you has not published .";
 		cout << endl;
 		cout << "Advertisements: \n \n ";
-		for (int i = 0; i < advertOfThisUser.size(); i++)
+		for (int i = 0; i < advWith0.size(); i++)
 		{
 			cout << advertOfThisUser[i].getTitle() << endl;
 		}
@@ -67,7 +78,7 @@ void correctLogIn(User user)
 		cout << "Enter the number of advertisement which you want to edit: \n";
 		cin >> number;
 
-		if (number > advertOfThisUser.size())
+		if (number > advWith0.size())
 		{
 			cout << "Enter correct number: " << endl;
 			cin >> number;

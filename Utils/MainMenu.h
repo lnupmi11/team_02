@@ -4,7 +4,7 @@ void mainMenu()
 	system("cls");
 	cout << " \tif you want to create a new profile ,  enter 1 . \n ";
 	cout << " \tif you want to log in ,  enter 2 . \n ";
-	cout << " \tif you want to view all adverrisement ,  enter 3 . \n ";
+	cout << " \tif you want to view all advertisements ,  enter 3 . \n ";
 	cout << " \tif you want to exit ,  enter 4 . \n ";
 	cout << "  Action : ";
 	
