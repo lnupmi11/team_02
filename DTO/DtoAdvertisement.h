@@ -9,4 +9,7 @@ public:
 	static void getAllAdvertisements(vector<Advertisement>& allAdvertisementWithStatus1);
    
 	static vector<Advertisement> getAllAdvertisementsOfThis(User user);
+
+	static void editAdvertisement(string oldLine , string newLine);
 };
+

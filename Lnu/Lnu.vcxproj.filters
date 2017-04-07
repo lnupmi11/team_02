@@ -67,5 +67,8 @@
     <ClInclude Include="..\Utils\HelperFunctions.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="..\AOTH\Edit.h">
+      <Filter>AOTH</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

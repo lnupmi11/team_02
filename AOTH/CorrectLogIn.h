@@ -1,6 +1,8 @@
 #pragma once
 #include"../Utils/HelperFunctions.h"
 
+#include"Edit.h"
+
 using namespace std;
 void correctLogIn(User user)
 {
@@ -33,9 +35,9 @@ void correctLogIn(User user)
 		}
 		else
 		{
-			for (Advertisement obj : advertOfThisUser)
+			for each (Advertisement advertisement in advertOfThisUser)
 			{
-				cout << obj;
+				cout << advertisement;
 			}
 			system("pause>>null");
 		}
@@ -44,90 +46,32 @@ void correctLogIn(User user)
 	}
 	case '2':
 	{
-
+	
 		system("cls");
+
 		DTOAdvertisement::saveAdvertisement(user);
 		correctLogIn(user);
 		break;
+	
 	}
 	case '3':
 	{
-		vector<Advertisement> advWith0;
-
-		advWith0 = leaveAdvGivenStatus(advertOfThisUser, 0);
-
 		system("cls");
+
+		vector<Advertisement> advWith0;
+		advWith0 = leaveAdvWithStatus(advertOfThisUser, 0);
 
 		if (advWith0.size() == 0)
 		{
-			cout << "You don't have any advertisements to edit. " << endl;
+			cout << "You don't have any advertisements to edit. \n" ;
 			system("pause>null");
-			break;
 		}
-
-		cout << "Here you can edit your advertisements , which you has not published .";
-		cout << endl;
-		cout << "Advertisements: \n \n ";
-		for (int i = 0; i < advWith0.size(); i++)
+		else
 		{
-			cout << advertOfThisUser[i].getTitle() << endl;
-		}
-		cout << endl;
-		int number;
-
-		cout << "Enter the number of advertisement which you want to edit: \n";
-		cin >> number;
-
-		if (number > advWith0.size())
-		{
-			cout << "Enter correct number: " << endl;
-			cin >> number;
-		}
-		system("cls");
-		cout << "Now you can edit this advertisement: \n\n";
-		cout << endl;
-		cout << "title: " << advertOfThisUser[number - 1].getTitle() << endl << endl;
-		cout << "main text: " << advertOfThisUser[number - 1].getMainText() << endl << endl;
-
-		char nextAction;
-		cout << "What do you want to do now?" << endl;
-		cout << "1 - change title" << endl;
-		cout << "2 - add new text" << endl;
-		cout << "3 - send this advertisement to the server" << endl;
-		cin >> nextAction;
-
-		switch (nextAction)
-		{
-		case'1':
-		{
-			system("cls");
-			cout << "Enter new title:\n";
-			string newTitle;
-
-
-			break;
-		}
-		case'2':
-		{
-			system("cls");
-			cout << "Enter new text: \n";
-
-			string newText;
-
-			break;
-		}
-		case'3':
-		{
-			system("cls");
-			advertOfThisUser[number - 1].setStatus(1);
-			cout << "Thank you! Now you can return to the main menu.\n\n Press any key to back to the main menu\n";
-			break;
-
+			editAdvertisement(advWith0);
 		}
 
-		}
-
-		system("pause>null");
+		correctLogIn(user);
 		break;
 
 

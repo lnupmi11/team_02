@@ -1,6 +1,7 @@
 #include <fstream> 
 #include<vector>
 #include<string>
+#include<cstdio>
 #include"../Entity/Advertisement.h"
 #include"../Entity/User.h"
 #include"../DTO/DTOAdvertisement.h"
@@ -29,7 +30,6 @@ void DTOAdvertisement::getAllAdvertisements(vector<Advertisement>& allAdvertisem
 	if (!advertisement.is_open())
 	{
 		cout << "\ndata base is empty!!! ...";
-
 	}
 	else {
 		string s;
@@ -82,24 +82,61 @@ void DTOAdvertisement::getAllAdvertisements(vector<Advertisement>& allAdvertisem
 
 vector<Advertisement> DTOAdvertisement::getAllAdvertisementsOfThis(User user)
 {
-	vector<Advertisement> vectorWithAdverOfThisUser;
+	vector<Advertisement> vect;
 
-	DTOAdvertisement::getAllAdvertisements(vectorWithAdverOfThisUser);
+	DTOAdvertisement::getAllAdvertisements(vect);
 	
 	int iterator;
 	iterator = 0;
 	
 	int vectSize;
-	vectSize = vectorWithAdverOfThisUser.size();
+	vectSize = vect.size();
 	while(iterator<vectSize)
 	{
-		if (vectorWithAdverOfThisUser[iterator].getEmail() != user.getEmail())
+		if (vect[iterator].getEmail() != user.getEmail())
 		{
-			vectorWithAdverOfThisUser.erase(vectorWithAdverOfThisUser.begin() + iterator);
-			vectSize = vectorWithAdverOfThisUser.size();
+			vect.erase(vect.begin() + iterator);
+			vectSize = vect.size();
 			continue;
 		}
 		iterator++;
 	}
-	return vectorWithAdverOfThisUser;
+	return vect;
+}
+
+
+
+
+
+void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine)
+{
+	vector<string> vect;
+	ifstream fileStream("advertisements.txt" );
+	
+	if (! fileStream.is_open() )
+	{
+		cout << "\ndata base is empty!!! ...";
+	}
+	else
+	{
+		string line;
+		while (!fileStream.eof())
+		{
+			getline(fileStream, line);
+			if (line == (string) oldLine)
+			{
+				line = (string) newLine;
+			}
+			vect.push_back(line);
+		}
+		fileStream.close();
+
+		ofstream inFile("advertisements.txt" , ios_base::trunc);
+	 
+		for each (line in vect)
+		{
+			inFile  << line<<"\n";
+		}
+		inFile.close();
+	}
 }
