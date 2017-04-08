@@ -1,21 +1,18 @@
 #pragma once
-void viewAllBeforeLogIn()
+void viewAllBeforeLogin()
 {
 	system("cls");
-	cout << "\t\tHere you can find all available advertisement \n";
+	cout << "\t\tHere you can find all available advertisements \n";
 	vector<Advertisement> vectWithAllInformation;
 	
-	DTOAdvertisement::getAllAdvertisements(vectWithAllInformation);
+	DTOAdvertisement::getAllAdv(vectWithAllInformation);
 
 	for (Advertisement obj : vectWithAllInformation)
 	{
 		cout<<obj;
 	}
 	cout << "\n*********************************************************************\n";
-	cout << "\n " << "\t\tPress any key to back to main menu ....";
+	cout << "\n " << "\t\tPress any key to back to the main menu ....";
 	system("pause>>null");
 	
-
-
-
 }

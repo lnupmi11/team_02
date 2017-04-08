@@ -6,9 +6,9 @@ public:
 
 	static void saveAdvertisement(User& obj);
 
-	static void getAllAdvertisements(vector<Advertisement>& allAdvertisementWithStatus1);
+	static void getAllAdv(vector<Advertisement>& allAdvWithStatus1);
    
-	static vector<Advertisement> getAllAdvertisementsOfThis(User user);
+	static vector<Advertisement> getAllAdvOfThis(User user);
 
 	static void editAdvertisement(string oldLine , string newLine);
 };

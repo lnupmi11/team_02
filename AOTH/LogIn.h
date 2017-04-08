@@ -2,21 +2,22 @@
 
 bool checkIfCorrect(User& user)
 {
-	vector<User> passAndEmailOfAllUsers = DTOUser::getAllUsers();
+	vector<User> usersPassAndEmails = DTOUser::getAllUsers();
 
-	bool checkIflog_PasCorrect = false;
+	bool IsLogPassCorrect;
+	IsLogPassCorrect = false;
 
-	for (int i = 0; i < passAndEmailOfAllUsers.size(); i++)
+	for (int i = 0; i < usersPassAndEmails.size(); i++)
 	{
-		if (passAndEmailOfAllUsers[i].getEmail() == user.getEmail() && passAndEmailOfAllUsers[i].getPassword() == user.getPassword() )
+		if (usersPassAndEmails[i].getEmail() == user.getEmail() && usersPassAndEmails[i].getPassword() == user.getPassword() )
 		{
-			checkIflog_PasCorrect = true;
+			IsLogPassCorrect = true;
 			break;
 		}
 	}
-	if (passAndEmailOfAllUsers.size() != 0 && checkIflog_PasCorrect==false)
+	if (usersPassAndEmails.size() != 0 && IsLogPassCorrect == false)
 	{
-		cout << "This user does not exist at our base .";
+		cout << "This user does not exist in our base .";
 	}
-	return checkIflog_PasCorrect;
+	return IsLogPassCorrect;
 }

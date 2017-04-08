@@ -1,10 +1,10 @@
 #pragma once
-#include"../Utils/HelperFunctions.h"
+#include "../Utils/HelperFunctions.h"
 
-#include"Edit.h"
+#include "Edit.h"
 
 using namespace std;
-void correctLogIn(User user)
+void correctLogin(User user)
 {
 	system("cls");
 
@@ -18,73 +18,73 @@ void correctLogIn(User user)
 	char action;
 	cin >> action;
 	vector<Advertisement> advertOfThisUser;
-	advertOfThisUser = DTOAdvertisement::getAllAdvertisementsOfThis(user);
+	advertOfThisUser = DTOAdvertisement::getAllAdvOfThis(user);
 
 	switch (action)
 	{
-	case '1':
-	{
-		system("cls");
-
-		if (advertOfThisUser.size() == 0)
+		case '1':
 		{
-			cout << "You don't have any advertisements yet .\n";
-			cout << "\nIf you want to create new advertisement , select this option in menu of your profile .\n ";
+			system("cls");
 
-			system("pause>>null");
-		}
-		else
-		{
-			for each (Advertisement advertisement in advertOfThisUser)
+			if (advertOfThisUser.size() == 0)
 			{
-				cout << advertisement;
+				cout << "You have no advertisements yet .\n";
+				cout << "\nIf you want to create new advertisement , select this option in menu of your profile .\n ";
+
+				system("pause>>null");
 			}
-			system("pause>>null");
+			else
+			{
+				for (int i = 0; i < advertOfThisUser.size(); i++)
+				{
+					cout << advertOfThisUser[i];
+				}
+				system("pause>>null");
+			}
+			correctLogin(user);
+			break;
 		}
-		correctLogIn(user);
-		break;
-	}
-	case '2':
-	{
-	
-		system("cls");
-
-		DTOAdvertisement::saveAdvertisement(user);
-		correctLogIn(user);
-		break;
-	
-	}
-	case '3':
-	{
-		system("cls");
-
-		vector<Advertisement> advWith0;
-		advWith0 = leaveAdvWithStatus(advertOfThisUser, 0);
-
-		if (advWith0.size() == 0)
+		case '2':
 		{
-			cout << "You don't have any advertisements to edit. \n" ;
-			system("pause>null");
+	
+			system("cls");
+
+			DTOAdvertisement::saveAdvertisement(user);
+			correctLogin(user);
+			break;
+	
 		}
-		else
+		case '3':
 		{
-			editAdvertisement(advWith0);
+			system("cls");
+
+			vector<Advertisement> advWith0;
+			advWith0 = leaveAdvWithStatus(advertOfThisUser, 0);
+
+			if (advWith0.size() == 0)
+			{
+				cout << "You have no advertisements to edit. \n" ;
+				system("pause>null");
+			}
+			else
+			{
+				editAdvertisement(advWith0);
+			}
+
+			correctLogin(user);
+			break;
+
+
 		}
-
-		correctLogIn(user);
-		break;
-
-
-	}
-	case '4':
-	{
-		break;
-	}
-	default:
-	{
-		cout << "enter action (1,2,3) : ";
-		cin >> action;
-	}
+		case '4':
+		{
+			break;
+		}
+		default:
+		{
+			cout << "Enter action (1,2,3) : ";
+			cin >> action;
+		}
 	}
 
 }

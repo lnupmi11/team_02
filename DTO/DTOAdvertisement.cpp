@@ -1,50 +1,52 @@
 #include <fstream> 
-#include<vector>
-#include<string>
-#include<cstdio>
-#include"../Entity/Advertisement.h"
-#include"../Entity/User.h"
-#include"../DTO/DTOAdvertisement.h"
+#include <vector>
+#include <string>
+#include <cstdio>
+#include "../Entity/Advertisement.h"
+#include "../Entity/User.h"
+#include "../DTO/DTOAdvertisement.h"
 
 void DTOAdvertisement::saveAdvertisement(User& obj)
 {
 	Advertisement advertisement;
 	cin>>advertisement;
-	ofstream putAdvertisementInformationIntoFile("advertisements.txt", ios_base::app);
+	ofstream putAdvIntoFile("advertisements.txt", ios_base::app);
 	advertisement.setEmail(obj.getEmail());
-	putAdvertisementInformationIntoFile << "\n";
-	putAdvertisementInformationIntoFile << advertisement.getTitle();
-	putAdvertisementInformationIntoFile << "\n";
-	putAdvertisementInformationIntoFile << advertisement.getMainText();
-	putAdvertisementInformationIntoFile << "\n";
-	putAdvertisementInformationIntoFile << advertisement.getStatus();
-	putAdvertisementInformationIntoFile << "\n";
-	putAdvertisementInformationIntoFile << advertisement.getEmail();
-	putAdvertisementInformationIntoFile.close();
+	putAdvIntoFile << "\n";
+	putAdvIntoFile << advertisement.getTitle();
+	putAdvIntoFile << "\n";
+	putAdvIntoFile << advertisement.getMainText();
+	putAdvIntoFile << "\n";
+	putAdvIntoFile << advertisement.getStatus();
+	putAdvIntoFile << "\n";
+	putAdvIntoFile << advertisement.getEmail();
+	putAdvIntoFile.close();
 }
 
-void DTOAdvertisement::getAllAdvertisements(vector<Advertisement>& allAdvertisementWithStatus1)
+void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdvWithStatus1)
 {
 	ifstream advertisement;
 	advertisement.open("../Lnu/advertisements.txt");
 	if (!advertisement.is_open())
 	{
-		cout << "\ndata base is empty!!! ...";
+		cout << "\nData base is empty!!! ...";
 	}
-	else {
+	else 
+	{
 		string s;
-		int lineNumber = 0;
+		int lineNumber;
+		lineNumber = 0;
 
 		Advertisement obj;
 
-		bool checkStatus = false;
+		bool checkStatus;
+		checkStatus = false;
 
 		while (!advertisement.eof())
 		{
-
 			getline(advertisement, s);
 
-			if (lineNumber != 0)// бо перша строка в файлі пуста/first line at file is empty
+			if (lineNumber != 0)// бо перший рядок в файлі пуста/first line at file is empty
 			{
 				if (lineNumber % 4 == 1)
 				{
@@ -70,21 +72,19 @@ void DTOAdvertisement::getAllAdvertisements(vector<Advertisement>& allAdvertisem
 				if (lineNumber % 4 == 0)
 				{
 					obj.setEmail(s);
-					allAdvertisementWithStatus1.push_back(obj);
+					allAdvWithStatus1.push_back(obj);
 				}
 			}
 			lineNumber++;
 		}
 	}
-
-
 }
 
-vector<Advertisement> DTOAdvertisement::getAllAdvertisementsOfThis(User user)
+vector<Advertisement> DTOAdvertisement::getAllAdvOfThis(User user)
 {
 	vector<Advertisement> vect;
 
-	DTOAdvertisement::getAllAdvertisements(vect);
+	DTOAdvertisement::getAllAdv(vect);
 	
 	int iterator;
 	iterator = 0;
@@ -104,18 +104,14 @@ vector<Advertisement> DTOAdvertisement::getAllAdvertisementsOfThis(User user)
 	return vect;
 }
 
-
-
-
-
 void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine)
 {
 	vector<string> vect;
 	ifstream fileStream("advertisements.txt" );
 	
-	if (! fileStream.is_open() )
+	if (!fileStream.is_open() )
 	{
-		cout << "\ndata base is empty!!! ...";
+		cout << "\nВata base is empty!!! ...";
 	}
 	else
 	{
@@ -133,9 +129,9 @@ void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine)
 
 		ofstream inFile("advertisements.txt" , ios_base::trunc);
 	 
-		for each (line in vect)
+		for (int i = 0; i < vect.size(); i++)
 		{
-			inFile  << line<<"\n";
+			inFile << line << "\n";
 		}
 		inFile.close();
 	}

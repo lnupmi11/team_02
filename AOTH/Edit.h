@@ -1,12 +1,13 @@
 #pragma once
+
 void editAdvertisement(vector<Advertisement>& vect )
 {
 	cout << "Here you can edit your advertisements , which you has not published .\n";
 	cout << "Advertisements: \n \n ";
 	
-	for each (Advertisement advertisement in vect)
+	for (int i = 0; i < vect.size(); i++)
 	{
-		cout << advertisement.getTitle() << "\n";
+		cout << vect[i].getTitle() << "\n";
 	}
 
 	cout << "\n Enter the number of advertisement which you want to edit: \n";
@@ -37,7 +38,8 @@ void editAdvertisement(vector<Advertisement>& vect )
 	{
 		system("cls");
 		
-		string oldTitle , newTitle;
+		string oldTitle;
+		string newTitle;
 		oldTitle = vect[number - 1].getTitle();
 		cout << "Enter new title:\n";
 		cin >> newTitle;
@@ -47,7 +49,8 @@ void editAdvertisement(vector<Advertisement>& vect )
 	case'2':
 	{
 		system("cls");
-		string newText, oldText;
+		string newText;
+		string oldText;
 		oldText = vect[number - 1].getMainText();
 		cout << "Enter new text: \n";
 		cin >> newText;
@@ -57,7 +60,8 @@ void editAdvertisement(vector<Advertisement>& vect )
 	case'3':
 	{
 		system("cls");
-		string newStatus, oldStatus;
+		string newStatus;
+		string oldStatus;
 		oldStatus = vect[number - 1].getStatus();
 		cout << "your advertisemnt has sent to server ..\n";
 		newStatus = 1;
@@ -65,6 +69,6 @@ void editAdvertisement(vector<Advertisement>& vect )
 		break;
     }
 	}
-	cout << "\n\n Now you can return to the main menu.\n\n Press any key to back to the main menu\n";
+	cout << "\n\n Now you can return to the main menu.\n\n Press any key to back to do this\n";
 	system("pause>>null");
 }

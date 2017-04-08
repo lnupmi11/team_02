@@ -1,9 +1,8 @@
 #pragma once
 
-
-vector<Advertisement> leaveAdvWithStatus(vector<Advertisement> &vect, bool statToLeave)
+vector<Advertisement> leaveAdvWithStatus(vector<Advertisement>& vect, bool statToLeave)
 {
-	for (int i = 0;i < vect.size()  ;i++)
+	for (int i = 0; i < vect.size(); i++)
 	{
 			while (vect[i].getStatus() != statToLeave)
 			{

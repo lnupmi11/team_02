@@ -1,6 +1,6 @@
 #pragma once
 
-#include"../Entity/Advertisement.h" 
+#include "../Entity/Advertisement.h" 
 #include <vector>
 
 Advertisement::Advertisement()
@@ -19,7 +19,7 @@ Advertisement::Advertisement(string title, string mainText, bool status , string
 	this->email = email;
 }
 
-Advertisement::Advertisement(const Advertisement&x) 
+Advertisement::Advertisement(const Advertisement& x) 
 {
 	this->title = x.title;
 	this->mainText = x.mainText;
@@ -67,14 +67,14 @@ void Advertisement::setMainText(string mainText)
 	this->mainText = mainText;
 }
 
-istream &operator >> (istream &cin, Advertisement &advert)
+istream& operator >> (istream& cin, Advertisement& advert)
 {
 	cout << " \t\t\t Welcome! \n" << "\t Here you can create an advertisement \n ";
-	cout << "enter title: \n";
+	cout << "Enter title: \n";
 	cin.get();
 
 	getline(cin, advert.title);
-	cout << "enter advertisement : \n";
+	cout << "Enter advertisement : \n";
 	cin.clear();
 
 	_flushall();
@@ -90,28 +90,28 @@ istream &operator >> (istream &cin, Advertisement &advert)
 	cin >> action;
 	switch (action)
 	{
-	case '1':
-	{
-		advert.setStatus(0);
-		break;
-	}
-	case '2':
-	{
-		advert.setStatus(1);
-		break;
-	}
-	default:
-	{
-		cout << "\n You will be returned to previos page \n";
-	}
+		case '1':
+		{
+			advert.setStatus(0);
+			break;
+		}
+		case '2':
+		{
+			advert.setStatus(1);
+			break;
+		}
+		default:
+		{
+			cout << "\n You will be returned to previous page \n";
+		}
 
-	break;
+		break;
 	}
 
 	return cin;
 }
 
-ostream &operator << (ostream& cout, Advertisement& advert)
+ostream& operator << (ostream& cout, Advertisement& advert)
 {
 	cout << "\n_________________________________\n";
 	cout << "\t\t " << advert.title << "\n";
