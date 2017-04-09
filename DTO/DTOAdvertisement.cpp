@@ -29,7 +29,7 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdvWithStatus1)
 	advertisement.open("../Lnu/advertisements.txt");
 	if (!advertisement.is_open())
 	{
-		cout << "\nData base is empty!!! ...";
+		cout << "\nData base is empty! ...";
 	}
 	else 
 	{
@@ -111,7 +111,7 @@ void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine)
 	
 	if (!fileStream.is_open() )
 	{
-		cout << "\nÂata base is empty!!! ...";
+		cout << "\nÂata base is empty! ...";
 	}
 	else
 	{

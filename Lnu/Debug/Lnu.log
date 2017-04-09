@@ -1,13 +1,3 @@
-﻿  DTOUser.cpp
-e:\desktop\github\team_02\dto\dtouser.cpp(51): warning C4018: '<': signed/unsigned mismatch
-  DTOAdvertisement.cpp
-  Generating Code...
-  Compiling...
-  Main.cpp
-e:\desktop\github\team_02\utils\helperfunctions.h(5): warning C4018: '<': signed/unsigned mismatch
-e:\desktop\github\team_02\aoth\edit.h(7): warning C4018: '<': signed/unsigned mismatch
-e:\desktop\github\team_02\aoth\edit.h(16): warning C4018: '>': signed/unsigned mismatch
-e:\desktop\github\team_02\aoth\login.h(9): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  Lnu.vcxproj -> E:\Desktop\github\team_02\Debug\Lnu.exe
-  Lnu.vcxproj -> E:\Desktop\github\team_02\Debug\Lnu.pdb (Full PDB)
+﻿  Advertisement.cpp
+  Lnu.vcxproj -> C:\Users\Andriana008\Desktop\team_02\Debug\Lnu.exe
+  Lnu.vcxproj -> C:\Users\Andriana008\Desktop\team_02\Debug\Lnu.pdb (Full PDB)

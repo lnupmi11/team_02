@@ -11,7 +11,7 @@ void viewAllBeforeLogin()
 	{
 		cout<<obj;
 	}
-	cout << "\n*********************************************************************\n";
+	cout << "#################################################################\n";
 	cout << "\n " << "\t\tPress any key to back to the main menu ....";
 	system("pause>>null");
 	

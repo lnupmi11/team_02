@@ -113,9 +113,12 @@ istream& operator >> (istream& cin, Advertisement& advert)
 
 ostream& operator << (ostream& cout, Advertisement& advert)
 {
-	cout << "\n_________________________________\n";
-	cout << "\t\t " << advert.title << "\n";
+	cout << "\n_________________________________________\n\n";
+	cout << "Tittle of the advetisement :";
+	cout << "\t " << advert.title << "\n";
+	cout << "Body of the advetisement :" << endl;
 	cout << advert.mainText << "\n";
+	cout << "Login author of advertisement(contact information) :" << endl;
 	cout << advert.email << "\n";
 
 	return cout;
