@@ -1,6 +1,6 @@
 #pragma once
 
-#include"../Entity/Advertisement.h" 
+#include "../Entity/Advertisement.h" 
 #include <vector>
 
 Advertisement::Advertisement()
@@ -19,7 +19,7 @@ Advertisement::Advertisement(string title, string mainText, bool status , string
 	this->email = email;
 }
 
-Advertisement::Advertisement(const Advertisement&x) 
+Advertisement::Advertisement(const Advertisement& x) 
 {
 	this->title = x.title;
 	this->mainText = x.mainText;
@@ -67,4 +67,59 @@ void Advertisement::setMainText(string mainText)
 	this->mainText = mainText;
 }
 
+istream& operator >> (istream& cin, Advertisement& advert)
+{
+	cout << " \t\t\t Welcome! \n" << "\t Here you can create an advertisement \n ";
+	cout << "Enter title: \n";
+	cin.get();
 
+	getline(cin, advert.title);
+	cout << "Enter advertisement : \n";
+	cin.clear();
+
+	_flushall();
+
+	cin.get();
+
+	getline(cin, advert.mainText);
+
+	cout << "Do you want to save or send your advertisement to server? \n enter 1 or 2 :\n";
+
+	cout << "Action :  ";
+	char action;
+	cin >> action;
+	switch (action)
+	{
+		case '1':
+		{
+			advert.setStatus(0);
+			break;
+		}
+		case '2':
+		{
+			advert.setStatus(1);
+			break;
+		}
+		default:
+		{
+			cout << "\n You will be returned to previous page \n";
+		}
+
+		break;
+	}
+
+	return cin;
+}
+
+ostream& operator << (ostream& cout, Advertisement& advert)
+{
+	cout << "\n_________________________________________\n\n";
+	cout << "Tittle of the advetisement :";
+	cout << "\t " << advert.title << "\n";
+	cout << "Body of the advetisement :" << endl;
+	cout << advert.mainText << "\n";
+	cout << "Login author of advertisement(contact information) :" << endl;
+	cout << advert.email << "\n";
+
+	return cout;
+}

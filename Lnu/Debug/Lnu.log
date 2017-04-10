@@ -1,8 +1,3 @@
-﻿  Main.cpp
-<<<<<<< HEAD
-c:\users\andre\desktop\team_02\aoth\login.h(15): warning C4018: '<': signed/unsigned mismatch
-=======
-c:\users\andre\desktop\team_02\aoth\login.h(11): warning C4018: '<': signed/unsigned mismatch
->>>>>>> ef78473... improved overloaded operators in DTOUser and added folder Utils
-  Lnu.vcxproj -> C:\Users\andre\Desktop\team_02\Debug\Lnu.exe
-  Lnu.vcxproj -> C:\Users\andre\Desktop\team_02\Debug\Lnu.pdb (Full PDB)
+﻿  Advertisement.cpp
+  Lnu.vcxproj -> C:\Users\Andriana008\Desktop\team_02\Debug\Lnu.exe
+  Lnu.vcxproj -> C:\Users\Andriana008\Desktop\team_02\Debug\Lnu.pdb (Full PDB)

@@ -1,6 +1,6 @@
 #pragma once
 
-#include"../Entity/User.h"
+#include "../Entity/User.h"
 
 User::User()
 {
@@ -12,7 +12,6 @@ User::User(string email, string password)
 {
 	this->email = email;
 	this->password = password;
-
 }
 
 
@@ -38,16 +37,16 @@ void User::setPassword(string s)
 
 void User::input()
 {
-	cout << "email : ";
+	cout << "Email : ";
 	cin >> email;
-	cout << "password : ";
+	cout << "Password : ";
 	cin >> password;
 }
- istream &operator>>(istream &is, User &user)
+ istream& operator>>(istream& is, User& user)
 {
-	 cout << "email : ";
+	 cout << "Email : ";
 	 is >> user.email;
-	 cout << "password : ";
+	 cout << "Password : ";
 	 is >> user.password;
 
 	 return is;
@@ -55,9 +54,9 @@ void User::input()
 
  ostream& operator<< (ostream& os,  User& user)
  {
-	 os << "email : ";
+	 os << "Email : ";
 	 os << user.email;
-	 os << "password : ";
+	 os << "Password : ";
 	 os << user.password;
 	
 	 return os;

@@ -1,5 +1,5 @@
 #include <iostream>
-#include<string>
+#include <string>
 using namespace std;
 
 class User
@@ -23,9 +23,9 @@ public:
 
 	void setPassword(string s);
 
-	friend  istream &operator >> (istream &is, User &user);
+	friend  istream& operator >> (istream& is, User& user);
 
-	friend  ostream &operator << (ostream &os,  User &user);
+	friend  ostream& operator << (ostream& os,  User& user);
 
 };
 
