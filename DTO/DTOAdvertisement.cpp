@@ -20,6 +20,8 @@ void DTOAdvertisement::saveAdvertisement(User& obj)
 	putAdvIntoFile << advertisement.getStatus();
 	putAdvIntoFile << "\n";
 	putAdvIntoFile << advertisement.getEmail();
+	putAdvIntoFile << "\n";
+	putAdvIntoFile << advertisement.getRubric();
 	putAdvIntoFile.close();
 }
 
@@ -48,17 +50,17 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdvWithStatus1)
 
 			if (lineNumber != 0)// бо перший рядок в файлі пуста/first line at file is empty
 			{
-				if (lineNumber % 4 == 1)
+				if (lineNumber % 5 == 1)
 				{
 					obj.setTitle(s);
 
 				}
-				if (lineNumber % 4 == 2)
+				if (lineNumber % 5 == 2)
 				{
 					obj.setMainText(s);
 				}
 
-				if (lineNumber % 4 == 3)
+				if (lineNumber % 5 == 3)
 				{
 					if (s == "1")
 					{
@@ -69,9 +71,13 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdvWithStatus1)
 						obj.setStatus(0);
 					}
 				}
-				if (lineNumber % 4 == 0)
+				if (lineNumber % 5 == 4)
 				{
 					obj.setEmail(s);
+				}
+				if (lineNumber % 5 == 0)
+				{
+					obj.setRubric(s);
 					allAdvWithStatus1.push_back(obj);
 				}
 			}

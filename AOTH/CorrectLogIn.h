@@ -35,10 +35,33 @@ void correctLogin(User user)
 			}
 			else
 			{
-				for (int i = 0; i < advertOfThisUser.size(); i++)
+				vector<string> rubrics1(5);
+				rubrics1 = getRubrics();
+
+				for (int i = 0;i < 5;i++)
 				{
-					cout << advertOfThisUser[i];
+					int counterPrintedRubrics = 0;
+					for (int j = 0; j < advertOfThisUser.size(); j++)
+					{
+						if (advertOfThisUser[j].getRubric() == rubrics1[i])
+						{
+							if (counterPrintedRubrics == 0)
+							{
+								cout << "\n*********************************************************************\n";
+
+								cout << "\nRubric:  ";
+								cout << advertOfThisUser[j].getRubric() << "\n\n";
+							}
+
+							counterPrintedRubrics++;
+
+							cout << advertOfThisUser[j];
+
+						}
+
+					}
 				}
+
 				system("pause>>null");
 			}
 			correctLogin(user);

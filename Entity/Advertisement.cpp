@@ -1,7 +1,8 @@
 #pragma once
 
-#include "../Entity/Advertisement.h" 
+#include"../Entity/Advertisement.h" 
 #include <vector>
+//#include"../Utils/HelperFunctions.h"
 
 Advertisement::Advertisement()
 {
@@ -9,22 +10,25 @@ Advertisement::Advertisement()
 	this->mainText = "";
 	this->status = 0;
 	this->email = "";
+	this->rubric = "";
 }
 
-Advertisement::Advertisement(string title, string mainText, bool status , string email ) 
+Advertisement::Advertisement(string title, string mainText, bool status, string email, string rubric)
 {
 	this->title = title;
 	this->mainText = mainText;
 	this->status = status;
 	this->email = email;
+	this->rubric = rubric;
 }
 
-Advertisement::Advertisement(const Advertisement& x) 
+Advertisement::Advertisement(const Advertisement&x)
 {
 	this->title = x.title;
 	this->mainText = x.mainText;
 	this->status = x.status;
 	this->email = x.email;
+	this->rubric = x.rubric;
 }
 
 string Advertisement::getTitle()
@@ -52,6 +56,12 @@ string Advertisement::getEmail()
 	return this->email;
 }
 
+string Advertisement::getRubric()
+{
+	return this->rubric;
+}
+
+
 void Advertisement::setEmail(string email)
 {
 	this->email = email;
@@ -67,14 +77,19 @@ void Advertisement::setMainText(string mainText)
 	this->mainText = mainText;
 }
 
-istream& operator >> (istream& cin, Advertisement& advert)
+void Advertisement::setRubric(string rubric)
+{
+	this->rubric = rubric;
+}
+
+istream &operator >> (istream &cin, Advertisement &advert)
 {
 	cout << " \t\t\t Welcome! \n" << "\t Here you can create an advertisement \n ";
-	cout << "Enter title: \n";
+	cout << "enter title: \n";
 	cin.get();
 
 	getline(cin, advert.title);
-	cout << "Enter advertisement : \n";
+	cout << "enter advertisement : \n";
 	cin.clear();
 
 	_flushall();
@@ -83,6 +98,65 @@ istream& operator >> (istream& cin, Advertisement& advert)
 
 	getline(cin, advert.mainText);
 
+
+	vector<string> allRubrics(5);
+	allRubrics[0] = "For sale";
+	allRubrics[1] = "Want to buy";
+	allRubrics[2] = "Something disappeared";
+	allRubrics[3] = "Meetings";
+	allRubrics[4] = "Advertising";
+
+	//vector<string> allRubrics(5);
+	//allRubrics = getRubrics();
+
+	cout << "Choose the rubric for your advertisement(enter number) :\n";
+
+	for (int i = 0;i < 5;i++)
+	{
+		cout << i + 1 << " - " << allRubrics[i] << "\n";
+	}
+
+	char action0;
+	cin >> action0;
+	switch (action0)
+	{
+	case '1':
+	{
+		advert.setRubric(allRubrics[0]);
+		break;
+	}
+	case '2':
+	{
+		advert.setRubric(allRubrics[1]);
+		break;
+	}
+	case '3':
+	{
+		advert.setRubric(allRubrics[2]);
+		break;
+	}
+	case '4':
+	{
+		advert.setRubric(allRubrics[3]);
+		break;
+	}
+	case '5':
+	{
+		advert.setRubric(allRubrics[4]);
+		break;
+	}
+	default:
+	{
+		cout << "\n Enter correct number \n";
+	}
+
+	break;
+	}
+
+
+
+
+
 	cout << "Do you want to save or send your advertisement to server? \n enter 1 or 2 :\n";
 
 	cout << "Action :  ";
@@ -90,36 +164,34 @@ istream& operator >> (istream& cin, Advertisement& advert)
 	cin >> action;
 	switch (action)
 	{
-		case '1':
-		{
-			advert.setStatus(0);
-			break;
-		}
-		case '2':
-		{
-			advert.setStatus(1);
-			break;
-		}
-		default:
-		{
-			cout << "\n You will be returned to previous page \n";
-		}
-
+	case '1':
+	{
+		advert.setStatus(0);
 		break;
+	}
+	case '2':
+	{
+		advert.setStatus(1);
+		break;
+	}
+	default:
+	{
+		cout << "\n You will be returned to previos page \n";
+	}
+
+	break;
 	}
 
 	return cin;
 }
 
-ostream& operator << (ostream& cout, Advertisement& advert)
+ostream &operator << (ostream& cout, Advertisement& advert)
 {
-	cout << "\n_________________________________________\n\n";
-	cout << "Tittle of the advetisement :";
-	cout << "\t " << advert.title << "\n";
-	cout << "Body of the advetisement :" << endl;
+	cout << "\t\t " << advert.title << "\n";
 	cout << advert.mainText << "\n";
-	cout << "Login author of advertisement(contact information) :" << endl;
 	cout << advert.email << "\n";
+	cout << "\n_________________________________\n";
+	//cout << advert.rubric << "\n";
 
 	return cout;
 }
