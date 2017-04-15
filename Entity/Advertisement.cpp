@@ -85,16 +85,14 @@ istream &operator >> (istream &cin, Advertisement &advert)
 {
 	cout << " \t\t\t Welcome! \n" << "\t Here you can create an advertisement \n ";
 	cout << "enter title: \n";
+	
 	cin.get();
-
 	getline(cin, advert.title);
+	
 	cout << "enter advertisement : \n";
 	
 	cin.clear();
 	_flushall();
-
-//	cin.get();
-
 	getline(cin, advert.mainText);
 
 
@@ -149,7 +147,7 @@ istream &operator >> (istream &cin, Advertisement &advert)
 	break;
 	}
 
-	cout << "Do you want to save or send your advertisement to server? \n enter 1 or 2 :\n";
+	cout << "Do you want to save or send your advertisement to server? \n 1 - save ,  2 - send :\n";
 
 	cout << "Action :  ";
 	char action;
@@ -168,7 +166,7 @@ istream &operator >> (istream &cin, Advertisement &advert)
 	}
 	default:
 	{
-		cout << "\n You will be returned to previos page \n";
+		cout << "\n You will be returned to previous page \n";
 	}
 
 	break;
@@ -183,7 +181,5 @@ ostream &operator << (ostream& cout, Advertisement& advert)
 	cout << advert.mainText << "\n";
 	cout << advert.email << "\n";
 	cout << "\n_________________________________\n";
-	//cout << advert.rubric << "\n";
-
 	return cout;
 }
