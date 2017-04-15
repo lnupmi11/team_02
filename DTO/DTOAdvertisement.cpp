@@ -110,7 +110,7 @@ vector<Advertisement> DTOAdvertisement::getAllAdvOfThis(User user)
 	return vect;
 }
 
-void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine)
+void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine )
 {
 	vector<string> vect;
 	ifstream fileStream("advertisements.txt" );
@@ -125,20 +125,31 @@ void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine)
 		while (!fileStream.eof())
 		{
 			getline(fileStream, line);
-			if (line == (string) oldLine)
+
+			if (line == oldLine)
 			{
-				line = (string) newLine;
+				line = newLine;
 			}
+
 			vect.push_back(line);
 		}
+		
+	}
 		fileStream.close();
 
-		ofstream inFile("advertisements.txt" , ios_base::trunc);
+		ofstream inFile("advertisements.txt" , ios_base::out | ios_base::trunc);
 	 
-		for (int i = 0; i < vect.size(); i++)
+		int size = vect.size();
+        for (size_t i = 0; i < size; i++)
 		{
-			inFile << line << "\n";
+			inFile << vect[i];
+			
+			if (i != (size - 1))
+			{
+				inFile << "\n";
+			}
+		
 		}
 		inFile.close();
-	}
 }
+

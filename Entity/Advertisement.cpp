@@ -2,7 +2,6 @@
 
 #include"../Entity/Advertisement.h" 
 #include <vector>
-//#include"../Utils/HelperFunctions.h"
 
 Advertisement::Advertisement()
 {
@@ -90,11 +89,11 @@ istream &operator >> (istream &cin, Advertisement &advert)
 
 	getline(cin, advert.title);
 	cout << "enter advertisement : \n";
+	
 	cin.clear();
-
 	_flushall();
 
-	cin.get();
+//	cin.get();
 
 	getline(cin, advert.mainText);
 
@@ -106,14 +105,11 @@ istream &operator >> (istream &cin, Advertisement &advert)
 	allRubrics[3] = "Meetings";
 	allRubrics[4] = "Advertising";
 
-	//vector<string> allRubrics(5);
-	//allRubrics = getRubrics();
-
+	
 	cout << "Choose the rubric for your advertisement(enter number) :\n";
-
 	for (int i = 0;i < 5;i++)
 	{
-		cout << i + 1 << " - " << allRubrics[i] << "\n";
+		cout <<i + 1<< " - " << allRubrics[i] << "\n";
 	}
 
 	char action0;
@@ -152,10 +148,6 @@ istream &operator >> (istream &cin, Advertisement &advert)
 
 	break;
 	}
-
-
-
-
 
 	cout << "Do you want to save or send your advertisement to server? \n enter 1 or 2 :\n";
 

@@ -10,6 +10,6 @@ public:
    
 	static vector<Advertisement> getAllAdvOfThis(User user);
 
-	static void editAdvertisement(string oldLine , string newLine);
+	static void editAdvertisement(string oldLine , string newLine );
 };
 

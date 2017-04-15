@@ -56,9 +56,7 @@ void correctLogin(User user)
 							counterPrintedRubrics++;
 
 							cout << advertOfThisUser[j];
-
 						}
-
 					}
 				}
 
@@ -71,7 +69,6 @@ void correctLogin(User user)
 		{
 	
 			system("cls");
-
 			DTOAdvertisement::saveAdvertisement(user);
 			correctLogin(user);
 			break;

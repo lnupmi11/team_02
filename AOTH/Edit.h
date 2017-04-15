@@ -7,7 +7,7 @@ void editAdvertisement(vector<Advertisement>& vect )
 	
 	for (int i = 0; i < vect.size(); i++)
 	{
-		cout << vect[i].getTitle() << "\n";
+		cout << i+1 <<".  " <<vect[i].getTitle() << "\n";
 	}
 
 	cout << "\n Enter the number of advertisement which you want to edit: \n";
@@ -43,7 +43,7 @@ void editAdvertisement(vector<Advertisement>& vect )
 		oldTitle = vect[number - 1].getTitle();
 		cout << "Enter new title:\n";
 		cin >> newTitle;
-		DTOAdvertisement::editAdvertisement(oldTitle,newTitle);
+		DTOAdvertisement::editAdvertisement(oldTitle,newTitle );
 		break;
 	}
 	case'2':
@@ -60,12 +60,8 @@ void editAdvertisement(vector<Advertisement>& vect )
 	case'3':
 	{
 		system("cls");
-		string newStatus;
-		string oldStatus;
-		oldStatus = vect[number - 1].getStatus();
 		cout << "your advertisemnt has sent to server ..\n";
-		newStatus = 1;
-		DTOAdvertisement::editAdvertisement(oldStatus, newStatus);
+		DTOAdvertisement::editAdvertisement(  "0" ,"1" );
 		break;
     }
 	}
