@@ -48,7 +48,7 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdvWithStatus1)
 		{
 			getline(advertisement, s);
 
-			if (lineNumber != 0)// бо перший рядок в файлі пуста/first line at file is empty
+			if (lineNumber != 0)
 			{
 				if (lineNumber % 5 == 1)
 				{
@@ -110,25 +110,43 @@ vector<Advertisement> DTOAdvertisement::getAllAdvOfThis(User user)
 	return vect;
 }
 
-void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine )
+void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine , string mainText)
 {
 	vector<string> vect;
 	ifstream fileStream("advertisements.txt" );
 	
 	if (!fileStream.is_open() )
 	{
-		cout << "\nВata base is empty! ...";
+		cout << "\nData base is empty! ...";
 	}
 	else
 	{
 		string line;
+		bool isThisAdv = false;
 		while (!fileStream.eof())
 		{
 			getline(fileStream, line);
-
-			if (line == oldLine)
+			if (line == mainText)
+			{
+				isThisAdv = true;
+			}
+			else
+			{
+				if (line != "0")
+				{
+					isThisAdv = false;
+				}
+			}
+			if ((oldLine=="0")&&(line == "0") && (isThisAdv))
 			{
 				line = newLine;
+			}
+			if (oldLine != "0")
+			{
+				if (line == oldLine)
+				{
+					line = newLine;
+				}
 			}
 
 			vect.push_back(line);
