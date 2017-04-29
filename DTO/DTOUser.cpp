@@ -48,7 +48,7 @@ bool DTOUser::ifExist(User myUser)
 			}
 			lineNumber++;
 		}
-		for (int i = 0; i < usersPassAndEmails.size(); i++)
+		for (size_t i = 0; i < usersPassAndEmails.size(); i++)
 		{
 			if (myUser.getEmail() == usersPassAndEmails[i].getEmail())
 			{

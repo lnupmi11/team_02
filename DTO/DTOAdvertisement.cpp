@@ -156,7 +156,7 @@ void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine , stri
 		fileStream.close();
 		ofstream inFile("advertisements.txt" , ios_base::out | ios_base::trunc);
 
-		int vectSize;
+		size_t vectSize;
 		vectSize = vect.size();
         for (size_t i = 0; i < vectSize; i++)
 		{

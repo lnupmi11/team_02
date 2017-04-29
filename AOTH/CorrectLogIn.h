@@ -41,7 +41,7 @@ void correctLogin(User user)
 				for (int i = 0;i < 5;i++)
 				{
 					int counterPrintedRubrics = 0;
-					for (int j = 0; j < advertOfThisUser.size(); j++)
+					for (size_t j = 0; j < advertOfThisUser.size(); j++)
 					{
 						if (advertOfThisUser[j].getRubric() == rubrics1[i])
 						{

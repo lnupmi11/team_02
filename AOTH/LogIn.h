@@ -7,7 +7,7 @@ bool checkIfCorrect(User& user)
 	bool IsLogPassCorrect;
 	IsLogPassCorrect = false;
 
-	for (int i = 0; i < usersPassAndEmails.size(); i++)
+	for (size_t i = 0; i < usersPassAndEmails.size(); i++)
 	{
 		if (usersPassAndEmails[i].getEmail() == user.getEmail() && usersPassAndEmails[i].getPassword() == user.getPassword() )
 		{

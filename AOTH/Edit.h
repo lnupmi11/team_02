@@ -5,13 +5,13 @@ void editAdvertisement(vector<Advertisement>& vect )
 	cout << "Here you can edit your advertisements , which you has not published .\n";
 	cout << "Advertisements: \n \n ";
 	
-	for (int i = 0; i < vect.size(); i++)
+	for (size_t i = 0; i < vect.size(); i++)
 	{
 		cout << i+1 <<".  " <<vect[i].getTitle() << "\n";
 	}
 
 	cout << "\n Enter the number of advertisement which you want to edit: \n";
-	int number;
+	size_t number;
 	cin >> number;
 
 	while (number > vect.size())

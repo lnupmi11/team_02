@@ -2,7 +2,7 @@
 
 vector<Advertisement> leaveAdvWithStatus(vector<Advertisement>& vect, bool statToLeave)
 {
-	for (int i = 0; i < vect.size(); i++)
+	for (size_t i = 0; i < vect.size(); i++)
 	{
 			while (vect[i].getStatus() != statToLeave)
 			{
