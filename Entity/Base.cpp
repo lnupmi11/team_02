@@ -23,7 +23,7 @@ string Base::generateId()
 
 	for (int i = 0; i < length; i++)
 	{
-		id += symbols[(int)(rand() * symbols.length())];
+		id += symbols[rand() % symbols.length()];
 	}
 	return id;
 }
