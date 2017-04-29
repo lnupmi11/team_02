@@ -25,7 +25,7 @@ void DTOAdvertisement::saveAdvertisement(User& obj)
 	saveAdv.close();
 }
 
-void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdvWithStatus1)
+void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdv)
 {
 	ifstream advertisement;
 	advertisement.open("../Lnu/advertisements.txt");
@@ -40,9 +40,6 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdvWithStatus1)
 		lineNumber = 0;
 
 		Advertisement obj;
-
-		bool checkStatus;
-		checkStatus = false;
 
 		while (!advertisement.eof())
 		{
@@ -78,7 +75,7 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdvWithStatus1)
 				if (lineNumber % 5 == 0)
 				{
 					obj.setRubric(s);
-					allAdvWithStatus1.push_back(obj);
+					allAdv.push_back(obj);
 				}
 			}
 			lineNumber++;
