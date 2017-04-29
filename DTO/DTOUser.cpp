@@ -31,16 +31,20 @@ bool DTOUser::ifExist(User myUser)
 
 			if (lineNumber != 0)
 			{
-				if (lineNumber % 2 != 0)
+				if (lineNumber % 3 ==1)
 				{
 					obj.setEmail(s);
 				}
-				else
+				if (lineNumber % 3 == 2)
 				{
 					obj.setPassword(s);
 				}
+				else
+				{
+					obj.setId(s);
+				}
 
-				if (lineNumber % 2 == 0)
+				if (lineNumber % 3 == 0)
 				{
 					usersPassAndEmails.push_back(obj);
 				}
@@ -84,14 +88,14 @@ bool DTOUser::ifExist(User myUser)
 			putInfoIntoFile << user.getEmail();
 			putInfoIntoFile << "\n";
 			putInfoIntoFile << user.getPassword();
-		//TODO
-		//add field id to txt file
+			putInfoIntoFile << "\n";
+			putInfoIntoFile << user.getId();
 		}
 		putInfoIntoFile.close();
 }
 
 
-vector<User> DTOUser::getAllUsers() // this function must be changed  , as we plan to add id field
+vector<User> DTOUser::getAllUsers()
 {
 	vector<User> usersPassAndEmails;
 	ifstream emailAndPass;
@@ -118,16 +122,20 @@ vector<User> DTOUser::getAllUsers() // this function must be changed  , as we pl
 
 			if (lineNumber != 0)
 			{
-				if (lineNumber % 2 != 0)
+				if (lineNumber % 3 == 1)
 				{
 					obj.setEmail(s);
 				}
-				else
+				if (lineNumber % 3 == 2)
 				{
 					obj.setPassword(s);
 				}
+				else
+				{
+					obj.setId(s);
+				}
 
-				if (lineNumber % 2 == 0)
+				if (lineNumber % 3 == 0)
 				{
 					usersPassAndEmails.push_back(obj);
 				}
