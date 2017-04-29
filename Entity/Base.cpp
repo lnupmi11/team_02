@@ -14,7 +14,7 @@ Base::Base(string id)
 
 string Base::generateId()
 {
-	srand(time(0));
+	srand((unsigned int)(time(0)));
 	string id;
 	int length;
 	length = 10;
