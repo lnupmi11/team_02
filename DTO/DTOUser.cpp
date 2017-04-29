@@ -79,16 +79,19 @@ bool DTOUser::ifExist(User myUser)
 		}
 		else
 		{
+			user.setId(user.generateId());
 			putInfoIntoFile << "\n";
 			putInfoIntoFile << user.getEmail();
 			putInfoIntoFile << "\n";
 			putInfoIntoFile << user.getPassword();
+		//TODO
+		//add field id to txt file
 		}
 		putInfoIntoFile.close();
 }
 
 
-vector<User> DTOUser::getAllUsers()
+vector<User> DTOUser::getAllUsers() // this function must be changed  , as we plan to add id field
 {
 	vector<User> usersPassAndEmails;
 	ifstream emailAndPass;

@@ -57,7 +57,6 @@ void User::input()
 	 is >> user.email;
 	 cout << "Password : ";
 	 is >> user.password;
-
 	 return is;
 }
 
@@ -67,7 +66,6 @@ void User::input()
 	 os << user.email;
 	 os << "Password : ";
 	 os << user.password;
-	
 	 return os;
  }
 

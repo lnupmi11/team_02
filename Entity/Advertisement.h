@@ -27,6 +27,5 @@ public:
 	string getRubric();
 
 	friend istream &operator >> (istream &cin, Advertisement &advert);
-
 	friend ostream &operator << (ostream &cout, Advertisement &advert);
 };

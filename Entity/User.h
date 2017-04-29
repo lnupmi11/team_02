@@ -19,8 +19,7 @@ public:
 	string getId();
 
 	friend istream& operator >> (istream& is, User& user);
-	friend ostream& operator << (ostream& os,  User& user);
-
+	friend ostream& operator << (ostream& os, User& user);
 };
 
 
