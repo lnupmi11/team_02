@@ -10,19 +10,19 @@ void DTOAdvertisement::saveAdvertisement(User& obj)
 {
 	Advertisement advertisement;
 	cin>>advertisement;
-	ofstream putAdvIntoFile("advertisements.txt", ios_base::app);
-	advertisement.setEmail(obj.getEmail());
-	putAdvIntoFile << "\n";
-	putAdvIntoFile << advertisement.getTitle();
-	putAdvIntoFile << "\n";
-	putAdvIntoFile << advertisement.getMainText();
-	putAdvIntoFile << "\n";
-	putAdvIntoFile << advertisement.getStatus();
-	putAdvIntoFile << "\n";
-	putAdvIntoFile << advertisement.getEmail();
-	putAdvIntoFile << "\n";
-	putAdvIntoFile << advertisement.getRubric();
-	putAdvIntoFile.close();
+	ofstream saveAdv("advertisements.txt", ios_base::app);
+	advertisement.setId(obj.getId());
+	saveAdv << "\n";
+	saveAdv << advertisement.getTitle();
+	saveAdv << "\n";
+	saveAdv << advertisement.getMainText();
+	saveAdv << "\n";
+	saveAdv << advertisement.getStatus();
+	saveAdv << "\n";
+	saveAdv << advertisement.getId();
+	saveAdv << "\n";
+	saveAdv << advertisement.getRubric();
+	saveAdv.close();
 }
 
 void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdvWithStatus1)
@@ -48,7 +48,7 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdvWithStatus1)
 		{
 			getline(advertisement, s);
 
-			if (lineNumber != 0)// бо перший рядок в файлі пуста/first line at file is empty
+			if (lineNumber != 0)
 			{
 				if (lineNumber % 5 == 1)
 				{
@@ -73,7 +73,7 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdvWithStatus1)
 				}
 				if (lineNumber % 5 == 4)
 				{
-					obj.setEmail(s);
+					obj.setId(s);
 				}
 				if (lineNumber % 5 == 0)
 				{
@@ -99,7 +99,7 @@ vector<Advertisement> DTOAdvertisement::getAllAdvOfThis(User user)
 	vectSize = vect.size();
 	while(iterator<vectSize)
 	{
-		if (vect[iterator].getEmail() != user.getEmail())
+		if (vect[iterator].getId() != user.getEmail())
 		{
 			vect.erase(vect.begin() + iterator);
 			vectSize = vect.size();
@@ -130,25 +130,21 @@ void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine )
 			{
 				line = newLine;
 			}
-
 			vect.push_back(line);
 		}
-		
 	}
 		fileStream.close();
-
 		ofstream inFile("advertisements.txt" , ios_base::out | ios_base::trunc);
-	 
-		int size = vect.size();
-        for (size_t i = 0; i < size; i++)
+
+		int vectSize;
+		vectSize = vect.size();
+        for (size_t i = 0; i < vectSize; i++)
 		{
 			inFile << vect[i];
-			
-			if (i != (size - 1))
+			if (i != (vectSize - 1))
 			{
 				inFile << "\n";
 			}
-		
 		}
 		inFile.close();
 }

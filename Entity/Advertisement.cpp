@@ -1,5 +1,4 @@
 #pragma once
-
 #include"../Entity/Advertisement.h" 
 #include <vector>
 
@@ -8,16 +7,14 @@ Advertisement::Advertisement()
 	this->title = "";
 	this->mainText = "";
 	this->status = 0;
-	this->email = "";
 	this->rubric = "";
 }
 
-Advertisement::Advertisement(string title, string mainText, bool status, string email, string rubric)
+Advertisement::Advertisement(string title, string mainText, bool status , string rubric)
 {
 	this->title = title;
 	this->mainText = mainText;
 	this->status = status;
-	this->email = email;
 	this->rubric = rubric;
 }
 
@@ -26,7 +23,7 @@ Advertisement::Advertisement(const Advertisement&x)
 	this->title = x.title;
 	this->mainText = x.mainText;
 	this->status = x.status;
-	this->email = x.email;
+	this->id = x.id;
 	this->rubric = x.rubric;
 }
 
@@ -50,20 +47,19 @@ bool Advertisement::getStatus()
 	return this->status;
 }
 
-string Advertisement::getEmail()
-{
-	return this->email;
-}
-
 string Advertisement::getRubric()
 {
 	return this->rubric;
 }
 
-
-void Advertisement::setEmail(string email)
+void Advertisement::setId(string id)
 {
-	this->email = email;
+	this->id = id;
+}
+
+string Advertisement::getId()
+{
+	return this->id;
 }
 
 void Advertisement::setTitle(string title)
@@ -179,7 +175,7 @@ ostream &operator << (ostream& cout, Advertisement& advert)
 {
 	cout << "\t\t " << advert.title << "\n";
 	cout << advert.mainText << "\n";
-	cout << advert.email << "\n";
+//	cout << advert.email << "\n";
 	cout << "\n_________________________________\n";
 	return cout;
 }

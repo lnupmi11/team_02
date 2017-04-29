@@ -1,5 +1,4 @@
 #pragma once
-
 #include "../Entity/User.h"
 
 User::User()
@@ -33,6 +32,16 @@ void User::setEmail(string s)
 void User::setPassword(string s)
 {
 	this->password = s;
+}
+
+void User::setId(string id)
+{
+	this->id = id;
+}
+
+string User::getId()
+{
+	return this->id;
 }
 
 void User::input()

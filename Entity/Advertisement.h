@@ -1,43 +1,30 @@
 #include <iostream>
-#include <string>
-
 using namespace std;
 
+#include"Base.h"
 
-class Advertisement
+class Advertisement :public Base
 {
 private:
 	string title;
 	string mainText;
 	bool status;
-	string email;
 	string rubric;
 public:
 	Advertisement();
-
-	Advertisement(string title, string mainText, bool status, string email, string rubric);
-
+	Advertisement(string title, string mainText, bool status,  string rubric);
 	Advertisement(const Advertisement&x);
-
+	
 	string getTitle();
-
-	string getMainText();
-
-	void setStatus(bool status);
-
-	bool getStatus();
-
-	string getEmail();
-
-	string getRubric();
-
-	void setEmail(string email);
-
-	void setMainText(string mainText);
-
 	void setTitle(string title);
-
+	void setStatus(bool status);
+	bool getStatus();
+	void setId(string id);
+	string getId();
+	void setMainText(string mainText);
+	string getMainText();
 	void setRubric(string rubric);
+	string getRubric();
 
 	friend istream &operator >> (istream &cin, Advertisement &advert);
 

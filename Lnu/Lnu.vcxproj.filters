@@ -38,11 +38,11 @@
     <ClCompile Include="..\DTO\DTOAdvertisement.cpp">
       <Filter>DTO</Filter>
     </ClCompile>
+    <ClCompile Include="..\Entity\Base.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Entity\User.h">
-      <Filter>Entity</Filter>
-    </ClInclude>
     <ClInclude Include="..\Entity\Advertisement.h">
       <Filter>Entity</Filter>
     </ClInclude>
@@ -69,6 +69,12 @@
     </ClInclude>
     <ClInclude Include="..\AOTH\Login.h">
       <Filter>AOTH</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Entity\Base.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Entity\User.h">
+      <Filter>Entity</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
