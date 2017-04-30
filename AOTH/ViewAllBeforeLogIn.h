@@ -28,9 +28,10 @@ void viewAllBeforeLogin()
 				}
 
 				counterPrintedRubrics++;
-
+				cout <<"user: "<< obj.getEmail() << endl;
+				cout << "\n";
 				cout << obj;
-
+				
 			}
 
 		}

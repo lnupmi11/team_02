@@ -12,6 +12,7 @@ void DTOAdvertisement::saveAdvertisement(User& obj)
 	cin>>advertisement;
 	ofstream saveAdv("advertisements.txt", ios_base::app);
 	advertisement.setId(obj.getId());
+	advertisement.setEmail(obj.getEmail());
 	saveAdv << "\n";
 	saveAdv << advertisement.getTitle();
 	saveAdv << "\n";
@@ -22,6 +23,8 @@ void DTOAdvertisement::saveAdvertisement(User& obj)
 	saveAdv << advertisement.getId();
 	saveAdv << "\n";
 	saveAdv << advertisement.getRubric();
+	saveAdv << "\n";
+	saveAdv << advertisement.getEmail();
 	saveAdv.close();
 }
 
@@ -47,17 +50,17 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdv)
 
 			if (lineNumber != 0)
 			{
-				if (lineNumber % 5 == 1)
+				if (lineNumber % 6 == 1)
 				{
 					obj.setTitle(lineOfFile);
 
 				}
-				if (lineNumber % 5 == 2)
+				if (lineNumber % 6 == 2)
 				{
 					obj.setMainText(lineOfFile);
 				}
 
-				if (lineNumber % 5 == 3)
+				if (lineNumber % 6 == 3)
 				{
 					if (lineOfFile == "1")
 					{
@@ -68,13 +71,17 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdv)
 						obj.setStatus(0);
 					}
 				}
-				if (lineNumber % 5 == 4)
+				if (lineNumber % 6 == 4)
 				{
 					obj.setId(lineOfFile);
 				}
-				if (lineNumber % 5 == 0)
+				if (lineNumber % 6 == 5)
 				{
 					obj.setRubric(lineOfFile);
+				}
+				if (lineNumber % 6 == 0)
+				{
+					obj.setEmail(lineOfFile);
 					allAdv.push_back(obj);
 				}
 			}
