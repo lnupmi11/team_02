@@ -12,7 +12,7 @@ void viewAllBeforeLogin()
 	vector<string> rubrics(5);
 	rubrics = getRubrics();
 
-	for (int i = 0;i < 5;i++)
+	for (int i = 0; i < 5; i++)
 	{
 		int counterPrintedRubrics = 0;
 		for (Advertisement obj : vectWithAllInformation)

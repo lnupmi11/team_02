@@ -13,6 +13,13 @@ User::User(string email, string password)
 	this->password = password;
 }
 
+User::User(const User& obj)
+{
+	this->email = obj.email;
+	this->password = obj.password;
+	this->id = obj.id;
+}
+
 
 string User::getEmail()
 {

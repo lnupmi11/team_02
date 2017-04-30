@@ -35,7 +35,7 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdv)
 	}
 	else 
 	{
-		string s;
+		string lineOfFile;
 		int lineNumber;
 		lineNumber = 0;
 
@@ -43,23 +43,23 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdv)
 
 		while (!advertisement.eof())
 		{
-			getline(advertisement, s);
+			getline(advertisement, lineOfFile);
 
 			if (lineNumber != 0)
 			{
 				if (lineNumber % 5 == 1)
 				{
-					obj.setTitle(s);
+					obj.setTitle(lineOfFile);
 
 				}
 				if (lineNumber % 5 == 2)
 				{
-					obj.setMainText(s);
+					obj.setMainText(lineOfFile);
 				}
 
 				if (lineNumber % 5 == 3)
 				{
-					if (s == "1")
+					if (lineOfFile == "1")
 					{
 						obj.setStatus(1);
 					}
@@ -70,11 +70,11 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdv)
 				}
 				if (lineNumber % 5 == 4)
 				{
-					obj.setId(s);
+					obj.setId(lineOfFile);
 				}
 				if (lineNumber % 5 == 0)
 				{
-					obj.setRubric(s);
+					obj.setRubric(lineOfFile);
 					allAdv.push_back(obj);
 				}
 			}

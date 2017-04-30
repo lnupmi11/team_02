@@ -17,7 +17,7 @@ bool DTOUser::ifExist(User myUser)
 		bool ifExist;
 		ifExist = false;
 
-		string s;
+		string lineOfFile;
 		int lineNumber;
 		lineNumber = 0;
 		int vectorIterator;
@@ -27,21 +27,21 @@ bool DTOUser::ifExist(User myUser)
 
 		while (!emailAndPass.eof())
 		{
-			getline(emailAndPass, s);
+			getline(emailAndPass, lineOfFile);
 
 			if (lineNumber != 0)
 			{
 				if (lineNumber % 3 ==1)
 				{
-					obj.setEmail(s);
+					obj.setEmail(lineOfFile);
 				}
 				if (lineNumber % 3 == 2)
 				{
-					obj.setPassword(s);
+					obj.setPassword(lineOfFile);
 				}
 				else
 				{
-					obj.setId(s);
+					obj.setId(lineOfFile);
 				}
 
 				if (lineNumber % 3 == 0)
@@ -73,8 +73,7 @@ bool DTOUser::ifExist(User myUser)
 			cout << "Enter another email and password \n";
 			cin >> user;
 		}
-		string s;
-
+		
 		ofstream saveInfo("users.txt", ios_base::app);
 
 		if (!saveInfo.is_open())

@@ -1,6 +1,6 @@
 #pragma once
-#include"../Entity/Base.h"
-#include<ctime>
+#include "../Entity/Base.h"
+#include <ctime>
 
 Base::Base()
 {

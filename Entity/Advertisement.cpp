@@ -1,5 +1,5 @@
 #pragma once
-#include"../Entity/Advertisement.h" 
+#include "../Entity/Advertisement.h" 
 #include <vector>
 
 Advertisement::Advertisement()
@@ -18,7 +18,7 @@ Advertisement::Advertisement(string title, string mainText, bool status , string
 	this->rubric = rubric;
 }
 
-Advertisement::Advertisement(const Advertisement&x)
+Advertisement::Advertisement(const Advertisement& x)
 {
 	this->title = x.title;
 	this->mainText = x.mainText;
@@ -77,7 +77,7 @@ void Advertisement::setRubric(string rubric)
 	this->rubric = rubric;
 }
 
-istream &operator >> (istream &cin, Advertisement &advert)
+istream& operator >> (istream& cin, Advertisement& advert)
 {
 	cout << " \t\t\t Welcome! \n" << "\t Here you can create an advertisement \n ";
 	cout << "enter title: \n";
@@ -101,7 +101,7 @@ istream &operator >> (istream &cin, Advertisement &advert)
 
 	
 	cout << "Choose the rubric for your advertisement(enter number) :\n";
-	for (int i = 0;i < 5;i++)
+	for (int i = 0; i < 5; i++)
 	{
 		cout <<i + 1<< " - " << allRubrics[i] << "\n";
 	}
@@ -171,7 +171,7 @@ istream &operator >> (istream &cin, Advertisement &advert)
 	return cin;
 }
 
-ostream &operator << (ostream& cout, Advertisement& advert)
+ostream& operator << (ostream& cout, Advertisement& advert)
 {
 	cout << "\t\t " << advert.title << "\n";
 	cout << advert.mainText << "\n";
