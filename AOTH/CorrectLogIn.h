@@ -1,6 +1,10 @@
 #pragma once
+#include "../Utils/HelperFunctions.h"
 
-void correctLogIn(User user)
+#include "Edit.h"
+
+using namespace std;
+void correctLogin(User user)
 {
 	system("cls");
 
@@ -13,46 +17,93 @@ void correctLogIn(User user)
 
 	char action;
 	cin >> action;
+	vector<Advertisement> advertOfThisUser;
+	advertOfThisUser = DTOAdvertisement::getAllAdvOfThis(user);
 
-	bool checkCorrectInput = false;
-
-	while (!checkCorrectInput)
+	switch (action)
 	{
-		switch (action)
-		{
 		case '1':
 		{
-			checkCorrectInput = true;
-			// here we nned to call function which will open all advertisement  of this user with status 1	
-			system("cls");				
-		
+			system("cls");
+
+			if (advertOfThisUser.size() == 0)
+			{
+				cout << "You have no advertisements yet .\n";
+				cout << "\nIf you want to create new advertisement , select this option in menu of your profile .\n ";
+
+				system("pause>>null");
+			}
+			else
+			{
+				vector<string> rubrics1(5);
+				rubrics1 = getRubrics();
+
+				for (int i = 0;i < 5;i++)
+				{
+					int counterPrintedRubrics = 0;
+					for (size_t j = 0; j < advertOfThisUser.size(); j++)
+					{
+						if (advertOfThisUser[j].getRubric() == rubrics1[i])
+						{
+							if (counterPrintedRubrics == 0)
+							{
+								cout << "\n*********************************************************************\n";
+
+								cout << "\nRubric:  ";
+								cout << advertOfThisUser[j].getRubric() << "\n\n";
+							}
+
+							counterPrintedRubrics++;
+
+							cout << advertOfThisUser[j];
+						}
+					}
+				}
+
+				system("pause>>null");
+			}
+			correctLogin(user);
 			break;
 		}
 		case '2':
 		{
-			checkCorrectInput = true;
-			putAdvertisementInformationIntoTxtFile(user);// this part is work
-		
+	
+			system("cls");
+			DTOAdvertisement::saveAdvertisement(user);
+			correctLogin(user);
 			break;
+	
 		}
 		case '3':
 		{
-			checkCorrectInput = true;
-			
-			// here we need to edit advertisement  of this user with status 0
+			system("cls");
+
+			vector<Advertisement> advWith0;
+			advWith0 = leaveAdvWithStatus(advertOfThisUser, 0);
+
+			if (advWith0.size() == 0)
+			{
+				cout << "You have no advertisements to edit. \n" ;
+				system("pause>null");
+			}
+			else
+			{
+				editAdvertisement(advWith0);
+			}
+
+			correctLogin(user);
 			break;
+
 
 		}
 		case '4':
 		{
-			checkCorrectInput = true;
 			break;
 		}
 		default:
 		{
-			cout << "enter action (1,2,3) : ";
+			cout << "Enter action (1,2,3) : ";
 			cin >> action;
-		}
 		}
 	}
 

@@ -1,25 +1,17 @@
-#include <iostream>
 #include <fstream> 
-#include<vector>
-#include<string>
-
+#include <vector>
+#include <string>
 using namespace std;
 
-#include"../Entity/User.h"
-
-#include"../DTO/DTOUser.h"
-
-#include"../Entity/Advertisement.h"
-
-#include"../DTO/DTOAdvertisement.h"
-
-#include"../AOTH/CorrectLogIn.h"
-
-#include"../AOTH/ViewAllBeforeLogIn.h"
-
-#include"../AOTH/LogIn.h"
-
-#include"../Utils/MainMenu.h"
+#include "../Entity/User.h"
+#include "../DTO/DTOUser.h"
+#include "../Entity/Advertisement.h"
+#include "../DTO/DTOAdvertisement.h"
+#include "../AOTH/CorrectLogin.h"
+#include "../AOTH/ViewAllBeforeLogin.h"
+#include "../AOTH/Login.h"
+#include "../Utils/HelperFunctions.h"
+#include "../Utils/MainMenu.h"
 
 int main()
 {

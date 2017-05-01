@@ -1,19 +1,45 @@
 #pragma once
-void viewAllBeforeLogIn()
+
+
+void viewAllBeforeLogin()
 {
 	system("cls");
 	cout << "\t\tHere you can find all available advertisement \n";
 	vector<Advertisement> vectWithAllInformation;
-	getAllAdvertisementWith1FromFile(vectWithAllInformation);
 
-	for (Advertisement obj : vectWithAllInformation)
+	DTOAdvertisement::getAllAdv(vectWithAllInformation);
+
+	vector<string> rubrics(5);
+	rubrics = getRubrics();
+
+	for (int i = 0; i < 5; i++)
 	{
-		print(obj);
+		int counterPrintedRubrics = 0;
+		for (Advertisement obj : vectWithAllInformation)
+		{
+			if (obj.getRubric() == rubrics[i])
+			{
+				if (counterPrintedRubrics == 0)
+				{
+					cout << "\n*********************************************************************\n";
+
+					cout << "\nRubric:  ";
+					cout << obj.getRubric() << "\n\n";
+				}
+
+				counterPrintedRubrics++;
+				cout <<"user: "<< obj.getEmail() << endl;
+				cout << "\n";
+				cout << obj;
+				
+			}
+
+		}
 	}
 	cout << "\n*********************************************************************\n";
 	cout << "\n " << "\t\tPress any key to back to main menu ....";
 	system("pause>>null");
-	
+
 
 
 

@@ -34,3 +34,6 @@
 /.vs/Lnu/v14
 *.vs/Lnu/v14
 *.vs
+/Debug
+/Lnu/Debug
+/Lnu/null

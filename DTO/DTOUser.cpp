@@ -1,55 +1,60 @@
 #include <fstream> 
-#include<vector>
-#include<string>
-
-#include"../Entity/User.h"
-#include"../DTO/DTOUser.h"
+#include <vector>
+#include <string>
+#include "../Entity/User.h"
+#include "../DTO/DTOUser.h"
 
 bool DTOUser::ifExist(User myUser)
 {
-	
-	ifstream emailAndPassword("user password and email.txt", ios_base::in);
-	if (!emailAndPassword.is_open())
+	ifstream emailAndPass("users.txt", ios_base::in);
+	if (!emailAndPass.is_open())
 	{
 		return false;
 	}
 	else 
 	{
-		vector<User> passAndEmailOfAllUsers;
-		bool ifExist = false;
+		vector<User> usersPassAndEmails;
+		bool ifExist;
+		ifExist = false;
 
-		string s;
-		int lineNumber = 0;
-		int vectorIterator = 0;
+		string lineOfFile;
+		int lineNumber;
+		lineNumber = 0;
+		int vectorIterator;
+		vectorIterator = 0;
 		
 		User obj; 
 
-		while (!emailAndPassword.eof())
+		while (!emailAndPass.eof())
 		{
-			getline(emailAndPassword, s);
+			getline(emailAndPass, lineOfFile);
 
 			if (lineNumber != 0)
 			{
-				if (lineNumber % 2 != 0)
+				if (lineNumber % 3 ==1)
 				{
-					obj.setEmail(s);
+					obj.setEmail(lineOfFile);
+				}
+				if (lineNumber % 3 == 2)
+				{
+					obj.setPassword(lineOfFile);
 				}
 				else
 				{
-					obj.setPassword(s);
+					obj.setId(lineOfFile);
 				}
 
-				if (lineNumber % 2 == 0)
+				if (lineNumber % 3 == 0)
 				{
-					passAndEmailOfAllUsers.push_back(obj);
+					usersPassAndEmails.push_back(obj);
 				}
 
 			}
 			lineNumber++;
 		}
-		for (int i = 0; i < passAndEmailOfAllUsers.size(); i++)
+		for (size_t i = 0; i < usersPassAndEmails.size(); i++)
 		{
-			if (myUser.getEmail() == passAndEmailOfAllUsers[i].getEmail())
+			if (myUser.getEmail() == usersPassAndEmails[i].getEmail())
 			{
 				ifExist = true;
 				break;
@@ -68,67 +73,74 @@ bool DTOUser::ifExist(User myUser)
 			cout << "Enter another email and password \n";
 			cin >> user;
 		}
-		string s;
+		
+		ofstream saveInfo("users.txt", ios_base::app);
 
-		ofstream putInformationIntoFile("user password and email.txt", ios_base::app);
-
-		if (!putInformationIntoFile.is_open())
+		if (!saveInfo.is_open())
 		{
 			cout << "problems with RegistrationAtOurSystem.h";
 		}
-		else {
-			putInformationIntoFile << "\n";
-			putInformationIntoFile << user.getEmail();
-			putInformationIntoFile << "\n";
-			putInformationIntoFile << user.getPassword();
+		else
+		{
+			user.setId(user.generateId());
+			saveInfo << "\n";
+			saveInfo << user.getEmail();
+			saveInfo << "\n";
+			saveInfo << user.getPassword();
+			saveInfo << "\n";
+			saveInfo << user.getId();
 		}
-		putInformationIntoFile.close();
+		saveInfo.close();
 }
 
 
 vector<User> DTOUser::getAllUsers()
 {
-
-	vector<User> passAndEmailOfAllUsers;
-	ifstream emailAndPassword;
+	vector<User> users;
+	ifstream emailAndPass;
 	
-	emailAndPassword.open("../Lnu/user password and email.txt");
-	if (!emailAndPassword.is_open())
+	emailAndPass.open("../Lnu/users.txt");
+	if (!emailAndPass.is_open())
 	{
-		cout << "\tData base is empty ...";	
-		
-		return passAndEmailOfAllUsers;
-
+		cout << "\tData base is empty ...";		
+		return users;
 	}
-	else {
+	else 
+	{
 		string s;
-		int lineNumber = 0;
-		int vectorIterator = 0;
+		int lineNumber;
+		lineNumber = 0;
+		int vectorIterator;
+		vectorIterator = 0;
 
 		User obj;
 
-		while (!emailAndPassword.eof())
+		while (!emailAndPass.eof())
 		{
-			getline(emailAndPassword, s);
+			getline(emailAndPass, s);
 
 			if (lineNumber != 0)
 			{
-				if (lineNumber % 2 != 0)
+				if (lineNumber % 3 == 1)
 				{
 					obj.setEmail(s);
 				}
-				else
+				if (lineNumber % 3 == 2)
 				{
 					obj.setPassword(s);
 				}
-
-				if (lineNumber % 2 == 0)
+				else
 				{
-					passAndEmailOfAllUsers.push_back(obj);
+					obj.setId(s);
+				}
+
+				if (lineNumber % 3 == 0)
+				{
+					users.push_back(obj);
 				}
 			}
 			lineNumber++;
 		}
-		return passAndEmailOfAllUsers;
+		return users;
 	}
 }

@@ -65,19 +65,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\DTO\DTOAdvertisement.cpp" />
     <ClCompile Include="..\DTO\DTOUser.cpp" />
     <ClCompile Include="..\Entity\Advertisement.cpp" />
+    <ClCompile Include="..\Entity\Base.cpp" />
     <ClCompile Include="..\Entity\User.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\AOTH\CorrectLogIn.h" />
-    <ClInclude Include="..\AOTH\LogIn.h" />
-    <ClInclude Include="..\AOTH\ViewAllBeforeLogIn.h" />
+    <ClInclude Include="..\AOTH\CorrectLogin.h" />
+    <ClInclude Include="..\AOTH\Edit.h" />
+    <ClInclude Include="..\AOTH\Login.h" />
+    <ClInclude Include="..\AOTH\ViewAllBeforeLogin.h" />
     <ClInclude Include="..\DTO\DTOAdvertisement.h" />
     <ClInclude Include="..\DTO\DTOUser.h" />
     <ClInclude Include="..\Entity\Advertisement.h" />
+    <ClInclude Include="..\Entity\Base.h" />
     <ClInclude Include="..\Entity\User.h" />
+    <ClInclude Include="..\Utils\HelperFunctions.h" />
     <ClInclude Include="..\Utils\MainMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

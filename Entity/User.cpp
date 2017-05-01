@@ -1,6 +1,5 @@
 #pragma once
-
-#include"../Entity/User.h"
+#include "../Entity/User.h"
 
 User::User()
 {
@@ -12,7 +11,13 @@ User::User(string email, string password)
 {
 	this->email = email;
 	this->password = password;
+}
 
+User::User(const User& obj)
+{
+	this->email = obj.email;
+	this->password = obj.password;
+	this->id = obj.id;
 }
 
 
@@ -36,30 +41,38 @@ void User::setPassword(string s)
 	this->password = s;
 }
 
+void User::setId(string id)
+{
+	this->id = id;
+}
+
+string User::getId()
+{
+	return this->id;
+}
+
 void User::input()
 {
-	cout << "email : ";
+	cout << "Email : ";
 	cin >> email;
-	cout << "password : ";
+	cout << "Password : ";
 	cin >> password;
 }
- istream &operator>>(istream &is, User &user)
+ istream& operator>>(istream& is, User& user)
 {
-	 cout << "email : ";
+	 cout << "Email : ";
 	 is >> user.email;
-	 cout << "password : ";
+	 cout << "Password : ";
 	 is >> user.password;
-
 	 return is;
 }
 
  ostream& operator<< (ostream& os,  User& user)
  {
-	 os << "email : ";
+	 os << "Email : ";
 	 os << user.email;
-	 os << "password : ";
+	 os << "Password : ";
 	 os << user.password;
-	
 	 return os;
  }
 
