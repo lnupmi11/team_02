@@ -12,6 +12,7 @@ bool checkIfCorrect(User& user)
 		if (usersPassAndEmails[i].getEmail() == user.getEmail() && usersPassAndEmails[i].getPassword() == user.getPassword() )
 		{
 			IsLogPassCorrect = true;
+			user = User(user.getEmail(), user.getPassword(), usersPassAndEmails[i].getId());
 			break;
 		}
 	}

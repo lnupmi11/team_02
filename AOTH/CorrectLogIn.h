@@ -4,7 +4,7 @@
 #include "Edit.h"
 #include"../Utils/EnumWithRubrics.h"
 using namespace std;
-void correctLogin(User user)
+void correctLogin(User& user)
 {
 	system("cls");
 

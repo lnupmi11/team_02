@@ -4,7 +4,7 @@
 #include "../Entity/User.h"
 #include "../DTO/DTOUser.h"
 
-bool DTOUser::ifExist(User myUser)
+bool DTOUser::ifExist(User& myUser)
 {
 	ifstream emailAndPass("users.txt", ios_base::in);
 	if (!emailAndPass.is_open())

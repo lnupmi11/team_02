@@ -10,6 +10,7 @@ private:
 public:
 	User();
 	User(string email, string password);
+	User(string email, string password,string id);
 	User(const User& obj);
 	void input();
 	string getEmail();

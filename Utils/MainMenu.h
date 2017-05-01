@@ -27,11 +27,12 @@ void mainMenu()
 			case '2':
 			{
 				system("cls");
-				cout << " \t\t\t Log in "<<endl;
+				cout << " \t\t\t Log in "<<"\n";
 				User user;
-				cin >> user;
+				cin >> user;//
 				if (checkIfCorrect(user))
 				{
+					
 					correctLogin(user);
 					mainMenu();
 				}
