@@ -82,6 +82,7 @@
     <ClInclude Include="..\Entity\Advertisement.h" />
     <ClInclude Include="..\Entity\Base.h" />
     <ClInclude Include="..\Entity\User.h" />
+    <ClInclude Include="..\Utils\EnumWithRubrics.h" />
     <ClInclude Include="..\Utils\HelperFunctions.h" />
     <ClInclude Include="..\Utils\MainMenu.h" />
   </ItemGroup>

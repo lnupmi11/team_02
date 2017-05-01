@@ -76,5 +76,8 @@
     <ClInclude Include="..\Entity\User.h">
       <Filter>Entity</Filter>
     </ClInclude>
+    <ClInclude Include="..\Utils\EnumWithRubrics.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -23,7 +23,6 @@ void mainMenu()
 				cout << " \n \t Registration successfully completed ! Press any key to continue.\n";		
 				system("pause>>null");
 				mainMenu();
-
 			}
 			case '2':
 			{

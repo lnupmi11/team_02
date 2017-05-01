@@ -2,7 +2,7 @@
 #include "../Utils/HelperFunctions.h"
 
 #include "Edit.h"
-
+#include"../Utils/EnumWithRubrics.h"
 using namespace std;
 void correctLogin(User user)
 {
@@ -30,20 +30,16 @@ void correctLogin(User user)
 			{
 				cout << "You have no advertisements yet .\n";
 				cout << "\nIf you want to create new advertisement , select this option in menu of your profile .\n ";
-
 				system("pause>>null");
 			}
 			else
 			{
-				vector<string> rubrics1(5);
-				rubrics1 = getRubrics();
-
 				for (int i = 0;i < 5;i++)
 				{
 					int counterPrintedRubrics = 0;
 					for (size_t j = 0; j < advertOfThisUser.size(); j++)
 					{
-						if (advertOfThisUser[j].getRubric() == rubrics1[i])
+						if (advertOfThisUser[j].getRubric() == getRubric(i) )// rubrics1[i])
 						{
 							if (counterPrintedRubrics == 0)
 							{
@@ -52,14 +48,12 @@ void correctLogin(User user)
 								cout << "\nRubric:  ";
 								cout << advertOfThisUser[j].getRubric() << "\n\n";
 							}
-
 							counterPrintedRubrics++;
 
 							cout << advertOfThisUser[j];
 						}
 					}
 				}
-
 				system("pause>>null");
 			}
 			correctLogin(user);
@@ -67,12 +61,10 @@ void correctLogin(User user)
 		}
 		case '2':
 		{
-	
 			system("cls");
 			DTOAdvertisement::saveAdvertisement(user);
 			correctLogin(user);
 			break;
-	
 		}
 		case '3':
 		{
@@ -90,11 +82,8 @@ void correctLogin(User user)
 			{
 				editAdvertisement(advWith0);
 			}
-
 			correctLogin(user);
 			break;
-
-
 		}
 		case '4':
 		{

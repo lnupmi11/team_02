@@ -1,7 +1,7 @@
 #pragma once
 #include "../Entity/Advertisement.h" 
 #include <vector>
-
+#include"../Utils/EnumWithRubrics.h"
 Advertisement::Advertisement()
 {
 	this->title = "";
@@ -104,48 +104,40 @@ istream& operator >> (istream& cin, Advertisement& advert)
 	_flushall();
 	getline(cin, advert.mainText);
 
-
-	vector<string> allRubrics(5);
-	allRubrics[0] = "For sale";
-	allRubrics[1] = "Want to buy";
-	allRubrics[2] = "Something disappeared";
-	allRubrics[3] = "Meetings";
-	allRubrics[4] = "Advertising";
-
-	
 	cout << "Choose the rubric for your advertisement(enter number) :\n";
 	for (int i = 0; i < 5; i++)
 	{
-		cout <<i + 1<< " - " << allRubrics[i] << "\n";
+		cout <<i + 1<< " - " <<  getRubric(i) << "\n";
 	}
 
-	char action0;
+	int action0 ;
 	cin >> action0;
+
 	switch (action0)
 	{
-	case '1':
+	case ForSale:
 	{
-		advert.setRubric(allRubrics[0]);
+		advert.setRubric(getRubric( ForSale));
 		break;
 	}
-	case '2':
+	case WantToBuy:
 	{
-		advert.setRubric(allRubrics[1]);
+		advert.setRubric(getRubric(WantToBuy) );
 		break;
 	}
-	case '3':
+	case SomethingDisappeared:
 	{
-		advert.setRubric(allRubrics[2]);
+		advert.setRubric(getRubric(SomethingDisappeared));
 		break;
 	}
-	case '4':
+	case Meetings:
 	{
-		advert.setRubric(allRubrics[3]);
+		advert.setRubric(getRubric(Meetings));
 		break;
 	}
-	case '5':
+	case Advertising:
 	{
-		advert.setRubric(allRubrics[4]);
+		advert.setRubric(getRubric(Advertising));
 		break;
 	}
 	default:

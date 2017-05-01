@@ -15,15 +15,3 @@ vector<Advertisement> leaveAdvWithStatus(vector<Advertisement>& vect, bool statT
 	}
 	return vect;
 }
-
-vector<string> getRubrics()
-{
-	vector<string> vectRubrics(5);
-	vectRubrics[0] = "For sale";
-	vectRubrics[1] = "Want to buy";
-	vectRubrics[2] = "Something disappeared";
-	vectRubrics[3] = "Meetings";
-	vectRubrics[4] = "Advertising";
-
-	return vectRubrics;
-}

@@ -1,6 +1,5 @@
 #pragma once
 
-
 void viewAllBeforeLogin()
 {
 	system("cls");
@@ -9,15 +8,12 @@ void viewAllBeforeLogin()
 
 	DTOAdvertisement::getAllAdv(vectWithAllInformation);
 
-	vector<string> rubrics(5);
-	rubrics = getRubrics();
-
 	for (int i = 0; i < 5; i++)
 	{
 		int counterPrintedRubrics = 0;
 		for (Advertisement obj : vectWithAllInformation)
 		{
-			if (obj.getRubric() == rubrics[i])
+			if (obj.getRubric() == getRubric(i) )
 			{
 				if (counterPrintedRubrics == 0)
 				{
@@ -26,21 +22,15 @@ void viewAllBeforeLogin()
 					cout << "\nRubric:  ";
 					cout << obj.getRubric() << "\n\n";
 				}
-
 				counterPrintedRubrics++;
 				cout <<"user: "<< obj.getEmail() << endl;
 				cout << "\n";
-				cout << obj;
-				
+				cout << obj;	
 			}
-
 		}
 	}
 	cout << "\n*********************************************************************\n";
 	cout << "\n " << "\t\tPress any key to back to main menu ....";
 	system("pause>>null");
-
-
-
 
 }
