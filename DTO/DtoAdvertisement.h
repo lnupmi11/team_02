@@ -8,7 +8,7 @@ public:
 
 	static void getAllAdv(vector<Advertisement>& allAdvWithStatus1);
    
-	static vector<Advertisement> getAllAdvOfThis(User user);
+	static vector<Advertisement> getAllAdvert(User user);
 
 	static void editAdvertisement(string oldLine , string newLine , string mainText);
 };

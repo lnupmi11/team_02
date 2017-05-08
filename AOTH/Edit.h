@@ -37,7 +37,7 @@ void editAdvertisement(vector<Advertisement>& vect )
 	case'1':
 	{
 		system("cls");
-		
+
 		string oldTitle;
 		string newTitle;
 		oldTitle = vect[number - 1].getTitle();

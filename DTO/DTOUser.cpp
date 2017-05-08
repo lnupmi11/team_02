@@ -62,6 +62,7 @@ bool DTOUser::ifExist(User& myUser)
 		}
 		return ifExist;
 	}
+	emailAndPass.close();
 	return 0;
 }
 
@@ -143,4 +144,5 @@ vector<User> DTOUser::getAllUsers()
 		}
 		return users;
 	}
+	emailAndPass.close();
 }

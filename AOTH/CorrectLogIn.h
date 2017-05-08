@@ -17,8 +17,8 @@ void correctLogin(User& user)
 
 	char action;
 	cin >> action;
-	vector<Advertisement> advertOfThisUser;
-	advertOfThisUser = DTOAdvertisement::getAllAdvOfThis(user);
+	vector<Advertisement> advertOfUser;
+	advertOfUser = DTOAdvertisement::getAllAdvert(user);
 
 	switch (action)
 	{
@@ -26,7 +26,7 @@ void correctLogin(User& user)
 		{
 			system("cls");
 
-			if (advertOfThisUser.size() == 0)
+			if (advertOfUser.size() == 0)
 			{
 				cout << "You have no advertisements yet .\n";
 				cout << "\nIf you want to create new advertisement , select this option in menu of your profile .\n ";
@@ -37,20 +37,20 @@ void correctLogin(User& user)
 				for (int i = 0;i < 5;i++)
 				{
 					int counterPrintedRubrics = 0;
-					for (size_t j = 0; j < advertOfThisUser.size(); j++)
+					for (size_t j = 0; j < advertOfUser.size(); j++)
 					{
-						if (advertOfThisUser[j].getRubric() == getRubric(i) )// rubrics1[i])
+						if (advertOfUser[j].getRubric() == getRubric(i) )// rubrics1[i])
 						{
 							if (counterPrintedRubrics == 0)
 							{
 								cout << "\n*********************************************************************\n";
 
 								cout << "\nRubric:  ";
-								cout << advertOfThisUser[j].getRubric() << "\n\n";
+								cout << advertOfUser[j].getRubric() << "\n\n";
 							}
 							counterPrintedRubrics++;
 
-							cout << advertOfThisUser[j];
+							cout << advertOfUser[j];
 						}
 					}
 				}
@@ -71,7 +71,7 @@ void correctLogin(User& user)
 			system("cls");
 
 			vector<Advertisement> advWith0;
-			advWith0 = leaveAdvWithStatus(advertOfThisUser, 0);
+			advWith0 = leaveAdvWithStatus(advertOfUser, 0);
 
 			if (advWith0.size() == 0)
 			{

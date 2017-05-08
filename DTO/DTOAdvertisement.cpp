@@ -88,9 +88,10 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdv)
 			lineNumber++;
 		}
 	}
+	advertisement.close();
 }
 
-vector<Advertisement> DTOAdvertisement::getAllAdvOfThis(User user)
+vector<Advertisement> DTOAdvertisement::getAllAdvert(User user)
 {
 	vector<Advertisement> vect;
 

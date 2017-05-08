@@ -11,25 +11,25 @@ void viewAllBeforeLogin()
 	for (int i = 0; i < 5; i++)
 	{
 		int counterPrintedRubrics = 0;
-		for (Advertisement obj : vectWithAllInformation)
+		for (int j = 0; j < vectWithAllInformation.size(); j++)
 		{
-			if (obj.getRubric() == getRubric(i) )
+			if (vectWithAllInformation[j].getRubric() == getRubric(i) )
 			{
 				if (counterPrintedRubrics == 0)
 				{
-					cout << "\n*********************************************************************\n";
+					cout << "\n********************************************************************\n";
 
 					cout << "\nRubric:  ";
-					cout << obj.getRubric() << "\n\n";
+					cout << vectWithAllInformation[j].getRubric() << "\n\n";
 				}
 				counterPrintedRubrics++;
-				cout <<"user: "<< obj.getEmail() << endl;
+				cout <<"user: "<< vectWithAllInformation[j].getEmail() << endl;
 				cout << "\n";
-				cout << obj;	
+				cout << vectWithAllInformation[j];
 			}
 		}
 	}
-	cout << "\n*********************************************************************\n";
+	cout << "\n********************************************************************\n";
 	cout << "\n " << "\t\tPress any key to back to main menu ....";
 	system("pause>>null");
 
