@@ -28,7 +28,7 @@ void DTOAdvertisement::saveAdvertisement(User& obj)
 	saveAdv << advertisement.getRubric();
 	saveAdv << "\n";
 	saveAdv << advertisement.getTime();
-	saveAdv << "\n";
+	//saveAdv << "\n";
 	saveAdv << advertisement.getEmail();
 	
 	saveAdv.close();

@@ -22,5 +22,14 @@ vector<Advertisement> HelperFunction::leaveAdvWithStatus(vector<Advertisement>& 
 
 string HelperFunction::timeOfCreating()
 {
-	return string();
+	char buffer[32];
+	time_t seconds;
+	seconds = time(NULL);
+	tm timeinfo;
+	localtime_s(&timeinfo, &seconds);
+	asctime_s(buffer, 32, &timeinfo);
+	string time;
+	time = (string)buffer;
+
+	return time;
 }
