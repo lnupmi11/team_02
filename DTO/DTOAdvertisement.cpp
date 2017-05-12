@@ -14,7 +14,7 @@ void DTOAdvertisement::saveAdvertisement(User& obj)
 	cin>>advertisement;
 	ofstream saveAdv("advertisements.txt", ios_base::app);
 	advertisement.setId(obj.getId());
-	advertisement.setTime(timeOfCreating());
+	advertisement.setTime(HelperFunction::timeOfCreating());
 	advertisement.setEmail(obj.getEmail());
 	saveAdv << "\n";
 	saveAdv << advertisement.getTitle();

@@ -11,7 +11,7 @@ void viewAllBeforeLogin()
 	for (int i = 0; i < 5; i++)
 	{
 		int counterPrintedRubrics = 0;
-		for (int j = 0; j < vectWithAllInformation.size(); j++)
+		for (size_t j = 0; j < vectWithAllInformation.size(); j++)
 		{
 			if (vectWithAllInformation[j].getRubric() == getRubric(i) )
 			{

@@ -1,8 +1,7 @@
 #pragma once
-#include "../Utils/HelperFunctions.h"
-
 #include "Edit.h"
 #include"../Utils/EnumWithRubrics.h"
+#include "../Utils/HelperFunctions.h"
 using namespace std;
 void correctLogin(User& user)
 {
@@ -71,7 +70,7 @@ void correctLogin(User& user)
 			system("cls");
 
 			vector<Advertisement> advWith0;
-			advWith0 = leaveAdvWithStatus(advertOfUser, 0);
+			advWith0 = HelperFunction::leaveAdvWithStatus(advertOfUser, 0);
 
 			if (advWith0.size() == 0)
 			{
