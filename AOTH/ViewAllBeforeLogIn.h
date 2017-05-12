@@ -23,9 +23,10 @@ void viewAllBeforeLogin()
 					cout << vectWithAllInformation[j].getRubric() << "\n\n";
 				}
 				counterPrintedRubrics++;
-				cout <<"user: "<< vectWithAllInformation[j].getEmail() << endl;
+				cout <<"User: "<< vectWithAllInformation[j].getEmail() << endl;
 				cout << "\n";
 				cout << vectWithAllInformation[j];
+				cout << "\n";
 			}
 		}
 	}

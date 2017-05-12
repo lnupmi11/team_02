@@ -194,9 +194,10 @@ istream& operator >> (istream& cin, Advertisement& advert)
 
 ostream& operator << (ostream& cout, Advertisement& advert)
 {
-	cout << "title: " << advert.title << "\n";
+	cout << "\t" << advert.title << "\n";
 	cout << "\n";
-	cout << advert.mainText << "\n";
+	cout << advert.mainText << "\n\n";
+	cout << advert.time << "\n";
 	cout << "\n_________________________________\n";
 	return cout;
 }
