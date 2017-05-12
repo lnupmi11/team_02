@@ -9,15 +9,19 @@ Advertisement::Advertisement()
 	this->status = 0;
 	this->rubric = "";
 	this->email = "";
+	this->time = "";
+
 }
 
-Advertisement::Advertisement(string title, string mainText, bool status , string rubric, string email)
+Advertisement::Advertisement(string title, string mainText, bool status , string rubric, string email, string time)
 {
 	this->title = title;
 	this->mainText = mainText;
 	this->status = status;
 	this->rubric = rubric;
 	this->email = email;
+	this->time = time;
+
 }
 
 Advertisement::Advertisement(const Advertisement& x)
@@ -28,6 +32,8 @@ Advertisement::Advertisement(const Advertisement& x)
 	this->id = x.id;
 	this->rubric = x.rubric;
 	this->email = x.email;
+	this->time = x.time;
+
 }
 
 string Advertisement::getTitle()
@@ -88,6 +94,16 @@ void Advertisement::setEmail(string email)
 string Advertisement::getEmail()
 {
 	return this->email;
+}
+
+void Advertisement::setTime(string time)
+{
+	this->time = time;
+
+}
+string Advertisement::getTime()
+{
+	return this->time;
 }
 
 istream& operator >> (istream& cin, Advertisement& advert)

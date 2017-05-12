@@ -1,4 +1,6 @@
 #pragma once
+#include <ctime>
+#include<string>
 
 vector<Advertisement> leaveAdvWithStatus(vector<Advertisement>& vect, bool statToLeave)
 {
@@ -14,4 +16,15 @@ vector<Advertisement> leaveAdvWithStatus(vector<Advertisement>& vect, bool statT
 			}
 	}
 	return vect;
+}
+
+static string timeOfCreating()
+{
+	char buffer[32];
+	time_t seconds = time(NULL);
+	tm timeinfo;
+	localtime_s(&timeinfo, &seconds);
+	asctime_s(buffer, 32, &timeinfo);
+	string time = (string)buffer;
+	return time;
 }
