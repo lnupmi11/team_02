@@ -1,11 +1,8 @@
 #ifndef HelperFunction_HEADER
 #define HelperFunction_HEADER
 
-#include <iostream>
 #include <ctime>
 #include<string>
-using namespace std;
-
 
 class HelperFunction
 {
