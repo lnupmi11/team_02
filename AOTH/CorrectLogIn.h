@@ -3,6 +3,8 @@
 #include"../Utils/EnumWithRubrics.h"
 #include "../Utils/HelperFunctions.h"
 using namespace std;
+
+
 void correctLogin(User& user)
 {
 	system("cls");
@@ -38,7 +40,7 @@ void correctLogin(User& user)
 					int counterPrintedRubrics = 0;
 					for (size_t j = 0; j < advertOfUser.size(); j++)
 					{
-						if (advertOfUser[j].getRubric() == getRubric(i) )// rubrics1[i])
+						if (advertOfUser[j].getRubric() == getRubric(i) )
 						{
 							if (counterPrintedRubrics == 0)
 							{

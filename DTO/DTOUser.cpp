@@ -1,12 +1,12 @@
 #include <fstream> 
 #include <vector>
-#include <string>
 #include "../Entity/User.h"
 #include "../DTO/DTOUser.h"
 
+
 bool DTOUser::ifExist(User& myUser)
 {
-	ifstream emailAndPass("users.txt", ios_base::in);
+	ifstream emailAndPass("Users.txt", ios_base::in);
 	if (!emailAndPass.is_open())
 	{
 		return false;
@@ -75,7 +75,7 @@ bool DTOUser::ifExist(User& myUser)
 			cin >> user;
 		}
 		
-		ofstream saveInfo("users.txt", ios_base::app);
+		ofstream saveInfo("Users.txt", ios_base::app);
 
 		if (!saveInfo.is_open())
 		{
@@ -100,7 +100,7 @@ vector<User> DTOUser::getAllUsers()
 	vector<User> users;
 	ifstream emailAndPass;
 	
-	emailAndPass.open("../Lnu/users.txt");
+	emailAndPass.open("../Lnu/Users.txt");
 	if (!emailAndPass.is_open())
 	{
 		cout << "\tData base is empty ...";		

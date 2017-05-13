@@ -1,6 +1,7 @@
 #include <iostream>
-using namespace std;
 #include "../Entity/Base.h"
+using namespace std;
+
 
 class User : public Base 
 {
