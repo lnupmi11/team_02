@@ -1,17 +1,18 @@
 #include <fstream> 
 #include <vector>
-#include <string>
-#include <cstdio>
 #include "../Entity/Advertisement.h"
 #include "../Entity/User.h"
 #include "../DTO/DTOAdvertisement.h"
+#include "../Utils/HelperFunctions.h"
+
 
 void DTOAdvertisement::saveAdvertisement(User& obj)
 {
 	Advertisement advertisement;
 	cin>>advertisement;
-	ofstream saveAdv("advertisements.txt", ios_base::app);
+	ofstream saveAdv("Advertisements.txt", ios_base::app);
 	advertisement.setId(obj.getId());
+	advertisement.setTime(HelperFunction::timeOfCreating());
 	advertisement.setEmail(obj.getEmail());
 	saveAdv << "\n";
 	saveAdv << advertisement.getTitle();
@@ -24,14 +25,16 @@ void DTOAdvertisement::saveAdvertisement(User& obj)
 	saveAdv << "\n";
 	saveAdv << advertisement.getRubric();
 	saveAdv << "\n";
+	saveAdv << advertisement.getTime();
 	saveAdv << advertisement.getEmail();
+	
 	saveAdv.close();
 }
 
 void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdv)
 {
 	ifstream advertisement;
-	advertisement.open("../Lnu/advertisements.txt");
+	advertisement.open("../Lnu/Advertisements.txt");
 	if (!advertisement.is_open())
 	{
 		cout << "\nData base is empty! ...";
@@ -50,17 +53,17 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdv)
 
 			if (lineNumber != 0)
 			{
-				if (lineNumber % 6 == 1)
+				if (lineNumber % 7 == 1)
 				{
 					obj.setTitle(lineOfFile);
 
 				}
-				if (lineNumber % 6 == 2)
+				if (lineNumber % 7 == 2)
 				{
 					obj.setMainText(lineOfFile);
 				}
 
-				if (lineNumber % 6 == 3)
+				if (lineNumber % 7 == 3)
 				{
 					if (lineOfFile == "1")
 					{
@@ -71,15 +74,19 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdv)
 						obj.setStatus(0);
 					}
 				}
-				if (lineNumber % 6 == 4)
+				if (lineNumber % 7 == 4)
 				{
 					obj.setId(lineOfFile);
 				}
-				if (lineNumber % 6 == 5)
+				if (lineNumber % 7 == 5)
 				{
 					obj.setRubric(lineOfFile);
 				}
-				if (lineNumber % 6 == 0)
+				if (lineNumber % 7 == 6)
+				{
+					obj.setTime(lineOfFile);
+				}
+				if (lineNumber % 7 == 0)
 				{
 					obj.setEmail(lineOfFile);
 					allAdv.push_back(obj);
@@ -112,13 +119,14 @@ vector<Advertisement> DTOAdvertisement::getAllAdvert(User user)
 		}
 		iterator++;
 	}
+
 	return vect;
 }
 
 void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine , string mainText)
 {
 	vector<string> vect;
-	ifstream fileStream("advertisements.txt" );
+	ifstream fileStream("Advertisements.txt" );
 	
 	if (!fileStream.is_open() )
 	{
@@ -159,7 +167,7 @@ void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine , stri
 		}
 	}
 		fileStream.close();
-		ofstream inFile("advertisements.txt" , ios_base::out | ios_base::trunc);
+		ofstream inFile("Advertisements.txt" , ios_base::out | ios_base::trunc);
 
 		size_t vectSize;
 		vectSize = vect.size();

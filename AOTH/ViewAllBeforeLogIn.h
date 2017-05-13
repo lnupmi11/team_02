@@ -1,5 +1,6 @@
 #pragma once
 
+
 void viewAllBeforeLogin()
 {
 	system("cls");
@@ -11,7 +12,7 @@ void viewAllBeforeLogin()
 	for (int i = 0; i < 5; i++)
 	{
 		int counterPrintedRubrics = 0;
-		for (int j = 0; j < vectWithAllInformation.size(); j++)
+		for (size_t j = 0; j < vectWithAllInformation.size(); j++)
 		{
 			if (vectWithAllInformation[j].getRubric() == getRubric(i) )
 			{
@@ -23,14 +24,14 @@ void viewAllBeforeLogin()
 					cout << vectWithAllInformation[j].getRubric() << "\n\n";
 				}
 				counterPrintedRubrics++;
-				cout <<"user: "<< vectWithAllInformation[j].getEmail() << endl;
+				cout <<"User: "<< vectWithAllInformation[j].getEmail() << endl;
 				cout << "\n";
 				cout << vectWithAllInformation[j];
+				cout << "\n";
 			}
 		}
 	}
 	cout << "\n********************************************************************\n";
 	cout << "\n " << "\t\tPress any key to back to main menu ....";
 	system("pause>>null");
-
 }

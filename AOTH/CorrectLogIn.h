@@ -1,9 +1,10 @@
 #pragma once
-#include "../Utils/HelperFunctions.h"
-
 #include "Edit.h"
 #include"../Utils/EnumWithRubrics.h"
+#include "../Utils/HelperFunctions.h"
 using namespace std;
+
+
 void correctLogin(User& user)
 {
 	system("cls");
@@ -39,7 +40,7 @@ void correctLogin(User& user)
 					int counterPrintedRubrics = 0;
 					for (size_t j = 0; j < advertOfUser.size(); j++)
 					{
-						if (advertOfUser[j].getRubric() == getRubric(i) )// rubrics1[i])
+						if (advertOfUser[j].getRubric() == getRubric(i) )
 						{
 							if (counterPrintedRubrics == 0)
 							{
@@ -71,7 +72,7 @@ void correctLogin(User& user)
 			system("cls");
 
 			vector<Advertisement> advWith0;
-			advWith0 = leaveAdvWithStatus(advertOfUser, 0);
+			advWith0 = HelperFunction::leaveAdvWithStatus(advertOfUser, 0);
 
 			if (advWith0.size() == 0)
 			{

@@ -1,7 +1,8 @@
 #pragma once
 #include "../Entity/Advertisement.h" 
-#include <vector>
 #include"../Utils/EnumWithRubrics.h"
+
+
 Advertisement::Advertisement()
 {
 	this->title = "";
@@ -9,15 +10,17 @@ Advertisement::Advertisement()
 	this->status = 0;
 	this->rubric = "";
 	this->email = "";
+	this->time = "";
 }
 
-Advertisement::Advertisement(string title, string mainText, bool status , string rubric, string email)
+Advertisement::Advertisement(string title, string mainText, bool status , string rubric, string email, string time)
 {
 	this->title = title;
 	this->mainText = mainText;
 	this->status = status;
 	this->rubric = rubric;
 	this->email = email;
+	this->time = time;
 }
 
 Advertisement::Advertisement(const Advertisement& x)
@@ -28,6 +31,7 @@ Advertisement::Advertisement(const Advertisement& x)
 	this->id = x.id;
 	this->rubric = x.rubric;
 	this->email = x.email;
+	this->time = x.time;
 }
 
 string Advertisement::getTitle()
@@ -85,9 +89,21 @@ void Advertisement::setEmail(string email)
 	this->email = email;
 
 }
+
 string Advertisement::getEmail()
 {
 	return this->email;
+}
+
+void Advertisement::setTime(string time)
+{
+	this->time = time;
+
+}
+
+string Advertisement::getTime()
+{
+	return this->time;
 }
 
 istream& operator >> (istream& cin, Advertisement& advert)
@@ -115,37 +131,36 @@ istream& operator >> (istream& cin, Advertisement& advert)
 
 	switch (action0)
 	{
-	case ForSale:
-	{
-		advert.setRubric(getRubric( ForSale));
+		case ForSale:
+		{
+			advert.setRubric(getRubric( ForSale));
+			break;
+		}
+		case WantToBuy:
+		{
+			advert.setRubric(getRubric(WantToBuy) );
+			break;
+		}
+		case SomethingDisappeared:
+		{
+			advert.setRubric(getRubric(SomethingDisappeared));
+			break;
+		}
+		case Meetings:
+		{
+			advert.setRubric(getRubric(Meetings));
+			break;
+		}
+		case Advertising:
+		{
+			advert.setRubric(getRubric(Advertising));
+			break;
+		}
+		default:
+		{
+			cout << "\n Enter correct number \n";
+		}
 		break;
-	}
-	case WantToBuy:
-	{
-		advert.setRubric(getRubric(WantToBuy) );
-		break;
-	}
-	case SomethingDisappeared:
-	{
-		advert.setRubric(getRubric(SomethingDisappeared));
-		break;
-	}
-	case Meetings:
-	{
-		advert.setRubric(getRubric(Meetings));
-		break;
-	}
-	case Advertising:
-	{
-		advert.setRubric(getRubric(Advertising));
-		break;
-	}
-	default:
-	{
-		cout << "\n Enter correct number \n";
-	}
-
-	break;
 	}
 
 	cout << "Do you want to save or send your advertisement to server? \n 1 - save ,  2 - send :\n";
@@ -155,22 +170,22 @@ istream& operator >> (istream& cin, Advertisement& advert)
 	cin >> action;
 	switch (action)
 	{
-	case '1':
-	{
-		advert.setStatus(0);
-		break;
-	}
-	case '2':
-	{
-		advert.setStatus(1);
-		break;
-	}
-	default:
-	{
-		cout << "\n You will be returned to previous page \n";
-	}
+		case '1':
+		{
+			advert.setStatus(0);
+			break;
+		}
+		case '2':
+		{
+			advert.setStatus(1);
+			break;
+		}
+		default:
+		{
+			cout << "\n You will be returned to previous page \n";
+		}
 
-	break;
+		break;
 	}
 
 	return cin;
@@ -178,9 +193,10 @@ istream& operator >> (istream& cin, Advertisement& advert)
 
 ostream& operator << (ostream& cout, Advertisement& advert)
 {
-	cout << "title: " << advert.title << "\n";
+	cout << "\t" << advert.title << "\n";
 	cout << "\n";
-	cout << advert.mainText << "\n";
+	cout << advert.mainText << "\n\n";
+	cout << advert.time << "\n";
 	cout << "\n_________________________________\n";
 	return cout;
 }

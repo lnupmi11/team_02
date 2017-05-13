@@ -1,8 +1,4 @@
-#include <fstream> 
 #include <vector>
-#include <string>
-using namespace std;
-
 #include "../Entity/User.h"
 #include "../DTO/DTOUser.h"
 #include "../Entity/Advertisement.h"

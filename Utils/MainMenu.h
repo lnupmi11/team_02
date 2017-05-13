@@ -1,4 +1,6 @@
 #pragma once
+
+
 void mainMenu()
 {
 	system("cls");
@@ -29,10 +31,9 @@ void mainMenu()
 				system("cls");
 				cout << " \t\t\t Log in "<<"\n";
 				User user;
-				cin >> user;//
+				cin >> user;
 				if (checkIfCorrect(user))
 				{
-					
 					correctLogin(user);
 					mainMenu();
 				}
@@ -59,6 +60,5 @@ void mainMenu()
 			{
 				cout << "Enter action (1,2,3,4) : ";
 			}
-
 		}
 }

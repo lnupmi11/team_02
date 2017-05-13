@@ -1,7 +1,7 @@
 #include <iostream>
+#include "Base.h"
 using namespace std;
 
-#include "Base.h"
 
 class Advertisement :public Base
 {
@@ -11,10 +11,11 @@ private:
 	bool status;
 	string rubric;
 	string email;
+	string time;
 
 public:
 	Advertisement();
-	Advertisement(string title, string mainText, bool status,  string rubric, string email);
+	Advertisement(string title, string mainText, bool status,  string rubric, string email, string time);
 	Advertisement(const Advertisement&x);
 	
 	string getTitle();
@@ -29,7 +30,8 @@ public:
 	string getRubric();
 	void setEmail(string email);
 	string getEmail();
-
+	string getTime();
+	void setTime(string time);
 
 	friend istream &operator >> (istream &cin, Advertisement &advert);
 	friend ostream &operator << (ostream &cout, Advertisement &advert);

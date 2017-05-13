@@ -41,6 +41,9 @@
     <ClCompile Include="..\Entity\Base.cpp">
       <Filter>Entity</Filter>
     </ClCompile>
+    <ClCompile Include="..\Utils\HelperFunctions.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Entity\Advertisement.h">

@@ -1,17 +1,14 @@
-#pragma once
+#ifndef HelperFunction_HEADER
+#define HelperFunction_HEADER
 
-vector<Advertisement> leaveAdvWithStatus(vector<Advertisement>& vect, bool statToLeave)
+#include <ctime>
+#include<string>
+
+class HelperFunction
 {
-	for (size_t i = 0; i < vect.size(); i++)
-	{
-			while (vect[i].getStatus() != statToLeave)
-			{
-				vect.erase(vect.begin() + i);
-				if (i == vect.size())
-				{
-					break;
-				}
-			}
-	}
-	return vect;
-}
+public:
+	static	vector<Advertisement> leaveAdvWithStatus(vector<Advertisement>& vect, bool statToLeave);
+	static string timeOfCreating();	
+};
+
+#endif
