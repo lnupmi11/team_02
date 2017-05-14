@@ -17,7 +17,7 @@ int menu()
 	do
 	{
 		system("cls");
-		key = (key + 4) % 4;
+		key = (key + 5) % 5;
 
 		if (key == 0)
 		{
@@ -44,6 +44,14 @@ int menu()
 			printf("\nView all advertisements");
 		}
 		if (key == 3)
+		{
+			draw("Search");
+		}
+		else
+		{
+			printf("\nSearch");
+		}
+		if (key == 4)
 		{
 			draw("Exit");
 		}
@@ -72,6 +80,7 @@ int menu()
 
 bool checkIfCorrect(User& user);
 void viewAllBeforeLogin();
+void viewAllBeforeLoginByRubric();
 int correctLogin(User& user);
 
 int mainMenu()
@@ -119,9 +128,17 @@ int mainMenu()
 		}
 		break;
 		case 3:
+		{
+			viewAllBeforeLoginByRubric();
+			mainMenu();
+		}
+		break;
+		case 4:
+		{
 			exit(0);
 		}
 		break;
+		}
+		return 0;
 	}
-	return 0;
 }
