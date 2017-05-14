@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include <stdio.h>
 #include <conio.h>
 
@@ -8,7 +7,6 @@ void draw(char str[20])
 	printf("\n");
 	_cprintf(">%s", str);
 	system("color F");
-
 }
 
 int menu()
@@ -72,10 +70,14 @@ int menu()
 	return key;
 }
 
-void mainMenu()
+bool checkIfCorrect(User& user);
+void viewAllBeforeLogin();
+int correctLogin(User& user);
+
+int mainMenu()
 {
 	int answer;
-	for (; ; )
+	for (; ;)
 	{
 		answer = menu();
 		switch (answer)
@@ -101,7 +103,6 @@ void mainMenu()
 			if (checkIfCorrect(user))
 			{
 				correctLogin(user);
-				mainMenu();
 			}
 			else
 			{
@@ -111,17 +112,16 @@ void mainMenu()
 			mainMenu();
 		}
 		break;
-
 		case 2:
 		{
 			viewAllBeforeLogin();
 			mainMenu();
 		}
 		break;
-
 		case 3:
-
-			return;
+			exit(0);
 		}
+		break;
 	}
+	return 0;
 }

@@ -1,7 +1,6 @@
 #pragma once
 
-
-void editAdvertisement(vector<Advertisement>& vect )
+void editAdvertisement(vector<Advertisement>& vect)
 {
 	cout << "Here you can edit your advertisements , which you has not published .\n";
 	cout << "Advertisements: \n \n ";
@@ -12,7 +11,7 @@ void editAdvertisement(vector<Advertisement>& vect )
 	}
 
 	cout << "\n Enter the number of advertisement which you want to edit: \n";
-	size_t number;
+	int number;
 	cin >> number;
 
 	while (number > vect.size())
@@ -23,47 +22,48 @@ void editAdvertisement(vector<Advertisement>& vect )
 
 	system("cls");
 	cout << "Now you can edit this advertisement: \n\n";
-	cout << "title: " << vect[number - 1].getTitle() << "\n\n";
-	cout << "main text: " << vect[number - 1].getMainText() << "\n\n";
-
-	char nextAction;
+	cout << "title: " << vect[number - 1].getTitle() << "\n";
+	cout << "main text: " << vect[number - 1].getMainText() << "\n";
+		
 	cout << "What do you want to do now?\n";
 	cout << "1 - change title \n";
 	cout << "2 - change main text \n";
 	cout << "3 - send this advertisement to the server \n";
+	char nextAction;
 	cin >> nextAction;
 
 	switch (nextAction)
 	{
-		case'1':
-		{
-			system("cls");
-			string oldTitle;
-			string newTitle;
-			oldTitle = vect[number - 1].getTitle();
-			cout << "Enter new title:\n";
-			cin >> newTitle;
-			DTOAdvertisement::editAdvertisement(oldTitle,newTitle, vect[number - 1].getMainText());
-			break;
-		}
-		case'2':
-		{
-			system("cls");
-			string newText;
-			string oldText;
-			oldText = vect[number - 1].getMainText();
-			cout << "Enter new text: \n";
-			cin >> newText;
-			DTOAdvertisement::editAdvertisement(oldText, newText, vect[number - 1].getMainText());
-			break;
-		}
-		case'3':
-		{
-			system("cls");
-			cout << "Your advertisemnt has been sent to server ..\n";
-			DTOAdvertisement::editAdvertisement(  "0" ,"1", vect[number - 1].getMainText());
-			break;
-		}
+	case'1':
+	{
+		system("cls");
+		string oldTitle;
+		string newTitle;
+		oldTitle = vect[number - 1].getTitle();
+		cout << "Enter new title:\n";
+		cin >> newTitle;
+		DTOAdvertisement::editAdvertisement(oldTitle,newTitle, vect[number - 1].getMainText());
+		break;
+	}
+	case'2':
+	{
+		system("cls");
+		string newText;
+		string oldText;
+		oldText = vect[number - 1].getMainText();
+		cout << "Enter new text: \n";
+		cin >> newText;
+		DTOAdvertisement::editAdvertisement(oldText, newText, vect[number - 1].getMainText());
+		break;
+	}
+	case'3':
+	{
+		system("cls");
+		cout << "Your advertisemnt has been sent to server ..\n";
+		DTOAdvertisement::editAdvertisement(  "0" ,"1", vect[number - 1].getMainText());
+		break;
+    }
+
 	}
 	cout << "\n\n Now you can return to the main menu.\n\n Press any key to back to do this\n";
 	system("pause>>null");

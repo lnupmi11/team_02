@@ -2,7 +2,6 @@
 #include "../Entity/Advertisement.h" 
 #include"../Utils/EnumWithRubrics.h"
 
-
 Advertisement::Advertisement()
 {
 	this->title = "";
@@ -110,12 +109,9 @@ istream& operator >> (istream& cin, Advertisement& advert)
 {
 	cout << " \t\t\t Welcome! \n" << "\t Here you can create an advertisement \n ";
 	cout << "enter title: \n";
-	
 	cin.get();
 	getline(cin, advert.title);
-	
 	cout << "enter advertisement : \n";
-	
 	cin.clear();
 	_flushall();
 	getline(cin, advert.mainText);
@@ -126,19 +122,20 @@ istream& operator >> (istream& cin, Advertisement& advert)
 		cout <<i + 1<< " - " <<  getRubric(i) << "\n";
 	}
 
-	int action0 ;
-	cin >> action0;
 
-	switch (action0)
-	{
+	int action;
+    cout << "-> ";
+    cin >> action;
+		switch (action-1)
+		{
 		case ForSale:
 		{
-			advert.setRubric(getRubric( ForSale));
+			advert.setRubric(getRubric(ForSale));
 			break;
 		}
 		case WantToBuy:
 		{
-			advert.setRubric(getRubric(WantToBuy) );
+			advert.setRubric(getRubric(WantToBuy));
 			break;
 		}
 		case SomethingDisappeared:
@@ -166,28 +163,25 @@ istream& operator >> (istream& cin, Advertisement& advert)
 	cout << "Do you want to save or send your advertisement to server? \n 1 - save ,  2 - send :\n";
 
 	cout << "Action :  ";
-	char action;
 	cin >> action;
 	switch (action)
 	{
-		case '1':
-		{
-			advert.setStatus(0);
-			break;
-		}
-		case '2':
-		{
-			advert.setStatus(1);
-			break;
-		}
-		default:
-		{
-			cout << "\n You will be returned to previous page \n";
-		}
-
+	case 1:
+	{
+		advert.setStatus(0);
 		break;
 	}
+	case 2:
+	{
+		advert.setStatus(1);
+		break;
+	}
+	default:
+	{
+		cout << "\n You will be returned to previous page \n";
+	}
 
+	}
 	return cin;
 }
 
