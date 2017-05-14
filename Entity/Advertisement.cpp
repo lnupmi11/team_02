@@ -122,8 +122,10 @@ istream& operator >> (istream& cin, Advertisement& advert)
 		cout <<i + 1<< " - " <<  getRubric(i) << "\n";
 	}
 
+
 	int action;
-	cin >> action;
+    cout << "-> ";
+    cin >> action;
 		switch (action-1)
 		{
 		case ForSale:
