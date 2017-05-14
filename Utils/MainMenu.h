@@ -77,7 +77,7 @@ int correctLogin(User& user);
 int mainMenu()
 {
 	int answer;
-	for (; ; )
+	for (; ;)
 	{
 		answer = menu();
 		switch (answer)

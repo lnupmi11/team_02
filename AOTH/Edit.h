@@ -1,6 +1,6 @@
 #pragma once
 
-void editAdvertisement(vector<Advertisement>& vect )
+void editAdvertisement(vector<Advertisement>& vect)
 {
 	cout << "Here you can edit your advertisements , which you has not published .\n";
 	cout << "Advertisements: \n \n ";
@@ -11,10 +11,10 @@ void editAdvertisement(vector<Advertisement>& vect )
 	}
 
 	cout << "\n Enter the number of advertisement which you want to edit: \n";
-	size_t number;
+	int number;
 	cin >> number;
 
-	while (number > vect.size())
+	while ( number - 1 > vect.size() )
 	{
 		cout << "Enter correct number : ";
 		cin >> number;
@@ -22,8 +22,8 @@ void editAdvertisement(vector<Advertisement>& vect )
 
 	system("cls");
 	cout << "Now you can edit this advertisement: \n\n";
-	cout << "title: " << vect[number - 1].getTitle() << "\n\n";
-	cout << "main text: " << vect[number - 1].getMainText() << "\n\n";
+	cout << "title: " << vect[number - 1].getTitle() << "\n";
+	cout << "main text: " << vect[number - 1].getMainText() << "\n";
 
 	char nextAction;
 	cout << "What do you want to do now?\n";

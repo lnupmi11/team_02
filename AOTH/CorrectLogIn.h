@@ -95,7 +95,7 @@ int correctLogin(User& user)
 					int counterPrintedRubrics = 0;
 					for (size_t j = 0; j < advertOfUser.size(); j++)
 					{
-						if (advertOfUser[j].getRubric() == getRubric(i))// rubrics1[i])
+						if (advertOfUser[j].getRubric() == getRubric(i))
 						{
 							if (counterPrintedRubrics == 0)
 							{
@@ -115,7 +115,7 @@ int correctLogin(User& user)
 			correctLogin(user);
 			break;
 		}
-		break;
+	//	break;
 		case 1:
 		{
 			system("cls");
@@ -123,8 +123,7 @@ int correctLogin(User& user)
 			correctLogin(user);
 			break;
 		}
-		break;
-
+	//	break;
 		case 2:
 		{
 			system("cls");
@@ -144,11 +143,9 @@ int correctLogin(User& user)
 			correctLogin(user);
 			break;
 		}
-		break;
-
 		case 3:
 		{
-			return 0;
+			mainMenu();
 			break;
 		}
 		}

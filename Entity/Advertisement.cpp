@@ -108,10 +108,8 @@ istream& operator >> (istream& cin, Advertisement& advert)
 {
 	cout << " \t\t\t Welcome! \n" << "\t Here you can create an advertisement \n ";
 	cout << "enter title: \n";
-	
 	cin.get();
 	getline(cin, advert.title);
-	
 	cout << "enter advertisement : \n";
 	
 	cin.clear();
@@ -124,9 +122,9 @@ istream& operator >> (istream& cin, Advertisement& advert)
 		cout <<i + 1<< " - " <<  getRubric(i) << "\n";
 	}
 
-	int action0 ;
-	cin >> action0;
-		switch (action0)
+	int action;
+	cin >> action;
+		switch (action-1)
 		{
 		case ForSale:
 		{
@@ -165,7 +163,6 @@ istream& operator >> (istream& cin, Advertisement& advert)
 	cout << "Do you want to save or send your advertisement to server? \n 1 - save ,  2 - send :\n";
 
 	cout << "Action :  ";
-	char action;
 	cin >> action;
 	switch (action)
 	{
@@ -183,10 +180,8 @@ istream& operator >> (istream& cin, Advertisement& advert)
 	{
 		cout << "\n You will be returned to previous page \n";
 	}
-
 	break;
 	}
-
 	return cin;
 }
 
