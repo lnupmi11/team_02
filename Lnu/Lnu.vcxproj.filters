@@ -35,11 +35,17 @@
     <ClCompile Include="..\DTO\DTOUser.cpp">
       <Filter>DTO</Filter>
     </ClCompile>
+    <ClCompile Include="..\DTO\DTOAdvertisement.cpp">
+      <Filter>DTO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Entity\Base.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Utils\HelperFunctions.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Entity\User.h">
-      <Filter>Entity</Filter>
-    </ClInclude>
     <ClInclude Include="..\Entity\Advertisement.h">
       <Filter>Entity</Filter>
     </ClInclude>
@@ -49,16 +55,31 @@
     <ClInclude Include="..\DTO\DTOUser.h">
       <Filter>DTO</Filter>
     </ClInclude>
-    <ClInclude Include="..\AOTH\CorrectLogIn.h">
-      <Filter>AOTH</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AOTH\LogIn.h">
-      <Filter>AOTH</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AOTH\ViewAllBeforeLogIn.h">
-      <Filter>AOTH</Filter>
-    </ClInclude>
     <ClInclude Include="..\Utils\MainMenu.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Utils\HelperFunctions.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AOTH\Edit.h">
+      <Filter>AOTH</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AOTH\CorrectLogin.h">
+      <Filter>AOTH</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AOTH\ViewAllBeforeLogin.h">
+      <Filter>AOTH</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AOTH\Login.h">
+      <Filter>AOTH</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Entity\Base.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Entity\User.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Utils\EnumWithRubrics.h">
       <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>
