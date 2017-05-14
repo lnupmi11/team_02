@@ -19,35 +19,35 @@ int menu_()
 
 		if (key == 0)
 		{
-			draw("view all your advertisement");
+			draw("View all your advertisement");
 		}
 		else
 		{
-			printf("\nview all your advertisement");
+			printf("\nView all your advertisement");
 		}
 		if (key == 1)
 		{
-			draw("create new advertisement");
+			draw("Create new advertisement");
 		}
 		else
 		{
-			printf("\ncreate new advertisement");
+			printf("\nCreate new advertisement");
 		}
 		if (key == 2)
 		{
-			draw("edit your advertisement");
+			draw("Edit your advertisement");
 		}
 		else
 		{
-			printf("\nedit your advertisement");
+			printf("\nEdit your advertisement");
 		}
 		if (key == 3)
 		{
-			draw("main menu");
+			draw("Main menu");
 		}
 		else
 		{
-			printf("\nmain menu");
+			printf("\nMain menu");
 		}
 
 		code = _getch();
