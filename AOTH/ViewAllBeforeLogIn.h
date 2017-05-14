@@ -1,5 +1,5 @@
 #pragma once
-
+#include "../Utils/HelperFunctions.h"
 
 void viewAllBeforeLogin()
 {
@@ -8,6 +8,8 @@ void viewAllBeforeLogin()
 	vector<Advertisement> vectWithAllInformation;
 
 	DTOAdvertisement::getAllAdv(vectWithAllInformation);
+
+	HelperFunction::leaveAdvWithStatus(vectWithAllInformation, 1);
 
 	for (int i = 0; i < 5; i++)
 	{
@@ -45,7 +47,9 @@ void viewAllBeforeLoginByRubric()
 
 	DTOAdvertisement::getAllAdv(vectWithAllInformation);
 
-	cout << "Choose the rubric , which you looking for(enter number) :\n";
+	HelperFunction::leaveAdvWithStatus(vectWithAllInformation, 1);
+
+	cout << "Choose the rubric , which you are looking for(enter number) :\n";
 	int action;
 	
 	for (int i = 0; i < 5; i++)

@@ -3,7 +3,7 @@
 void editAdvertisement(vector<Advertisement>& vect)
 {
 	cout << "Here you can edit your advertisements , which you has not published .\n";
-	cout << "Advertisements: \n \n ";
+	cout << "Advertisements: \n \n";
 
 	for (size_t i = 0; i < vect.size(); i++)
 	{
@@ -56,7 +56,10 @@ void editAdvertisement(vector<Advertisement>& vect)
 		string oldText;
 		oldText = vect[number - 1].getMainText();
 		cout << "Enter new text: \n";
-		cin >> newText;
+		cin.get();
+		getline(cin, newText);
+		cin.clear();
+		_flushall();
 		DTOAdvertisement::editAdvertisement(oldText, newText, vect[number - 1].getMainText());
 		break;
 	}
