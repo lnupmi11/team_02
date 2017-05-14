@@ -1,4 +1,5 @@
 #include <vector>
+#include <string>
 #include "../Entity/User.h"
 #include "../DTO/DTOUser.h"
 #include "../Entity/Advertisement.h"
@@ -12,5 +13,6 @@
 int main()
 {
 	mainMenu();
+	
 	return 0;
 }

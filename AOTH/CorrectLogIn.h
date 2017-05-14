@@ -2,28 +2,83 @@
 #include "Edit.h"
 #include"../Utils/EnumWithRubrics.h"
 #include "../Utils/HelperFunctions.h"
+#include "../Utils/MainMenu.h"
+#include "../AOTH/Login.h"
+
 using namespace std;
 
+int menu_()
+{
+	int key;
+	key = 0;
+	int code;
+	do
+	{
+		system("cls");
+		key = (key + 4) % 4;
 
-void correctLogin(User& user)
+		if (key == 0)
+		{
+			draw("view all your advertisement");
+		}
+		else
+		{
+			printf("\nview all your advertisement");
+		}
+		if (key == 1)
+		{
+			draw("create new advertisement");
+		}
+		else
+		{
+			printf("\ncreate new advertisement");
+		}
+		if (key == 2)
+		{
+			draw("edit your advertisement");
+		}
+		else
+		{
+			printf("\nedit your advertisement");
+		}
+		if (key == 3)
+		{
+			draw("main menu");
+		}
+		else
+		{
+			printf("\nmain menu");
+		}
+
+		code = _getch();
+		if (code == 0)
+		{
+			code = _getch();
+		}
+		if (code == 80)
+		{
+			key++;
+		}
+		if (code == 72)
+		{
+			key--;
+		}
+	}while (code != 13);
+	return key;
+}
+
+int correctLogin(User& user)
 {
 	system("cls");
-
-	cout << "\n\t\tYou successfully logined !\n";
-	cout << "\nIf you want to view all your advertisement , enter 1 ";
-	cout << "\nIf you want to create new advertisement ,enter 2 ";
-	cout << "\nIf you want to edit your advertisement  , enter 3 ";
-	cout << "\nIf you want to return to the main menu , enter 4 ";
-	cout << " \n Action : ";
-
-	char action;
-	cin >> action;
 	vector<Advertisement> advertOfUser;
 	advertOfUser = DTOAdvertisement::getAllAdvert(user);
-
-	switch (action)
+	int answer;
+	for (; ; )
 	{
-		case '1':
+		answer = menu_();
+		switch (answer)
+		{
+		case 0:
 		{
 			system("cls");
 
@@ -35,12 +90,12 @@ void correctLogin(User& user)
 			}
 			else
 			{
-				for (int i = 0;i < 5;i++)
+				for (int i = 0; i < 5; i++)
 				{
 					int counterPrintedRubrics = 0;
 					for (size_t j = 0; j < advertOfUser.size(); j++)
 					{
-						if (advertOfUser[j].getRubric() == getRubric(i) )
+						if (advertOfUser[j].getRubric() == getRubric(i))
 						{
 							if (counterPrintedRubrics == 0)
 							{
@@ -60,14 +115,14 @@ void correctLogin(User& user)
 			correctLogin(user);
 			break;
 		}
-		case '2':
+		case 1:
 		{
 			system("cls");
 			DTOAdvertisement::saveAdvertisement(user);
 			correctLogin(user);
 			break;
 		}
-		case '3':
+		case 2:
 		{
 			system("cls");
 
@@ -76,7 +131,7 @@ void correctLogin(User& user)
 
 			if (advWith0.size() == 0)
 			{
-				cout << "You have no advertisements to edit. \n" ;
+				cout << "You have no advertisements to edit. \n";
 				system("pause>null");
 			}
 			else
@@ -86,15 +141,12 @@ void correctLogin(User& user)
 			correctLogin(user);
 			break;
 		}
-		case '4':
+		case 3:
 		{
+			mainMenu();
 			break;
 		}
-		default:
-		{
-			cout << "Enter action (1,2,3) : ";
-			cin >> action;
 		}
 	}
-
+	return 0;
 }
