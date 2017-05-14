@@ -45,13 +45,22 @@ int menu()
 		}
 		if (key == 3)
 		{
+			draw("Search");
+		}
+		else
+		{
+			printf("\nSearch");
+		}
+		if (key == 4)
+		{
 			draw("Exit");
 		}
 		else
 		{
 			printf("\nExit");
 		}
-	
+
+
 		code = _getch();
 		if (code == 0)
 		{
@@ -72,6 +81,7 @@ int menu()
 
 bool checkIfCorrect(User& user);
 void viewAllBeforeLogin();
+void viewAllBeforeLoginByRubric();
 int correctLogin(User& user);
 
 int mainMenu()
@@ -119,9 +129,17 @@ int mainMenu()
 		}
 		break;
 		case 3:
+		{
+			viewAllBeforeLoginByRubric();
+			mainMenu();
+		}
+		break;
+		case 4:
+		{
 			exit(0);
 		}
 		break;
+		}
+		return 0;
 	}
-	return 0;
 }
