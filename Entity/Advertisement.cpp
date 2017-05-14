@@ -11,7 +11,6 @@ Advertisement::Advertisement()
 	this->rubric = "";
 	this->email = "";
 	this->time = "";
-
 }
 
 Advertisement::Advertisement(string title, string mainText, bool status , string rubric, string email, string time)
@@ -22,7 +21,6 @@ Advertisement::Advertisement(string title, string mainText, bool status , string
 	this->rubric = rubric;
 	this->email = email;
 	this->time = time;
-
 }
 
 Advertisement::Advertisement(const Advertisement& x)
@@ -34,7 +32,6 @@ Advertisement::Advertisement(const Advertisement& x)
 	this->rubric = x.rubric;
 	this->email = x.email;
 	this->time = x.time;
-
 }
 
 string Advertisement::getTitle()

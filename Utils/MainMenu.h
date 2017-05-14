@@ -7,7 +7,6 @@ void draw(char str[20])
 	printf("\n");
 	_cprintf(">%s", str);
 	system("color F");
-
 }
 
 int menu()
@@ -52,7 +51,7 @@ int menu()
 		{
 			printf("\nExit");
 		}
-
+	
 		code = _getch();
 		if (code == 0)
 		{
@@ -70,6 +69,7 @@ int menu()
 
 	return key;
 }
+
 bool checkIfCorrect(User& user);
 void viewAllBeforeLogin();
 int correctLogin(User& user);
@@ -92,7 +92,8 @@ int mainMenu()
 			cout << " \n \t Registration successfully completed ! Press any key to continue.\n";
 			system("pause>>null");
 			mainMenu();
-		}break;
+		}
+		break;
 		case 1:
 		{
 			system("cls");
@@ -102,7 +103,6 @@ int mainMenu()
 			if (checkIfCorrect(user))
 			{
 				correctLogin(user);
-				mainMenu();
 			}
 			else
 			{
@@ -110,17 +110,18 @@ int mainMenu()
 				system("pause>>null");
 			}
 			mainMenu();
-		}break;
-
+		}
+		break;
 		case 2:
 		{
 			viewAllBeforeLogin();
 			mainMenu();
-		}break;
-
+		}
+		break;
 		case 3:
-			return 0;
-		}break;
+			exit(0);
+		}
+		break;
 	}
 	return 0;
 }

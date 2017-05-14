@@ -1,8 +1,5 @@
-#include <fstream> 
 #include <vector>
 #include <string>
-using namespace std;
-
 #include "../Entity/User.h"
 #include "../DTO/DTOUser.h"
 #include "../Entity/Advertisement.h"
@@ -12,7 +9,6 @@ using namespace std;
 #include "../AOTH/Login.h"
 #include "../Utils/HelperFunctions.h"
 #include "../Utils/MainMenu.h"
-
 
 int main()
 {

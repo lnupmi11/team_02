@@ -4,20 +4,18 @@
 #include"../Utils/HelperFunctions.h"
 vector<Advertisement> HelperFunction::leaveAdvWithStatus(vector<Advertisement>& vect, bool statToLeave)
 {
+	for (size_t i = 0; i < vect.size(); i++)
 	{
-		for (size_t i = 0; i < vect.size(); i++)
+		while (vect[i].getStatus() != statToLeave)
 		{
-			while (vect[i].getStatus() != statToLeave)
+			vect.erase(vect.begin() + i);
+			if (i == vect.size())
 			{
-				vect.erase(vect.begin() + i);
-				if (i == vect.size())
-				{
-					break;
-				}
+				break;
 			}
 		}
-		return vect;
 	}
+	return vect;
 }
 
 string HelperFunction::timeOfCreating()
