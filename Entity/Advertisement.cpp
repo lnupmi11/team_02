@@ -125,6 +125,7 @@ istream& operator >> (istream& cin, Advertisement& advert)
 	}
 
 	int action0 ;
+	cout << "-> ";
 	cin >> action0;
 		switch (action0)
 		{
