@@ -111,7 +111,6 @@ istream& operator >> (istream& cin, Advertisement& advert)
 	cin.get();
 	getline(cin, advert.title);
 	cout << "enter advertisement : \n";
-	
 	cin.clear();
 	_flushall();
 	getline(cin, advert.mainText);
@@ -168,12 +167,12 @@ istream& operator >> (istream& cin, Advertisement& advert)
 	cin >> action;
 	switch (action)
 	{
-	case '1':
+	case 1:
 	{
 		advert.setStatus(0);
 		break;
 	}
-	case '2':
+	case 2:
 	{
 		advert.setStatus(1);
 		break;
@@ -182,7 +181,6 @@ istream& operator >> (istream& cin, Advertisement& advert)
 	{
 		cout << "\n You will be returned to previous page \n";
 	}
-	break;
 	}
 	return cin;
 }

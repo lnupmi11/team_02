@@ -115,7 +115,6 @@ int correctLogin(User& user)
 			correctLogin(user);
 			break;
 		}
-	//	break;
 		case 1:
 		{
 			system("cls");
@@ -123,7 +122,6 @@ int correctLogin(User& user)
 			correctLogin(user);
 			break;
 		}
-	//	break;
 		case 2:
 		{
 			system("cls");

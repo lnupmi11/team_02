@@ -14,7 +14,7 @@ void editAdvertisement(vector<Advertisement>& vect)
 	int number;
 	cin >> number;
 
-	while ( number - 1 > vect.size() )
+	while (number > vect.size())
 	{
 		cout << "Enter correct number : ";
 		cin >> number;
@@ -24,12 +24,12 @@ void editAdvertisement(vector<Advertisement>& vect)
 	cout << "Now you can edit this advertisement: \n\n";
 	cout << "title: " << vect[number - 1].getTitle() << "\n";
 	cout << "main text: " << vect[number - 1].getMainText() << "\n";
-
-	char nextAction;
+		
 	cout << "What do you want to do now?\n";
 	cout << "1 - change title \n";
 	cout << "2 - change main text \n";
 	cout << "3 - send this advertisement to the server \n";
+	char nextAction;
 	cin >> nextAction;
 
 	switch (nextAction)
@@ -37,7 +37,6 @@ void editAdvertisement(vector<Advertisement>& vect)
 	case'1':
 	{
 		system("cls");
-
 		string oldTitle;
 		string newTitle;
 		oldTitle = vect[number - 1].getTitle();
