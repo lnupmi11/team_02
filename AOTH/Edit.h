@@ -63,6 +63,7 @@ void editAdvertisement(vector<Advertisement>& vect)
 		DTOAdvertisement::editAdvertisement(  "0" ,"1", vect[number - 1].getMainText());
 		break;
     }
+
 	}
 	cout << "\n\n Now you can return to the main menu.\n\n Press any key to back to do this\n";
 	system("pause>>null");

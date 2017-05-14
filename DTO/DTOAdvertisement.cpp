@@ -1,7 +1,5 @@
 #include <fstream> 
 #include <vector>
-#include <string>
-#include <cstdio>
 #include "../Entity/Advertisement.h"
 #include "../Entity/User.h"
 #include "../DTO/DTOAdvertisement.h"
@@ -12,7 +10,7 @@ void DTOAdvertisement::saveAdvertisement(User& obj)
 {
 	Advertisement advertisement;
 	cin>>advertisement;
-	ofstream saveAdv("advertisements.txt", ios_base::app);
+	ofstream saveAdv("Advertisements.txt", ios_base::app);
 	advertisement.setId(obj.getId());
 	advertisement.setTime(HelperFunction::timeOfCreating());
 	advertisement.setEmail(obj.getEmail());
@@ -36,7 +34,7 @@ void DTOAdvertisement::saveAdvertisement(User& obj)
 void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdv)
 {
 	ifstream advertisement;
-	advertisement.open("../Lnu/advertisements.txt");
+	advertisement.open("../Lnu/Advertisements.txt");
 	if (!advertisement.is_open())
 	{
 		cout << "\nData base is empty! ...";
@@ -121,13 +119,14 @@ vector<Advertisement> DTOAdvertisement::getAllAdvert(User user)
 		}
 		iterator++;
 	}
+
 	return vect;
 }
 
 void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine , string mainText)
 {
 	vector<string> vect;
-	ifstream fileStream("advertisements.txt" );
+	ifstream fileStream("Advertisements.txt" );
 	
 	if (!fileStream.is_open() )
 	{
@@ -168,7 +167,7 @@ void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine , stri
 		}
 	}
 		fileStream.close();
-		ofstream inFile("advertisements.txt" , ios_base::out | ios_base::trunc);
+		ofstream inFile("Advertisements.txt" , ios_base::out | ios_base::trunc);
 
 		size_t vectSize;
 		vectSize = vect.size();

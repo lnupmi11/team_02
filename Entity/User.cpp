@@ -1,6 +1,7 @@
 #pragma once
 #include "../Entity/User.h"
 
+
 User::User()
 {
 	email = "";

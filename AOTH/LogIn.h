@@ -1,5 +1,6 @@
 #pragma once
 
+
 bool checkIfCorrect(User& user)
 {
 	vector<User> usersPassAndEmails = DTOUser::getAllUsers();

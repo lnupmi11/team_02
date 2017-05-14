@@ -1,6 +1,5 @@
 #pragma once
 #include "../Entity/Advertisement.h" 
-#include <vector>
 #include"../Utils/EnumWithRubrics.h"
 
 Advertisement::Advertisement()
@@ -89,6 +88,7 @@ void Advertisement::setEmail(string email)
 	this->email = email;
 
 }
+
 string Advertisement::getEmail()
 {
 	return this->email;
@@ -99,6 +99,7 @@ void Advertisement::setTime(string time)
 	this->time = time;
 
 }
+
 string Advertisement::getTime()
 {
 	return this->time;
@@ -156,9 +157,7 @@ istream& operator >> (istream& cin, Advertisement& advert)
 		{
 			cout << "\n Enter correct number \n";
 		}
-
 		break;
-		
 	}
 
 	cout << "Do you want to save or send your advertisement to server? \n 1 - save ,  2 - send :\n";
@@ -181,6 +180,7 @@ istream& operator >> (istream& cin, Advertisement& advert)
 	{
 		cout << "\n You will be returned to previous page \n";
 	}
+
 	}
 	return cin;
 }
