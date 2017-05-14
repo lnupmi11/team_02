@@ -17,7 +17,7 @@ int menu()
 	do
 	{
 		system("cls");
-		key = (key + 4) % 4;
+		key = (key + 5) % 5;
 
 		if (key == 0)
 		{
