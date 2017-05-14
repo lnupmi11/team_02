@@ -9,7 +9,7 @@ bool checkIfCorrect(User& user)
 	IsCorrect = false;
 
 	for (size_t i = 0; i < usersPassAndEmails.size(); i++)
-	{
+	{ 
 		if (usersPassAndEmails[i].getEmail() == user.getEmail() && usersPassAndEmails[i].getPassword() == user.getPassword() )
 		{
 			IsCorrect = true;

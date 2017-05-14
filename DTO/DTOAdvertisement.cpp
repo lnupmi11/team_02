@@ -37,7 +37,7 @@ void DTOAdvertisement::getAllAdv(vector<Advertisement>& allAdv)
 	advertisement.open("../Lnu/Advertisements.txt");
 	if (!advertisement.is_open())
 	{
-		cout << "\nData base is empty! ...";
+		cout << "\n There aren't advertisement to see !!! ";
 	}
 	else 
 	{

@@ -79,7 +79,7 @@ bool DTOUser::ifExist(User& myUser)
 
 		if (!saveInfo.is_open())
 		{
-			cout << "problems with RegistrationAtOurSystem.h";
+			cout << "Problems with RegistrationAtOurSystem.h";
 		}
 		else
 		{
@@ -103,7 +103,8 @@ vector<User> DTOUser::getAllUsers()
 	emailAndPass.open("../Lnu/Users.txt");
 	if (!emailAndPass.is_open())
 	{
-		cout << "\tData base is empty ...";		
+		//cout << "\tData base is empty ...";	
+		cout << " You should registrate before login !!! ";
 		return users;
 	}
 	else 
