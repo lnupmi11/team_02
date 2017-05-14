@@ -4,10 +4,6 @@
 #include "../Utils/HelperFunctions.h"
 #include "../Utils/MainMenu.h"
 #include "../AOTH/Login.h"
-#include <iostream>
-#include <stdio.h>
-#include <conio.h>
-
 
 using namespace std;
 
@@ -71,28 +67,18 @@ int menu_()
 	return key;
 }
 
-void correctLogin(User& user)
+int correctLogin(User& user)
 {
 	system("cls");
-
-	//cout << "\n\t\tYou successfully logined !\n";
-	//cout << "\nIf you want to view all your advertisement , enter 1 ";
-	//cout << "\nIf you want to create new advertisement ,enter 2 ";
-	//cout << "\nIf you want to edit your advertisement  , enter 3 ";
-	//cout << "\nIf you want to return to the main menu , enter 4 ";
-	//cout << " \n Action : ";
-
-	//char action;
-	//cin >> action;
 	vector<Advertisement> advertOfUser;
 	advertOfUser = DTOAdvertisement::getAllAdvert(user);
 	int answer;
 	for (; ; )
-		answer = menu_();
 	{
+		answer = menu_();
 		switch (answer)
 		{
-		case 1:
+		case 0:
 		{
 			system("cls");
 
@@ -130,7 +116,7 @@ void correctLogin(User& user)
 			break;
 		}
 		break;
-		case 2:
+		case 1:
 		{
 			system("cls");
 			DTOAdvertisement::saveAdvertisement(user);
@@ -139,7 +125,7 @@ void correctLogin(User& user)
 		}
 		break;
 
-		case 3:
+		case 2:
 		{
 			system("cls");
 
@@ -160,12 +146,14 @@ void correctLogin(User& user)
 		}
 		break;
 
-		case 4:
+		case 3:
 		{
+			return 0;
 			break;
 		}
 		}
 	}
+	return 0;
 }
 	/*switch (action)
 	{

@@ -1,10 +1,7 @@
 #pragma once
-#include "../AOTH/Login.h"
-#include "../AOTH/CorrectLogin.h"
-#include "../AOTH/ViewAllBeforeLogin.h"
-#include <iostream>
 #include <stdio.h>
 #include <conio.h>
+
 void draw(char str[20])
 {
 	printf("\n");
@@ -73,11 +70,11 @@ int menu()
 
 	return key;
 }
+bool checkIfCorrect(User& user);
+void viewAllBeforeLogin();
+int correctLogin(User& user);
 
-//fucking bad solution but can work
-void correctLogin(User& user);
-
-void mainMenu()
+int mainMenu()
 {
 	int answer;
 	for (; ; )
@@ -95,8 +92,7 @@ void mainMenu()
 			cout << " \n \t Registration successfully completed ! Press any key to continue.\n";
 			system("pause>>null");
 			mainMenu();
-		}
-		break;
+		}break;
 		case 1:
 		{
 			system("cls");
@@ -114,19 +110,17 @@ void mainMenu()
 				system("pause>>null");
 			}
 			mainMenu();
-		}
-		break;
+		}break;
 
 		case 2:
 		{
 			viewAllBeforeLogin();
 			mainMenu();
-		}
-		break;
+		}break;
 
 		case 3:
-
-			return;
-		}
+			return 0;
+		}break;
 	}
+	return 0;
 }

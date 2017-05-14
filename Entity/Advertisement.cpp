@@ -2,6 +2,7 @@
 #include "../Entity/Advertisement.h" 
 #include <vector>
 #include"../Utils/EnumWithRubrics.h"
+
 Advertisement::Advertisement()
 {
 	this->title = "";
@@ -128,40 +129,40 @@ istream& operator >> (istream& cin, Advertisement& advert)
 
 	int action0 ;
 	cin >> action0;
+		switch (action0)
+		{
+		case ForSale:
+		{
+			advert.setRubric(getRubric(ForSale));
+			break;
+		}
+		case WantToBuy:
+		{
+			advert.setRubric(getRubric(WantToBuy));
+			break;
+		}
+		case SomethingDisappeared:
+		{
+			advert.setRubric(getRubric(SomethingDisappeared));
+			break;
+		}
+		case Meetings:
+		{
+			advert.setRubric(getRubric(Meetings));
+			break;
+		}
+		case Advertising:
+		{
+			advert.setRubric(getRubric(Advertising));
+			break;
+		}
+		default:
+		{
+			cout << "\n Enter correct number \n";
+		}
 
-	switch (action0)
-	{
-	case ForSale:
-	{
-		advert.setRubric(getRubric( ForSale));
 		break;
-	}
-	case WantToBuy:
-	{
-		advert.setRubric(getRubric(WantToBuy) );
-		break;
-	}
-	case SomethingDisappeared:
-	{
-		advert.setRubric(getRubric(SomethingDisappeared));
-		break;
-	}
-	case Meetings:
-	{
-		advert.setRubric(getRubric(Meetings));
-		break;
-	}
-	case Advertising:
-	{
-		advert.setRubric(getRubric(Advertising));
-		break;
-	}
-	default:
-	{
-		cout << "\n Enter correct number \n";
-	}
-
-	break;
+		
 	}
 
 	cout << "Do you want to save or send your advertisement to server? \n 1 - save ,  2 - send :\n";
