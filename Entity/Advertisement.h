@@ -2,7 +2,6 @@
 #include "Base.h"
 using namespace std;
 
-
 class Advertisement :public Base
 {
 private:

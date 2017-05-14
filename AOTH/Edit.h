@@ -4,13 +4,14 @@ void editAdvertisement(vector<Advertisement>& vect)
 {
 	cout << "Here you can edit your advertisements , which you has not published .\n";
 	cout << "Advertisements: \n \n ";
-	
+
 	for (size_t i = 0; i < vect.size(); i++)
 	{
-		cout << i+1 <<".  " <<vect[i].getTitle() << "\n";
+		cout << i + 1 << ".  " << vect[i].getTitle() << "\n";
 	}
 
 	cout << "\n Enter the number of advertisement which you want to edit: \n";
+	
 	int number;
 	cin >> number;
 
@@ -24,7 +25,7 @@ void editAdvertisement(vector<Advertisement>& vect)
 	cout << "Now you can edit this advertisement: \n\n";
 	cout << "title: " << vect[number - 1].getTitle() << "\n";
 	cout << "main text: " << vect[number - 1].getMainText() << "\n";
-		
+
 	cout << "What do you want to do now?\n";
 	cout << "1 - change title \n";
 	cout << "2 - change main text \n";
@@ -41,8 +42,11 @@ void editAdvertisement(vector<Advertisement>& vect)
 		string newTitle;
 		oldTitle = vect[number - 1].getTitle();
 		cout << "Enter new title:\n";
-		cin >> newTitle;
-		DTOAdvertisement::editAdvertisement(oldTitle,newTitle, vect[number - 1].getMainText());
+		cin.get();
+		getline(cin, newTitle);
+		cin.clear();
+		_flushall();
+		DTOAdvertisement::editAdvertisement(oldTitle, newTitle, vect[number - 1].getMainText());
 		break;
 	}
 	case'2':
@@ -60,10 +64,9 @@ void editAdvertisement(vector<Advertisement>& vect)
 	{
 		system("cls");
 		cout << "Your advertisemnt has been sent to server ..\n";
-		DTOAdvertisement::editAdvertisement(  "0" ,"1", vect[number - 1].getMainText());
+		DTOAdvertisement::editAdvertisement("0", "1", vect[number - 1].getMainText());
 		break;
-    }
-
+	}
 	}
 	cout << "\n\n Now you can return to the main menu.\n\n Press any key to back to do this\n";
 	system("pause>>null");

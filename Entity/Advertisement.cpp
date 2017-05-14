@@ -119,45 +119,46 @@ istream& operator >> (istream& cin, Advertisement& advert)
 	cout << "Choose the rubric for your advertisement(enter number) :\n";
 	for (int i = 0; i < 5; i++)
 	{
-		cout <<i + 1<< " - " <<  getRubric(i) << "\n";
+		cout << i + 1 << " - " << getRubric(i) << "\n";
 	}
 
 
 	int action;
-    cout << "-> ";
-    cin >> action;
-		switch (action-1)
-		{
-		case ForSale:
-		{
-			advert.setRubric(getRubric(ForSale));
-			break;
-		}
-		case WantToBuy:
-		{
-			advert.setRubric(getRubric(WantToBuy));
-			break;
-		}
-		case SomethingDisappeared:
-		{
-			advert.setRubric(getRubric(SomethingDisappeared));
-			break;
-		}
-		case Meetings:
-		{
-			advert.setRubric(getRubric(Meetings));
-			break;
-		}
-		case Advertising:
-		{
-			advert.setRubric(getRubric(Advertising));
-			break;
-		}
-		default:
-		{
-			cout << "\n Enter correct number \n";
-		}
+	cout << "-> ";
+	cin >> action;
+	switch (action - 1)
+	{
+	case ForSale:
+	{
+		advert.setRubric(getRubric(ForSale));
 		break;
+	}
+	case WantToBuy:
+	{
+		advert.setRubric(getRubric(WantToBuy));
+		break;
+	}
+	case SomethingDisappeared:
+	{
+		advert.setRubric(getRubric(SomethingDisappeared));
+		break;
+	}
+	case Meetings:
+	{
+		advert.setRubric(getRubric(Meetings));
+		break;
+	}
+	case Advertising:
+	{
+		advert.setRubric(getRubric(Advertising));
+		break;
+	}
+	default:
+	{
+		cout << "\n Enter correct number \n";
+	}
+	break;
+
 	}
 
 	cout << "Do you want to save or send your advertisement to server? \n 1 - save ,  2 - send :\n";
@@ -180,7 +181,6 @@ istream& operator >> (istream& cin, Advertisement& advert)
 	{
 		cout << "\n You will be returned to previous page \n";
 	}
-
 	}
 	return cin;
 }
