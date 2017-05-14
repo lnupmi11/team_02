@@ -1,4 +1,6 @@
 #pragma once
+
+
 enum Rubrics {
 	ForSale,
 	WantToBuy,

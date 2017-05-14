@@ -1,5 +1,6 @@
 #pragma once
 
+
 void viewAllBeforeLogin()
 {
 	system("cls");
@@ -33,7 +34,6 @@ void viewAllBeforeLogin()
 	cout << "\n********************************************************************\n";
 	cout << "\n " << "\t\tPress any key to back to main menu ....";
 	system("pause>>null");
-
 }
 
 

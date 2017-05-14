@@ -1,7 +1,6 @@
 #include <iostream>
-using namespace std;
-
 #include "Base.h"
+using namespace std;
 
 class Advertisement :public Base
 {
@@ -32,7 +31,6 @@ public:
 	string getEmail();
 	string getTime();
 	void setTime(string time);
-
 
 	friend istream &operator >> (istream &cin, Advertisement &advert);
 	friend ostream &operator << (ostream &cout, Advertisement &advert);

@@ -2,6 +2,7 @@
 #include "../Entity/Base.h"
 #include <ctime>
 
+
 Base::Base()
 {
 	this->id = "";
@@ -25,5 +26,6 @@ string Base::generateId()
 	{
 		id += symbols[rand() % symbols.length()];
 	}
+
 	return id;
 }

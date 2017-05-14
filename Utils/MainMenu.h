@@ -60,7 +60,6 @@ int menu()
 			printf("\nExit");
 		}
 
-
 		code = _getch();
 		if (code == 0)
 		{
