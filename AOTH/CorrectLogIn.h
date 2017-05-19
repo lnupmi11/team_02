@@ -15,7 +15,7 @@ int menu_()
 	do
 	{
 		system("cls");
-		key = (key + 5) % 5;
+		key = (key + 6) % 6;
 
 		if (key == 0)
 		{
@@ -43,13 +43,21 @@ int menu_()
 		}
 		if (key == 3)
 		{
-			draw("View all");
+			draw("View all advertisements");
 		}
 		else
 		{
-			printf("\nView all");
+			printf("\nView all advertisements");
 		}
 		if (key == 4)
+		{
+			draw("Search");
+		}
+		else
+		{
+			printf("\nSearch");
+		}
+		if (key == 5)
 		{
 			draw("Main menu");
 		}
@@ -155,6 +163,11 @@ int correctLogin(User& user)
 			break;
 		}
 		case 4:
+		{
+			viewAllBeforeLoginByRubric();
+			break;
+		}
+		case 5:
 		{
 			mainMenu();
 			break;
