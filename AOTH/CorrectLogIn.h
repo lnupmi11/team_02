@@ -15,7 +15,7 @@ int menu_()
 	do
 	{
 		system("cls");
-		key = (key + 4) % 4;
+		key = (key + 5) % 5;
 
 		if (key == 0)
 		{
@@ -42,6 +42,14 @@ int menu_()
 			printf("\nEdit your advertisement");
 		}
 		if (key == 3)
+		{
+			draw("View all");
+		}
+		else
+		{
+			printf("\nView all");
+		}
+		if (key == 4)
 		{
 			draw("Main menu");
 		}
@@ -142,6 +150,11 @@ int correctLogin(User& user)
 			break;
 		}
 		case 3:
+		{
+			viewAllBeforeLogin();
+			break;
+		}
+		case 4:
 		{
 			mainMenu();
 			break;
