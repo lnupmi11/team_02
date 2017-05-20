@@ -147,3 +147,36 @@ vector<User> DTOUser::getAllUsers()
 	}
 	emailAndPass.close();
 }
+
+void DTOUser::deleteUser(User& user)
+{
+	vector<User> users;
+    users = getAllUsers();
+	for (size_t i = 0; i < users.size(); i++)
+	{
+		if (users[i].getEmail() == user.getEmail())
+		{
+			users.erase(users.begin()+i);
+		}
+	}
+
+	ofstream saveInfo("Users.txt", ios_base::out | ios_base::trunc);
+
+	if (!saveInfo.is_open())
+	{
+		cout << "Problems with RegistrationAtOurSystem.h";
+	}
+	else
+	{
+		for (size_t i = 0; i < users.size(); i++)
+		{
+			saveInfo << "\n";
+			saveInfo << users[i].getEmail();
+			saveInfo << "\n";
+			saveInfo << users[i].getPassword();
+			saveInfo << "\n";
+			saveInfo << users[i].getId();
+		}
+	}
+	saveInfo.close();
+}

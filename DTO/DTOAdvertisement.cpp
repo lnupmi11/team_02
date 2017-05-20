@@ -182,3 +182,35 @@ void  DTOAdvertisement::editAdvertisement(string oldLine , string newLine , stri
 		inFile.close();
 }
 
+void DTOAdvertisement::deleteAdvertisementsOf(User& user)
+{
+	vector<Advertisement> adv;
+	getAllAdv(adv);
+	for (size_t i = 0; i < adv.size(); i++)
+	{
+		if (adv[i].getEmail() == user.getEmail())
+		{
+			adv.erase(adv.begin() + i);
+		}
+	}
+	ofstream saveAdv("Advertisements.txt", ios_base::out | ios_base::trunc);
+	for (size_t i = 0; i < adv.size(); i++)
+	{
+		saveAdv << "\n";
+		saveAdv << adv[i].getTitle();
+		saveAdv << "\n";
+		saveAdv << adv[i].getMainText();
+		saveAdv << "\n";
+		saveAdv << adv[i].getStatus();
+		saveAdv << "\n";
+		saveAdv << adv[i].getId();
+		saveAdv << "\n";
+		saveAdv << adv[i].getRubric();
+		saveAdv << "\n";
+		saveAdv << adv[i].getTime();
+		saveAdv << adv[i].getEmail();
+	}
+	saveAdv.close();
+
+}
+

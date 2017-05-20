@@ -15,7 +15,7 @@ int menu_()
 	do
 	{
 		system("cls");
-		key = (key + 6) % 6;
+		key = (key + 7) % 7;
 
 		if (key == 0)
 		{
@@ -64,6 +64,14 @@ int menu_()
 		else
 		{
 			printf("\nMain menu");
+		}
+		if (key == 6)
+		{
+			draw("Delete profile");
+		}
+		else
+		{
+			printf("\nDelete profile");
 		}
 
 		code = _getch();
@@ -170,6 +178,27 @@ int correctLogin(User& user)
 		case 5:
 		{
 			mainMenu();
+			break;
+		}
+		case 6:
+		{
+			system("cls");
+			string email;
+			cout << "Eneter your email : ";
+			cin >> email;
+			if (user.getEmail() == email)
+			{
+				DTOUser::deleteUser(user);
+				DTOAdvertisement::deleteAdvertisementsOf(user);
+				cout << "your account was sucessfully deleted ..\n";
+				system("pause>>null");
+				mainMenu();
+			}
+			else
+			{
+				cout << "incorrect email ...\n";
+				system("pause>>null");
+			}
 			break;
 		}
 		}
