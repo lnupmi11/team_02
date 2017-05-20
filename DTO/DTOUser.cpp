@@ -194,7 +194,6 @@ void DTOUser::changePassword(User& user)
 			cout << "Enter your new password : ";
 			cin >> password;
 			users[i].setPassword(password);
-			cout << "Please reload for further work \n ";
 		}
 	}
 

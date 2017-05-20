@@ -132,6 +132,7 @@ int profileMenu(User& user)
 				system("pause>>null");
 				correctLogin(user);
 			}
+			mainMenu();
 			break;
 		}
 		case 3:
