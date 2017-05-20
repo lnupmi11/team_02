@@ -116,7 +116,22 @@ int profileMenu(User& user)
 		case 2:
 		{
 			system("cls");
-			//TODO : add code wich wiil change email or pass or this user
+			system("cls");
+			string password;
+			cout << "Enter your password : ";
+			cin >> password;
+			if (user.getPassword() == password)
+			{
+				DTOUser::changePassword(user);
+				cout << "Your password was sucessfully changed ..\n";
+				system("pause>>null");
+			}
+			else
+			{
+				cout << "Incorrect password ...\n";
+				system("pause>>null");
+				correctLogin(user);
+			}
 			break;
 		}
 		case 3:

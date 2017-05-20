@@ -180,3 +180,41 @@ void DTOUser::deleteUser(User& user)
 	}
 	saveInfo.close();
 }
+
+void DTOUser::changePassword(User& user)
+{
+	vector<User> users;
+	users = getAllUsers();
+
+	for (size_t i = 0; i < users.size(); i++)
+	{
+		if (users[i].getPassword() == user.getPassword())
+		{
+			string password;
+			cout << "Enter your new password : ";
+			cin >> password;
+			users[i].setPassword(password);
+			cout << "Please reload for further work \n ";
+		}
+	}
+
+	ofstream saveInfo("Users.txt", ios_base::out | ios_base::trunc);
+
+	if (!saveInfo.is_open())
+	{
+		cout << "Problems with RegistrationAtOurSystem.h";
+	}
+	else
+	{
+		for (size_t i = 0; i < users.size(); i++)
+		{
+			saveInfo << "\n";
+			saveInfo << users[i].getEmail();
+			saveInfo << "\n";
+			saveInfo << users[i].getPassword();
+			saveInfo << "\n";
+			saveInfo << users[i].getId();
+		}
+	}
+	saveInfo.close();
+}
