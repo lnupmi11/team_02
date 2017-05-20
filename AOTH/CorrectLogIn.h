@@ -4,6 +4,7 @@
 #include "../Utils/HelperFunctions.h"
 #include "../Utils/MainMenu.h"
 #include "../AOTH/Login.h"
+#include"../AOTH/ProfileMenu.h"
 
 using namespace std;
 
@@ -67,11 +68,11 @@ int menu_()
 		}
 		if (key == 6)
 		{
-			draw("Delete profile");
+			draw("Profile menu");
 		}
 		else
 		{
-			printf("\nDelete profile");
+			printf("\nProfile menu");
 		}
 
 		code = _getch();
@@ -182,23 +183,7 @@ int correctLogin(User& user)
 		}
 		case 6:
 		{
-			system("cls");
-			string email;
-			cout << "Eneter your email : ";
-			cin >> email;
-			if (user.getEmail() == email)
-			{
-				DTOUser::deleteUser(user);
-				DTOAdvertisement::deleteAdvertisementsOf(user);
-				cout << "your account was sucessfully deleted ..\n";
-				system("pause>>null");
-				mainMenu();
-			}
-			else
-			{
-				cout << "incorrect email ...\n";
-				system("pause>>null");
-			}
+			profileMenu(user);
 			break;
 		}
 		}

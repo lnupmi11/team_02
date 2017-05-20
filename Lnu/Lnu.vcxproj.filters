@@ -82,5 +82,6 @@
     <ClInclude Include="..\Utils\EnumWithRubrics.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="..\AOTH\ProfileMenu.h" />
   </ItemGroup>
 </Project>
