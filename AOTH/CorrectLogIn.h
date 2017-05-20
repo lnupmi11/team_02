@@ -4,7 +4,8 @@
 #include "../Utils/HelperFunctions.h"
 #include "../Utils/MainMenu.h"
 #include "../AOTH/Login.h"
-
+#include"../AOTH/ProfileMenu.h"
+ 
 using namespace std;
 
 int menu_()
@@ -15,7 +16,7 @@ int menu_()
 	do
 	{
 		system("cls");
-		key = (key + 6) % 6;
+		key = (key + 7) % 7;
 
 		if (key == 0)
 		{
@@ -64,6 +65,14 @@ int menu_()
 		else
 		{
 			printf("\nMain menu");
+		}
+		if (key == 6)
+		{
+			draw("Profile menu");
+		}
+		else
+		{
+			printf("\nProfile menu");
 		}
 
 		code = _getch();
@@ -170,6 +179,11 @@ int correctLogin(User& user)
 		case 5:
 		{
 			mainMenu();
+			break;
+		}
+		case 6:
+		{
+			profileMenu(user);
 			break;
 		}
 		}
