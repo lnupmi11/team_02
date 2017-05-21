@@ -1,5 +1,7 @@
 #include <vector>
 #include <string>
+#include <sstream>
+#include <ctype.h>
 #include "../Entity/User.h"
 #include "../DTO/DTOUser.h"
 #include "../Entity/Advertisement.h"

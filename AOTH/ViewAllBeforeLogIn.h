@@ -56,18 +56,30 @@ void viewAllBeforeLoginByRubric()
 	{
 		cout << "\t\tHere you can find  advertisement \n";
 		cout << "Choose the rubric , which you are looking for(enter number) :\n";
-		int action;
+		
 
 		for (int i = 0; i < 5; i++)
 		{
 			cout << i + 1 << " - " << getRubric(i) << "\n";
 		}
-
+		string action;
 		cin >> action;
 
 		string rubric;
-
-		switch (action - 1)
+		while (true)
+		{
+			if (action == "1" || action == "2" || action == "3" || action == "4" || action == "5")
+			{
+				break;
+			}
+			else
+			{
+				cout << "Enter correct number \n";
+				action.clear();
+				cin >> action;
+			}
+		}
+		switch (stoi(action) - 1)
 		{
 		case ForSale:
 		{

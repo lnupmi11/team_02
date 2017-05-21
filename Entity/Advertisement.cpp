@@ -123,10 +123,23 @@ istream& operator >> (istream& cin, Advertisement& advert)
 	}
 
 
-	int action;
+	string action;
 	cout << "-> ";
 	cin >> action;
-	switch (action - 1)
+	while (true)
+	{
+		if (action == "1" || action == "2" || action == "3" || action == "4" || action == "5")
+		{
+			break;
+		}
+		else
+		{
+			cout << "Enter correct number \n";
+			action.clear();
+			cin >> action;
+		}
+	}
+	switch (stoi(action) - 1)
 	{
 	case ForSale:
 	{
@@ -153,19 +166,27 @@ istream& operator >> (istream& cin, Advertisement& advert)
 		advert.setRubric(getRubric(Advertising));
 		break;
 	}
-	default:
-	{
-		cout << "\n Enter correct number \n";
 	}
-	break;
-
-	}
-
+	
 	cout << "Do you want to save or send your advertisement to server? \n 1 - save ,  2 - send :\n";
 
+	string newAction;
 	cout << "Action :  ";
-	cin >> action;
-	switch (action)
+	cin >> newAction;
+	while (true)
+	{
+		if (newAction == "1" || newAction == "2")
+		{
+			break;
+		}
+		else
+		{
+			cout << "Enter correct number \n";
+			newAction.clear();
+			cin >> newAction;
+		}
+	}
+	switch (stoi(action))
 	{
 	case 1:
 	{
@@ -176,10 +197,6 @@ istream& operator >> (istream& cin, Advertisement& advert)
 	{
 		advert.setStatus(1);
 		break;
-	}
-	default:
-	{
-		cout << "\n You will be returned to previous page \n";
 	}
 	}
 	return cin;
