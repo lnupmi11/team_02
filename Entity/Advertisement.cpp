@@ -186,7 +186,7 @@ istream& operator >> (istream& cin, Advertisement& advert)
 			cin >> newAction;
 		}
 	}
-	switch (stoi(action))
+	switch (stoi(newAction))
 	{
 	case 1:
 	{

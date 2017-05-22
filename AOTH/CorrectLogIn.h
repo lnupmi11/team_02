@@ -97,6 +97,9 @@ int correctLogin(User& user)
 	system("cls");
 	vector<Advertisement> advertOfUser;
 	advertOfUser = DTOAdvertisement::getAllAdvert(user);
+
+	vector<Advertisement> advWith1;
+	advWith1 = HelperFunction::leaveAdvWithStatus(advertOfUser, 1);
 	int answer;
 	for (; ; )
 	{
@@ -107,7 +110,7 @@ int correctLogin(User& user)
 		{
 			system("cls");
 
-			if (advertOfUser.size() == 0)
+			if (advWith1.size() == 0)
 			{
 				cout << "You have no advertisements yet .\n";
 				cout << "\nIf you want to create new advertisement , select this option in menu of your profile .\n ";
@@ -118,20 +121,20 @@ int correctLogin(User& user)
 				for (int i = 0; i < 5; i++)
 				{
 					int counterPrintedRubrics = 0;
-					for (size_t j = 0; j < advertOfUser.size(); j++)
+					for (size_t j = 0; j < advWith1.size(); j++)
 					{
-						if (advertOfUser[j].getRubric() == getRubric(i))
+						if (advWith1[j].getRubric() == getRubric(i))
 						{
 							if (counterPrintedRubrics == 0)
 							{
 								cout << "\n*********************************************************************\n";
 
 								cout << "\nRubric:  ";
-								cout << advertOfUser[j].getRubric() << "\n\n";
+								cout << advWith1[j].getRubric() << "\n\n";
 							}
 							counterPrintedRubrics++;
 
-							cout << advertOfUser[j];
+							cout << advWith1[j];
 						}
 					}
 				}
@@ -150,9 +153,9 @@ int correctLogin(User& user)
 		case 2:
 		{
 			system("cls");
-
+			vector<Advertisement> advert = DTOAdvertisement::getAllAdvert(user);
 			vector<Advertisement> advWith0;
-			advWith0 = HelperFunction::leaveAdvWithStatus(advertOfUser, 0);
+			advWith0 = HelperFunction::leaveAdvWithStatus(advert, 0);
 
 			if (advWith0.size() == 0)
 			{
