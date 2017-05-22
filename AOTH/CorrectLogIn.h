@@ -4,7 +4,8 @@
 #include "../Utils/HelperFunctions.h"
 #include "../Utils/MainMenu.h"
 #include "../AOTH/Login.h"
-
+#include"../AOTH/ProfileMenu.h"
+ 
 using namespace std;
 
 int menu_()
@@ -15,7 +16,7 @@ int menu_()
 	do
 	{
 		system("cls");
-		key = (key + 4) % 4;
+		key = (key + 7) % 7;
 
 		if (key == 0)
 		{
@@ -43,11 +44,35 @@ int menu_()
 		}
 		if (key == 3)
 		{
+			draw("View all advertisements");
+		}
+		else
+		{
+			printf("\nView all advertisements");
+		}
+		if (key == 4)
+		{
+			draw("Search");
+		}
+		else
+		{
+			printf("\nSearch");
+		}
+		if (key == 5)
+		{
 			draw("Main menu");
 		}
 		else
 		{
 			printf("\nMain menu");
+		}
+		if (key == 6)
+		{
+			draw("Profile menu");
+		}
+		else
+		{
+			printf("\nProfile menu");
 		}
 
 		code = _getch();
@@ -72,6 +97,9 @@ int correctLogin(User& user)
 	system("cls");
 	vector<Advertisement> advertOfUser;
 	advertOfUser = DTOAdvertisement::getAllAdvert(user);
+
+	vector<Advertisement> advWith1;
+	advWith1 = HelperFunction::leaveAdvWithStatus(advertOfUser, 1);
 	int answer;
 	for (; ; )
 	{
@@ -82,7 +110,7 @@ int correctLogin(User& user)
 		{
 			system("cls");
 
-			if (advertOfUser.size() == 0)
+			if (advWith1.size() == 0)
 			{
 				cout << "You have no advertisements yet .\n";
 				cout << "\nIf you want to create new advertisement , select this option in menu of your profile .\n ";
@@ -93,20 +121,20 @@ int correctLogin(User& user)
 				for (int i = 0; i < 5; i++)
 				{
 					int counterPrintedRubrics = 0;
-					for (size_t j = 0; j < advertOfUser.size(); j++)
+					for (size_t j = 0; j < advWith1.size(); j++)
 					{
-						if (advertOfUser[j].getRubric() == getRubric(i))
+						if (advWith1[j].getRubric() == getRubric(i))
 						{
 							if (counterPrintedRubrics == 0)
 							{
 								cout << "\n*********************************************************************\n";
 
 								cout << "\nRubric:  ";
-								cout << advertOfUser[j].getRubric() << "\n\n";
+								cout << advWith1[j].getRubric() << "\n\n";
 							}
 							counterPrintedRubrics++;
 
-							cout << advertOfUser[j];
+							cout << advWith1[j];
 						}
 					}
 				}
@@ -125,9 +153,9 @@ int correctLogin(User& user)
 		case 2:
 		{
 			system("cls");
-
+			vector<Advertisement> advert = DTOAdvertisement::getAllAdvert(user);
 			vector<Advertisement> advWith0;
-			advWith0 = HelperFunction::leaveAdvWithStatus(advertOfUser, 0);
+			advWith0 = HelperFunction::leaveAdvWithStatus(advert, 0);
 
 			if (advWith0.size() == 0)
 			{
@@ -143,7 +171,22 @@ int correctLogin(User& user)
 		}
 		case 3:
 		{
+			viewAllBeforeLogin();
+			break;
+		}
+		case 4:
+		{
+			viewAllBeforeLoginByRubric();
+			break;
+		}
+		case 5:
+		{
 			mainMenu();
+			break;
+		}
+		case 6:
+		{
+			profileMenu(user);
 			break;
 		}
 		}

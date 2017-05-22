@@ -12,15 +12,27 @@ void editAdvertisement(vector<Advertisement>& vect)
 
 	cout << "\n Enter the number of advertisement which you want to edit: \n";
 	
+start:
+	string action;
 	int number;
-	cin >> number;
-
-	while (number > vect.size())
+	cin >> action;
+	for (size_t i = 0; i <= vect.size(); i++)
 	{
-		cout << "Enter correct number : ";
-		cin >> number;
+		if (action == to_string(i))
+		{
+			number = i;
+			break;
+		}
+		else 
+		{
+			number = -1;
+		}
 	}
-
+	if (number == -1)
+	{
+		cout << "Enter correct number \n ";
+		goto start;
+	}
 	system("cls");
 	cout << "Now you can edit this advertisement: \n\n";
 	cout << "title: " << vect[number - 1].getTitle() << "\n";
@@ -30,12 +42,26 @@ void editAdvertisement(vector<Advertisement>& vect)
 	cout << "1 - change title \n";
 	cout << "2 - change main text \n";
 	cout << "3 - send this advertisement to the server \n";
-	char nextAction;
-	cin >> nextAction;
 
-	switch (nextAction)
+	string nextAction;
+	cin >> nextAction;
+	while (true)
 	{
-	case'1':
+		if (nextAction == "1" || nextAction == "2" || nextAction == "3")
+		{
+			break;
+		}
+		else
+		{
+			cout << "Enter correct number \n";
+			nextAction.clear();
+			cin >> nextAction;
+		}
+	}
+
+	switch (stoi(nextAction))
+	{
+	case 1:
 	{
 		system("cls");
 		string oldTitle;
@@ -49,7 +75,7 @@ void editAdvertisement(vector<Advertisement>& vect)
 		DTOAdvertisement::editAdvertisement(oldTitle, newTitle, vect[number - 1].getMainText());
 		break;
 	}
-	case'2':
+	case 2:
 	{
 		system("cls");
 		string newText;
@@ -63,7 +89,7 @@ void editAdvertisement(vector<Advertisement>& vect)
 		DTOAdvertisement::editAdvertisement(oldText, newText, vect[number - 1].getMainText());
 		break;
 	}
-	case'3':
+	case 3:
 	{
 		system("cls");
 		cout << "Your advertisemnt has been sent to server ..\n";
